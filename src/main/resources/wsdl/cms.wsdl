@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/cms" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/cms" targetNamespace="http://www.vitero.de/schema/cms">
+  <wsdl:types>
+    <xs:schema xmlns:viterocms="http://www.vitero.de/schema/cms" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/cms" version="1.0">
+    
+  <!-- AVAILABLE REQUESTS AND RESPONSES -->  
+  <xs:element name="successResponse">
+    <xs:complexType>
+    <xs:all>
+      <xs:element name="request" type="xs:string"/>
+    </xs:all>
+  </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="getGroupFolderRequest">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="groupid" type="xs:int"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>  
+  <xs:element name="getGroupFolderResponse" type="viterocms:wrappedFolder"/>
+  
+  <xs:element name="getCustomerFolderRequest">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="customerid" type="xs:int"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>  
+  <xs:element name="getCustomerFolderResponse" type="viterocms:wrappedFolder"/>
+  
+  <xs:element name="createFolderRequest">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="nodeid" type="xs:long"/>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element minOccurs="0" name="authorid" type="xs:int"/>
+        <xs:element minOccurs="0" name="displaytype" type="xs:int"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createFolderResponse" type="viterocms:nodeid"/>
+  
+  <xs:element name="deleteNodeRequest" type="viterocms:nodeid"/>
+  
+  <xs:element name="renameNodeRequest">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="nodeid" type="xs:long"/>
+        <xs:element name="name" type="xs:string"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="copyNodeRequest" type="viterocms:sourceAndDestNodeId"/>
+  
+  <xs:element name="moveNodeRequest" type="viterocms:sourceAndDestNodeId"/>
+  
+  <xs:element name="changeDisplaytypeRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nodeid" type="xs:long"/>
+        <xs:element name="displaytype" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <!-- TYPES -->
+  <xs:complexType name="wrappedFolder">
+    <xs:all>
+      <xs:element name="folder" type="viterocms:folder"/>
+    </xs:all>
+  </xs:complexType>
+  
+  <xs:complexType name="folder">
+    <xs:sequence>
+      <xs:element name="nodeid" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="children" type="viterocms:nodeList"/>
+    </xs:sequence>  
+  </xs:complexType>
+  
+  <xs:complexType name="file">
+    <xs:sequence>
+      <xs:element name="nodeid" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>  
+  </xs:complexType>
+  
+  <xs:complexType name="nodeList">
+  	<xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="folder" type="viterocms:folder"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="file" type="viterocms:file"/>
+  	</xs:sequence>    
+  </xs:complexType>
+  
+  
+  <xs:complexType name="sourceAndDestNodeId">
+    <xs:all>
+      <xs:element name="sourcenodeid" type="xs:long"/>
+      <xs:element name="destnodeid" type="xs:long"/>
+    </xs:all>
+  </xs:complexType> 
+  
+  <xs:complexType name="nodeid">
+      <xs:all>
+        <xs:element name="nodeid" type="xs:long"/>
+      </xs:all>
+    </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="createFolderRequest">
+    <wsdl:part element="tns:createFolderRequest" name="createFolderRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="renameNodeRequest">
+    <wsdl:part element="tns:renameNodeRequest" name="renameNodeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeDisplaytypeRequest">
+    <wsdl:part element="tns:changeDisplaytypeRequest" name="changeDisplaytypeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createFolderResponse">
+    <wsdl:part element="tns:createFolderResponse" name="createFolderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="copyNodeRequest">
+    <wsdl:part element="tns:copyNodeRequest" name="copyNodeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteNodeRequest">
+    <wsdl:part element="tns:deleteNodeRequest" name="deleteNodeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGroupFolderRequest">
+    <wsdl:part element="tns:getGroupFolderRequest" name="getGroupFolderRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomerFolderResponse">
+    <wsdl:part element="tns:getCustomerFolderResponse" name="getCustomerFolderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="moveNodeRequest">
+    <wsdl:part element="tns:moveNodeRequest" name="moveNodeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="successResponse">
+    <wsdl:part element="tns:successResponse" name="successResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGroupFolderResponse">
+    <wsdl:part element="tns:getGroupFolderResponse" name="getGroupFolderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomerFolderRequest">
+    <wsdl:part element="tns:getCustomerFolderRequest" name="getCustomerFolderRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Cms">
+    <wsdl:operation name="renameNode">
+      <wsdl:input message="tns:renameNodeRequest" name="renameNodeRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerFolder">
+      <wsdl:input message="tns:getCustomerFolderRequest" name="getCustomerFolderRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getCustomerFolderResponse" name="getCustomerFolderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="copyNode">
+      <wsdl:input message="tns:copyNodeRequest" name="copyNodeRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="moveNode">
+      <wsdl:input message="tns:moveNodeRequest" name="moveNodeRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="changeDisplaytype">
+      <wsdl:input message="tns:changeDisplaytypeRequest" name="changeDisplaytypeRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getGroupFolder">
+      <wsdl:input message="tns:getGroupFolderRequest" name="getGroupFolderRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getGroupFolderResponse" name="getGroupFolderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNode">
+      <wsdl:input message="tns:deleteNodeRequest" name="deleteNodeRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="createFolder">
+      <wsdl:input message="tns:createFolderRequest" name="createFolderRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createFolderResponse" name="createFolderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CmsSoap11" type="tns:Cms">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="renameNode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="renameNodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerFolder">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getCustomerFolderRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCustomerFolderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="copyNode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="copyNodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="moveNode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="moveNodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="changeDisplaytype">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="changeDisplaytypeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getGroupFolder">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getGroupFolderRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getGroupFolderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deleteNodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="createFolder">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createFolderRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createFolderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CmsService">
+    <wsdl:port binding="tns:CmsSoap11" name="CmsSoap11">
+      <soap:address location="https://kivik.frentix.com:443/vitero/services/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

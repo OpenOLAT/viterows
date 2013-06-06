@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/sessioncode" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/sessioncode" targetNamespace="http://www.vitero.de/schema/sessioncode">
+  <wsdl:types>
+    <xs:schema xmlns:viterosessioncode="http://www.vitero.de/schema/sessioncode" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/sessioncode" version="1.0">
+        
+  <!-- AVAILABLE REQUESTS AND RESPONSES -->  
+  <xs:element name="successResponse">
+    <xs:complexType>
+    <xs:all>
+      <xs:element name="request" type="xs:string"/>
+    </xs:all>
+  </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="createBookingSessionCodeRequest">
+    <xs:complexType>
+  	  <xs:all>
+	    <xs:element name="sessioncode">
+	      <xs:complexType>
+			<xs:all>
+			  <xs:element name="bookingid" type="xs:int"/>
+			  <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>  
+			  <xs:element minOccurs="0" name="timezone" type="xs:string"/>
+			  <xs:element minOccurs="0" name="codelength" type="xs:int"/>        
+		    </xs:all>
+		  </xs:complexType>
+	    </xs:element>
+	  </xs:all>
+	</xs:complexType>
+  </xs:element> 
+  <xs:element name="createBookingSessionCodeResponse" type="viterosessioncode:codetype"/>
+  
+  <xs:element name="createPersonalBookingSessionCodeRequest">
+    <xs:complexType>
+  	  <xs:all>
+	    <xs:element name="sessioncode">
+	      <xs:complexType>
+			<xs:all>
+			  <xs:element name="userid" type="xs:int"/>
+			  <xs:element name="bookingid" type="xs:int"/>
+			  <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>  
+			  <xs:element minOccurs="0" name="timezone" type="xs:string"/>
+			  <xs:element minOccurs="0" name="codelength" type="xs:int"/>        
+		    </xs:all>
+		  </xs:complexType>
+	    </xs:element>
+	  </xs:all>
+	</xs:complexType>
+  </xs:element> 
+  <xs:element name="createPersonalBookingSessionCodeResponse" type="viterosessioncode:codetype"/>
+  
+  <xs:element name="createPersonalGroupSessionCodeRequest">
+    <xs:complexType>
+  	  <xs:all>
+  		<xs:element name="sessioncode">
+  		  <xs:complexType>
+		    <xs:all>
+		      <xs:element name="userid" type="xs:int"/>
+		      <xs:element name="groupid" type="xs:int"/>
+		      <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>  
+		      <xs:element minOccurs="0" name="timezone" type="xs:string"/>
+		      <xs:element minOccurs="0" name="codelength" type="xs:int"/>        
+		      <xs:element minOccurs="0" name="allownotassignedusers" type="xs:boolean"/>  
+		    </xs:all>
+		  </xs:complexType>
+  		</xs:element>
+  	  </xs:all>
+    </xs:complexType>
+  </xs:element> 
+  <xs:element name="createPersonalGroupSessionCodeResponse" type="viterosessioncode:codetype"/>
+  
+  <xs:element name="createVmsSessionCodeRequest">
+    <xs:complexType>
+  	  <xs:all>
+  		<xs:element name="sessioncode">
+  		  <xs:complexType>
+		    <xs:all>
+		      <xs:element name="userid" type="xs:int"/>
+		      <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>  
+		      <xs:element minOccurs="0" name="timezone" type="xs:string"/>
+		      <xs:element minOccurs="0" name="codelength" type="xs:int"/>        
+		    </xs:all>
+		  </xs:complexType>
+  		</xs:element>
+  	  </xs:all>
+    </xs:complexType>
+  </xs:element> 
+  <xs:element name="createVmsSessionCodeResponse" type="viterosessioncode:codetype"/>
+      
+  <xs:element name="deleteSessionCodeRequest" type="viterosessioncode:codetype"/>
+  
+  <xs:element name="getSessionCodeInformationRequest">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="code" type="xs:string"/>
+		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSessionCodeInformationResponse">
+  	<xs:complexType>
+  		<xs:all>
+  			<xs:element name="sessioncode">
+  				<xs:complexType>
+  					<xs:all>
+  						<xs:element name="type" type="xs:string"/>
+  						<xs:element name="userid" type="xs:int"/>
+				        <xs:element minOccurs="0" name="bookingid" type="xs:int"/>
+				        <xs:element minOccurs="0" name="groupid" type="xs:int"/>
+				        <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>  
+				        <xs:element name="allownotexistingusers" type="xs:boolean"/>
+				        <xs:element name="allownotassignedusers" type="xs:boolean"/>
+  					</xs:all>
+  				</xs:complexType>
+  			</xs:element>
+  		</xs:all>
+  	</xs:complexType>
+  </xs:element>
+  
+  <xs:element name="getPersonalBookingSessionCodesRequest">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="userid" type="xs:int"/>
+		<xs:element name="bookingid" type="xs:int"/>
+		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPersonalBookingSessionCodesResponse">
+  	<xs:complexType>
+  		<xs:sequence>
+  			<xs:element maxOccurs="unbounded" minOccurs="0" name="sessioncode" type="viterosessioncode:sessioncodebyidtype"/>
+  		</xs:sequence>
+  	</xs:complexType>
+  </xs:element>
+  
+  <xs:element name="getPersonalGroupSessionCodesRequest">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="userid" type="xs:int"/>
+		<xs:element name="groupid" type="xs:int"/>
+		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPersonalGroupSessionCodesResponse">
+  	<xs:complexType>
+  		<xs:sequence>
+  			<xs:element maxOccurs="unbounded" minOccurs="0" name="sessioncode" type="viterosessioncode:sessioncodebyidtype"/>
+  		</xs:sequence>
+  	</xs:complexType>
+  </xs:element>
+
+  <xs:element name="getTestroomSessionCodeRequest">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="userid" type="xs:int"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTestroomSessionCodeResponse" type="viterosessioncode:codetype"/>
+      
+  <!-- TYPES -->  
+  <xs:complexType name="codetype">
+    <xs:all>
+      <xs:element name="code" type="xs:string"/>    
+    </xs:all>
+  </xs:complexType>
+  
+  <xs:complexType name="sessioncodebyidtype">
+	<xs:all>
+	  <xs:element name="code" type="xs:string"/>  						
+      <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>		
+      <xs:element minOccurs="0" name="allownotassignedusers" type="xs:boolean"/>	
+      <xs:element minOccurs="0" name="allownotexistingusers" type="xs:boolean"/>					        
+	</xs:all>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="createPersonalGroupSessionCodeResponse">
+    <wsdl:part element="tns:createPersonalGroupSessionCodeResponse" name="createPersonalGroupSessionCodeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSessionCodeRequest">
+    <wsdl:part element="tns:deleteSessionCodeRequest" name="deleteSessionCodeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createBookingSessionCodeRequest">
+    <wsdl:part element="tns:createBookingSessionCodeRequest" name="createBookingSessionCodeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createVmsSessionCodeResponse">
+    <wsdl:part element="tns:createVmsSessionCodeResponse" name="createVmsSessionCodeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonalBookingSessionCodesResponse">
+    <wsdl:part element="tns:getPersonalBookingSessionCodesResponse" name="getPersonalBookingSessionCodesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createVmsSessionCodeRequest">
+    <wsdl:part element="tns:createVmsSessionCodeRequest" name="createVmsSessionCodeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createBookingSessionCodeResponse">
+    <wsdl:part element="tns:createBookingSessionCodeResponse" name="createBookingSessionCodeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createPersonalBookingSessionCodeRequest">
+    <wsdl:part element="tns:createPersonalBookingSessionCodeRequest" name="createPersonalBookingSessionCodeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createPersonalGroupSessionCodeRequest">
+    <wsdl:part element="tns:createPersonalGroupSessionCodeRequest" name="createPersonalGroupSessionCodeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="successResponse">
+    <wsdl:part element="tns:successResponse" name="successResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTestroomSessionCodeResponse">
+    <wsdl:part element="tns:getTestroomSessionCodeResponse" name="getTestroomSessionCodeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSessionCodeInformationResponse">
+    <wsdl:part element="tns:getSessionCodeInformationResponse" name="getSessionCodeInformationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonalGroupSessionCodesResponse">
+    <wsdl:part element="tns:getPersonalGroupSessionCodesResponse" name="getPersonalGroupSessionCodesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSessionCodeInformationRequest">
+    <wsdl:part element="tns:getSessionCodeInformationRequest" name="getSessionCodeInformationRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createPersonalBookingSessionCodeResponse">
+    <wsdl:part element="tns:createPersonalBookingSessionCodeResponse" name="createPersonalBookingSessionCodeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonalBookingSessionCodesRequest">
+    <wsdl:part element="tns:getPersonalBookingSessionCodesRequest" name="getPersonalBookingSessionCodesRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonalGroupSessionCodesRequest">
+    <wsdl:part element="tns:getPersonalGroupSessionCodesRequest" name="getPersonalGroupSessionCodesRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTestroomSessionCodeRequest">
+    <wsdl:part element="tns:getTestroomSessionCodeRequest" name="getTestroomSessionCodeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SessionCode">
+    <wsdl:operation name="getPersonalGroupSessionCodes">
+      <wsdl:input message="tns:getPersonalGroupSessionCodesRequest" name="getPersonalGroupSessionCodesRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getPersonalGroupSessionCodesResponse" name="getPersonalGroupSessionCodesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSessionCodeInformation">
+      <wsdl:input message="tns:getSessionCodeInformationRequest" name="getSessionCodeInformationRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getSessionCodeInformationResponse" name="getSessionCodeInformationResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPersonalBookingSessionCode">
+      <wsdl:input message="tns:createPersonalBookingSessionCodeRequest" name="createPersonalBookingSessionCodeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createPersonalBookingSessionCodeResponse" name="createPersonalBookingSessionCodeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createVmsSessionCode">
+      <wsdl:input message="tns:createVmsSessionCodeRequest" name="createVmsSessionCodeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createVmsSessionCodeResponse" name="createVmsSessionCodeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTestroomSessionCode">
+      <wsdl:input message="tns:getTestroomSessionCodeRequest" name="getTestroomSessionCodeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getTestroomSessionCodeResponse" name="getTestroomSessionCodeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPersonalGroupSessionCode">
+      <wsdl:input message="tns:createPersonalGroupSessionCodeRequest" name="createPersonalGroupSessionCodeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createPersonalGroupSessionCodeResponse" name="createPersonalGroupSessionCodeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonalBookingSessionCodes">
+      <wsdl:input message="tns:getPersonalBookingSessionCodesRequest" name="getPersonalBookingSessionCodesRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getPersonalBookingSessionCodesResponse" name="getPersonalBookingSessionCodesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSessionCode">
+      <wsdl:input message="tns:deleteSessionCodeRequest" name="deleteSessionCodeRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="createBookingSessionCode">
+      <wsdl:input message="tns:createBookingSessionCodeRequest" name="createBookingSessionCodeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createBookingSessionCodeResponse" name="createBookingSessionCodeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SessionCodeSoap11" type="tns:SessionCode">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getPersonalGroupSessionCodes">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPersonalGroupSessionCodesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPersonalGroupSessionCodesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSessionCodeInformation">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getSessionCodeInformationRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSessionCodeInformationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPersonalBookingSessionCode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createPersonalBookingSessionCodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createPersonalBookingSessionCodeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createVmsSessionCode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createVmsSessionCodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createVmsSessionCodeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTestroomSessionCode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getTestroomSessionCodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTestroomSessionCodeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPersonalGroupSessionCode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createPersonalGroupSessionCodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createPersonalGroupSessionCodeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonalBookingSessionCodes">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPersonalBookingSessionCodesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPersonalBookingSessionCodesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSessionCode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deleteSessionCodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="createBookingSessionCode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createBookingSessionCodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createBookingSessionCodeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SessionCodeService">
+    <wsdl:port binding="tns:SessionCodeSoap11" name="SessionCodeSoap11">
+      <soap:address location="https://kivik.frentix.com:443/vitero/services/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
