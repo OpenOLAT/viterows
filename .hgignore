@@ -11,6 +11,8 @@ syntax: glob
 
 # mvn build trees
 target/*
+cargo/*
+bin/*
 
 # deprecated scripting files
 *.pl
@@ -36,5 +38,15 @@ CVS/*
 
 # Mac idiosyncrasies
 .DS_Store
+
+#ignore olat/.classpath file at this gets created by maven
+.classpath
+.project
+.settings/*
+
+syntax: regexp
+^\.classpath$
+syntax: regexp
+^\.project$
 
 
