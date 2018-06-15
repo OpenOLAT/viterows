@@ -1,29 +1,27 @@
 
-package de.vitero.schema.mtom;
+package de.vitero.schema.user;
 
-import java.math.BigInteger;
-import javax.activation.DataHandler;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlMimeType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour CompleteAvatarWrapper complex type.
+ * <p>Classe Java pour anonymous complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="CompleteAvatarWrapper"&gt;
+ * &lt;complexType&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
- *         &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
- *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *         &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="filename" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="file" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/&gt;
+ *         &lt;element name="file" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -33,65 +31,48 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CompleteAvatarWrapper", propOrder = {
+@XmlType(name = "", propOrder = {
 
 })
-public class CompleteAvatarWrapper {
+@XmlRootElement(name = "storeAvatarUsingBase64StringRequest")
+public class StoreAvatarUsingBase64StringRequest {
 
-    @XmlElement(required = true)
-    protected BigInteger userid;
-    protected BigInteger type;
+    protected int userid;
+    protected int type;
     @XmlElement(required = true)
     protected String filename;
     @XmlElement(required = true)
-    @XmlMimeType("application/octet-stream")
-    protected DataHandler file;
+    protected String file;
 
     /**
      * Obtient la valeur de la propriété userid.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getUserid() {
+    public int getUserid() {
         return userid;
     }
 
     /**
      * Définit la valeur de la propriété userid.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setUserid(BigInteger value) {
+    public void setUserid(int value) {
         this.userid = value;
     }
 
     /**
      * Obtient la valeur de la propriété type.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getType() {
+    public int getType() {
         return type;
     }
 
     /**
      * Définit la valeur de la propriété type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setType(BigInteger value) {
+    public void setType(int value) {
         this.type = value;
     }
 
@@ -124,10 +105,10 @@ public class CompleteAvatarWrapper {
      * 
      * @return
      *     possible object is
-     *     {@link DataHandler }
+     *     {@link String }
      *     
      */
-    public DataHandler getFile() {
+    public String getFile() {
         return file;
     }
 
@@ -136,10 +117,10 @@ public class CompleteAvatarWrapper {
      * 
      * @param value
      *     allowed object is
-     *     {@link DataHandler }
+     *     {@link String }
      *     
      */
-    public void setFile(DataHandler value) {
+    public void setFile(String value) {
         this.file = value;
     }
 

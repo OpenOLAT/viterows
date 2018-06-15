@@ -3,6 +3,7 @@
     <xs:schema xmlns:viterocms="http://www.vitero.de/schema/cms" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/cms" version="1.0">
     
   <!-- AVAILABLE REQUESTS AND RESPONSES -->  
+  <xs:element name="successRequest" type="xs:string"/> <!-- do not use -->
   <xs:element name="successResponse">
     <xs:complexType>
     <xs:all>
@@ -110,10 +111,6 @@
 
 </xs:schema>
   </wsdl:types>
-  <wsdl:message name="createFolderRequest">
-    <wsdl:part element="tns:createFolderRequest" name="createFolderRequest">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="renameNodeRequest">
     <wsdl:part element="tns:renameNodeRequest" name="renameNodeRequest">
     </wsdl:part>
@@ -126,16 +123,36 @@
     <wsdl:part element="tns:createFolderResponse" name="createFolderResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="copyNodeRequest">
-    <wsdl:part element="tns:copyNodeRequest" name="copyNodeRequest">
+  <wsdl:message name="successResponse">
+    <wsdl:part element="tns:successResponse" name="successResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGroupFolderResponse">
+    <wsdl:part element="tns:getGroupFolderResponse" name="getGroupFolderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="successRequest">
+    <wsdl:part element="tns:successRequest" name="successRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomerFolderRequest">
+    <wsdl:part element="tns:getCustomerFolderRequest" name="getCustomerFolderRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createFolderRequest">
+    <wsdl:part element="tns:createFolderRequest" name="createFolderRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGroupFolderRequest">
+    <wsdl:part element="tns:getGroupFolderRequest" name="getGroupFolderRequest">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="deleteNodeRequest">
     <wsdl:part element="tns:deleteNodeRequest" name="deleteNodeRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupFolderRequest">
-    <wsdl:part element="tns:getGroupFolderRequest" name="getGroupFolderRequest">
+  <wsdl:message name="copyNodeRequest">
+    <wsdl:part element="tns:copyNodeRequest" name="copyNodeRequest">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="getCustomerFolderResponse">
@@ -146,28 +163,42 @@
     <wsdl:part element="tns:moveNodeRequest" name="moveNodeRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successResponse">
-    <wsdl:part element="tns:successResponse" name="successResponse">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getGroupFolderResponse">
-    <wsdl:part element="tns:getGroupFolderResponse" name="getGroupFolderResponse">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getCustomerFolderRequest">
-    <wsdl:part element="tns:getCustomerFolderRequest" name="getCustomerFolderRequest">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:portType name="Cms">
     <wsdl:operation name="renameNode">
       <wsdl:input message="tns:renameNodeRequest" name="renameNodeRequest">
     </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="changeDisplaytype">
+      <wsdl:input message="tns:changeDisplaytypeRequest" name="changeDisplaytypeRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="createFolder">
+      <wsdl:input message="tns:createFolderRequest" name="createFolderRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createFolderResponse" name="createFolderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="success">
+      <wsdl:input message="tns:successRequest" name="successRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:successResponse" name="successResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGroupFolder">
+      <wsdl:input message="tns:getGroupFolderRequest" name="getGroupFolderRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getGroupFolderResponse" name="getGroupFolderResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getCustomerFolder">
       <wsdl:input message="tns:getCustomerFolderRequest" name="getCustomerFolderRequest">
     </wsdl:input>
       <wsdl:output message="tns:getCustomerFolderResponse" name="getCustomerFolderResponse">
     </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNode">
+      <wsdl:input message="tns:deleteNodeRequest" name="deleteNodeRequest">
+    </wsdl:input>
     </wsdl:operation>
     <wsdl:operation name="copyNode">
       <wsdl:input message="tns:copyNodeRequest" name="copyNodeRequest">
@@ -176,26 +207,6 @@
     <wsdl:operation name="moveNode">
       <wsdl:input message="tns:moveNodeRequest" name="moveNodeRequest">
     </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="changeDisplaytype">
-      <wsdl:input message="tns:changeDisplaytypeRequest" name="changeDisplaytypeRequest">
-    </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getGroupFolder">
-      <wsdl:input message="tns:getGroupFolderRequest" name="getGroupFolderRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:getGroupFolderResponse" name="getGroupFolderResponse">
-    </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteNode">
-      <wsdl:input message="tns:deleteNodeRequest" name="deleteNodeRequest">
-    </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="createFolder">
-      <wsdl:input message="tns:createFolderRequest" name="createFolderRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:createFolderResponse" name="createFolderResponse">
-    </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CmsSoap11" type="tns:Cms">
@@ -206,6 +217,39 @@
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="changeDisplaytype">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="changeDisplaytypeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="createFolder">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createFolderRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createFolderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="success">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="successRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="successResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGroupFolder">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getGroupFolderRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getGroupFolderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getCustomerFolder">
       <soap:operation soapAction=""/>
       <wsdl:input name="getCustomerFolderRequest">
@@ -214,6 +258,12 @@
       <wsdl:output name="getCustomerFolderResponse">
         <soap:body use="literal"/>
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deleteNodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
     </wsdl:operation>
     <wsdl:operation name="copyNode">
       <soap:operation soapAction=""/>
@@ -227,40 +277,10 @@
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="changeDisplaytype">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="changeDisplaytypeRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getGroupFolder">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getGroupFolderRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="getGroupFolderResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteNode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="deleteNodeRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="createFolder">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createFolderRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="createFolderResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="CmsService">
     <wsdl:port binding="tns:CmsSoap11" name="CmsSoap11">
-      <soap:address location="https://kivik.frentix.com:443/vitero/services/"/>
+      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

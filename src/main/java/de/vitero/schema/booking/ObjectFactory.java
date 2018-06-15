@@ -24,17 +24,20 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetBookingTimeByIdResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingTimeByIdResponse");
-    private final static QName _GetBookingListByUserAndDateResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByUserAndDateResponse");
-    private final static QName _GetBookingListByGroupAndDateResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByGroupAndDateResponse");
+    private final static QName _SuccessRequest_QNAME = new QName("http://www.vitero.de/schema/booking", "successRequest");
     private final static QName _GetBookingByIdRequest_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingByIdRequest");
-    private final static QName _GetBookingByBookingTimeIdRequest_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingByBookingTimeIdRequest");
     private final static QName _GetBookingByIdResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingByIdResponse");
-    private final static QName _GetBookingListByDateResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByDateResponse");
-    private final static QName _GetBookingListByUserInFutureResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByUserInFutureResponse");
+    private final static QName _GetBookingByBookingTimeIdRequest_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingByBookingTimeIdRequest");
     private final static QName _GetBookingByBookingTimeIdResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingByBookingTimeIdResponse");
-    private final static QName _GetBookingListByGroupInFutureResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByGroupInFutureResponse");
     private final static QName _GetBookingTimeByIdRequest_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingTimeByIdRequest");
+    private final static QName _GetBookingTimeByIdResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingTimeByIdResponse");
+    private final static QName _GetBookingListByGroupAndDateResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByGroupAndDateResponse");
+    private final static QName _GetBookingListByGroupInFutureResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByGroupInFutureResponse");
+    private final static QName _GetBookingListByUserAndDateResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByUserAndDateResponse");
+    private final static QName _GetBookingListByUserAndDateAndCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByUserAndDateAndCustomerResponse");
+    private final static QName _GetBookingListByUserInFutureResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByUserInFutureResponse");
+    private final static QName _GetBookingListByUserAndCustomerInFutureResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByUserAndCustomerInFutureResponse");
+    private final static QName _GetBookingListByDateResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByDateResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.vitero.schema.booking
@@ -68,43 +71,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Bookingtimeid }
-     * 
-     */
-    public Bookingtimeid createBookingtimeid() {
-        return new Bookingtimeid();
-    }
-
-    /**
-     * Create an instance of {@link Bookinglist }
-     * 
-     */
-    public Bookinglist createBookinglist() {
-        return new Bookinglist();
-    }
-
-    /**
      * Create an instance of {@link SuccessResponse }
      * 
      */
     public SuccessResponse createSuccessResponse() {
         return new SuccessResponse();
-    }
-
-    /**
-     * Create an instance of {@link CreateBookingResponse }
-     * 
-     */
-    public CreateBookingResponse createCreateBookingResponse() {
-        return new CreateBookingResponse();
-    }
-
-    /**
-     * Create an instance of {@link Bookingtype }
-     * 
-     */
-    public Bookingtype createBookingtype() {
-        return new Bookingtype();
     }
 
     /**
@@ -116,11 +87,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UpdateBookingRequest }
+     * Create an instance of {@link Bookingtype }
      * 
      */
-    public UpdateBookingRequest createUpdateBookingRequest() {
-        return new UpdateBookingRequest();
+    public Bookingtype createBookingtype() {
+        return new Bookingtype();
+    }
+
+    /**
+     * Create an instance of {@link Bookingtimeid }
+     * 
+     */
+    public Bookingtimeid createBookingtimeid() {
+        return new Bookingtimeid();
+    }
+
+    /**
+     * Create an instance of {@link Bookingtimetype }
+     * 
+     */
+    public Bookingtimetype createBookingtimetype() {
+        return new Bookingtimetype();
     }
 
     /**
@@ -129,6 +116,62 @@ public class ObjectFactory {
      */
     public GetBookingListByGroupAndDateRequest createGetBookingListByGroupAndDateRequest() {
         return new GetBookingListByGroupAndDateRequest();
+    }
+
+    /**
+     * Create an instance of {@link Bookinglist }
+     * 
+     */
+    public Bookinglist createBookinglist() {
+        return new Bookinglist();
+    }
+
+    /**
+     * Create an instance of {@link GetBookingListByGroupInFutureRequest }
+     * 
+     */
+    public GetBookingListByGroupInFutureRequest createGetBookingListByGroupInFutureRequest() {
+        return new GetBookingListByGroupInFutureRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetBookingListByUserAndDateRequest }
+     * 
+     */
+    public GetBookingListByUserAndDateRequest createGetBookingListByUserAndDateRequest() {
+        return new GetBookingListByUserAndDateRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetBookingListByUserAndDateAndCustomerRequest }
+     * 
+     */
+    public GetBookingListByUserAndDateAndCustomerRequest createGetBookingListByUserAndDateAndCustomerRequest() {
+        return new GetBookingListByUserAndDateAndCustomerRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetBookingListByUserInFutureRequest }
+     * 
+     */
+    public GetBookingListByUserInFutureRequest createGetBookingListByUserInFutureRequest() {
+        return new GetBookingListByUserInFutureRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetBookingListByUserAndCustomerInFutureRequest }
+     * 
+     */
+    public GetBookingListByUserAndCustomerInFutureRequest createGetBookingListByUserAndCustomerInFutureRequest() {
+        return new GetBookingListByUserAndCustomerInFutureRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetBookingListByDateRequest }
+     * 
+     */
+    public GetBookingListByDateRequest createGetBookingListByDateRequest() {
+        return new GetBookingListByDateRequest();
     }
 
     /**
@@ -148,11 +191,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DeleteBookingResponse }
+     * Create an instance of {@link CreateBookingResponse }
      * 
      */
-    public DeleteBookingResponse createDeleteBookingResponse() {
-        return new DeleteBookingResponse();
+    public CreateBookingResponse createCreateBookingResponse() {
+        return new CreateBookingResponse();
+    }
+
+    /**
+     * Create an instance of {@link UpdateBookingRequest }
+     * 
+     */
+    public UpdateBookingRequest createUpdateBookingRequest() {
+        return new UpdateBookingRequest();
     }
 
     /**
@@ -164,51 +215,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Bookingtimetype }
+     * Create an instance of {@link DeleteBookingResponse }
      * 
      */
-    public Bookingtimetype createBookingtimetype() {
-        return new Bookingtimetype();
-    }
-
-    /**
-     * Create an instance of {@link GetBookingListByUserAndDateRequest }
-     * 
-     */
-    public GetBookingListByUserAndDateRequest createGetBookingListByUserAndDateRequest() {
-        return new GetBookingListByUserAndDateRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetBookingListByUserInFutureRequest }
-     * 
-     */
-    public GetBookingListByUserInFutureRequest createGetBookingListByUserInFutureRequest() {
-        return new GetBookingListByUserInFutureRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetBookingListByGroupInFutureRequest }
-     * 
-     */
-    public GetBookingListByGroupInFutureRequest createGetBookingListByGroupInFutureRequest() {
-        return new GetBookingListByGroupInFutureRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetBookingListByDateRequest }
-     * 
-     */
-    public GetBookingListByDateRequest createGetBookingListByDateRequest() {
-        return new GetBookingListByDateRequest();
-    }
-
-    /**
-     * Create an instance of {@link Phonetype }
-     * 
-     */
-    public Phonetype createPhonetype() {
-        return new Phonetype();
+    public DeleteBookingResponse createDeleteBookingResponse() {
+        return new DeleteBookingResponse();
     }
 
     /**
@@ -217,6 +228,14 @@ public class ObjectFactory {
      */
     public de.vitero.schema.booking.Bookingtime createBookingtime() {
         return new de.vitero.schema.booking.Bookingtime();
+    }
+
+    /**
+     * Create an instance of {@link Phonetype }
+     * 
+     */
+    public Phonetype createPhonetype() {
+        return new Phonetype();
     }
 
     /**
@@ -236,30 +255,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtimetype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingTimeByIdResponse")
-    public JAXBElement<Bookingtimetype> createGetBookingTimeByIdResponse(Bookingtimetype value) {
-        return new JAXBElement<Bookingtimetype>(_GetBookingTimeByIdResponse_QNAME, Bookingtimetype.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByUserAndDateResponse")
-    public JAXBElement<Bookinglist> createGetBookingListByUserAndDateResponse(Bookinglist value) {
-        return new JAXBElement<Bookinglist>(_GetBookingListByUserAndDateResponse_QNAME, Bookinglist.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByGroupAndDateResponse")
-    public JAXBElement<Bookinglist> createGetBookingListByGroupAndDateResponse(Bookinglist value) {
-        return new JAXBElement<Bookinglist>(_GetBookingListByGroupAndDateResponse_QNAME, Bookinglist.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "successRequest")
+    public JAXBElement<String> createSuccessRequest(String value) {
+        return new JAXBElement<String>(_SuccessRequest_QNAME, String.class, null, value);
     }
 
     /**
@@ -269,6 +270,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingByIdRequest")
     public JAXBElement<Bookingid> createGetBookingByIdRequest(Bookingid value) {
         return new JAXBElement<Bookingid>(_GetBookingByIdRequest_QNAME, Bookingid.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtype }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingByIdResponse")
+    public JAXBElement<Bookingtype> createGetBookingByIdResponse(Bookingtype value) {
+        return new JAXBElement<Bookingtype>(_GetBookingByIdResponse_QNAME, Bookingtype.class, null, value);
     }
 
     /**
@@ -284,36 +294,36 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtype }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingByIdResponse")
-    public JAXBElement<Bookingtype> createGetBookingByIdResponse(Bookingtype value) {
-        return new JAXBElement<Bookingtype>(_GetBookingByIdResponse_QNAME, Bookingtype.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByDateResponse")
-    public JAXBElement<Bookinglist> createGetBookingListByDateResponse(Bookinglist value) {
-        return new JAXBElement<Bookinglist>(_GetBookingListByDateResponse_QNAME, Bookinglist.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByUserInFutureResponse")
-    public JAXBElement<Bookinglist> createGetBookingListByUserInFutureResponse(Bookinglist value) {
-        return new JAXBElement<Bookinglist>(_GetBookingListByUserInFutureResponse_QNAME, Bookinglist.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtype }{@code >}}
-     * 
-     */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingByBookingTimeIdResponse")
     public JAXBElement<Bookingtype> createGetBookingByBookingTimeIdResponse(Bookingtype value) {
         return new JAXBElement<Bookingtype>(_GetBookingByBookingTimeIdResponse_QNAME, Bookingtype.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtimeid }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingTimeByIdRequest")
+    public JAXBElement<Bookingtimeid> createGetBookingTimeByIdRequest(Bookingtimeid value) {
+        return new JAXBElement<Bookingtimeid>(_GetBookingTimeByIdRequest_QNAME, Bookingtimeid.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtimetype }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingTimeByIdResponse")
+    public JAXBElement<Bookingtimetype> createGetBookingTimeByIdResponse(Bookingtimetype value) {
+        return new JAXBElement<Bookingtimetype>(_GetBookingTimeByIdResponse_QNAME, Bookingtimetype.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByGroupAndDateResponse")
+    public JAXBElement<Bookinglist> createGetBookingListByGroupAndDateResponse(Bookinglist value) {
+        return new JAXBElement<Bookinglist>(_GetBookingListByGroupAndDateResponse_QNAME, Bookinglist.class, null, value);
     }
 
     /**
@@ -326,12 +336,48 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtimeid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingTimeByIdRequest")
-    public JAXBElement<Bookingtimeid> createGetBookingTimeByIdRequest(Bookingtimeid value) {
-        return new JAXBElement<Bookingtimeid>(_GetBookingTimeByIdRequest_QNAME, Bookingtimeid.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByUserAndDateResponse")
+    public JAXBElement<Bookinglist> createGetBookingListByUserAndDateResponse(Bookinglist value) {
+        return new JAXBElement<Bookinglist>(_GetBookingListByUserAndDateResponse_QNAME, Bookinglist.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByUserAndDateAndCustomerResponse")
+    public JAXBElement<Bookinglist> createGetBookingListByUserAndDateAndCustomerResponse(Bookinglist value) {
+        return new JAXBElement<Bookinglist>(_GetBookingListByUserAndDateAndCustomerResponse_QNAME, Bookinglist.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByUserInFutureResponse")
+    public JAXBElement<Bookinglist> createGetBookingListByUserInFutureResponse(Bookinglist value) {
+        return new JAXBElement<Bookinglist>(_GetBookingListByUserInFutureResponse_QNAME, Bookinglist.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByUserAndCustomerInFutureResponse")
+    public JAXBElement<Bookinglist> createGetBookingListByUserAndCustomerInFutureResponse(Bookinglist value) {
+        return new JAXBElement<Bookinglist>(_GetBookingListByUserAndCustomerInFutureResponse_QNAME, Bookinglist.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByDateResponse")
+    public JAXBElement<Bookinglist> createGetBookingListByDateResponse(Bookinglist value) {
+        return new JAXBElement<Bookinglist>(_GetBookingListByDateResponse_QNAME, Bookinglist.class, null, value);
     }
 
 }

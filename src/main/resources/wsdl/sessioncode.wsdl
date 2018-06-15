@@ -2,7 +2,8 @@
   <wsdl:types>
     <xs:schema xmlns:viterosessioncode="http://www.vitero.de/schema/sessioncode" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/sessioncode" version="1.0">
         
-  <!-- AVAILABLE REQUESTS AND RESPONSES -->  
+  <!-- AVAILABLE REQUESTS AND RESPONSES -->
+  <xs:element name="successRequest" type="xs:string"/> <!-- do not use -->  
   <xs:element name="successResponse">
     <xs:complexType>
     <xs:all>
@@ -85,6 +86,24 @@
     </xs:complexType>
   </xs:element> 
   <xs:element name="createVmsSessionCodeResponse" type="viterosessioncode:codetype"/>
+  
+  <xs:element name="createAppointmentConfirmationSessionCodeRequest">
+    <xs:complexType>
+  	  <xs:all>
+	    <xs:element name="sessioncode">
+	      <xs:complexType>
+			<xs:all>
+			  <xs:element name="bookingid" type="xs:int"/>
+			  <xs:element name="registrationdeadline" type="xs:int"/>     
+			  <xs:element minOccurs="0" name="role" type="xs:int"/> 
+			  <xs:element minOccurs="0" name="codelength" type="xs:int"/>        
+		    </xs:all>
+		  </xs:complexType>
+	    </xs:element>
+	  </xs:all>
+	</xs:complexType>
+  </xs:element> 
+  <xs:element name="createAppointmentConfirmationSessionCodeResponse" type="viterosessioncode:codetype"/>
       
   <xs:element name="deleteSessionCodeRequest" type="viterosessioncode:codetype"/>
   
@@ -177,12 +196,12 @@
 
 </xs:schema>
   </wsdl:types>
-  <wsdl:message name="createPersonalGroupSessionCodeResponse">
-    <wsdl:part element="tns:createPersonalGroupSessionCodeResponse" name="createPersonalGroupSessionCodeResponse">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="deleteSessionCodeRequest">
     <wsdl:part element="tns:deleteSessionCodeRequest" name="deleteSessionCodeRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createPersonalGroupSessionCodeResponse">
+    <wsdl:part element="tns:createPersonalGroupSessionCodeResponse" name="createPersonalGroupSessionCodeResponse">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="createBookingSessionCodeRequest">
@@ -233,12 +252,20 @@
     <wsdl:part element="tns:getSessionCodeInformationRequest" name="getSessionCodeInformationRequest">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="successRequest">
+    <wsdl:part element="tns:successRequest" name="successRequest">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="createPersonalBookingSessionCodeResponse">
     <wsdl:part element="tns:createPersonalBookingSessionCodeResponse" name="createPersonalBookingSessionCodeResponse">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="getPersonalBookingSessionCodesRequest">
     <wsdl:part element="tns:getPersonalBookingSessionCodesRequest" name="getPersonalBookingSessionCodesRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createAppointmentConfirmationSessionCodeRequest">
+    <wsdl:part element="tns:createAppointmentConfirmationSessionCodeRequest" name="createAppointmentConfirmationSessionCodeRequest">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="getPersonalGroupSessionCodesRequest">
@@ -249,23 +276,25 @@
     <wsdl:part element="tns:getTestroomSessionCodeRequest" name="getTestroomSessionCodeRequest">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="createAppointmentConfirmationSessionCodeResponse">
+    <wsdl:part element="tns:createAppointmentConfirmationSessionCodeResponse" name="createAppointmentConfirmationSessionCodeResponse">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:portType name="SessionCode">
-    <wsdl:operation name="getPersonalGroupSessionCodes">
-      <wsdl:input message="tns:getPersonalGroupSessionCodesRequest" name="getPersonalGroupSessionCodesRequest">
+    <wsdl:operation name="deleteSessionCode">
+      <wsdl:input message="tns:deleteSessionCodeRequest" name="deleteSessionCodeRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getPersonalGroupSessionCodesResponse" name="getPersonalGroupSessionCodesResponse">
+    </wsdl:operation>
+    <wsdl:operation name="createPersonalGroupSessionCode">
+      <wsdl:input message="tns:createPersonalGroupSessionCodeRequest" name="createPersonalGroupSessionCodeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createPersonalGroupSessionCodeResponse" name="createPersonalGroupSessionCodeResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getSessionCodeInformation">
-      <wsdl:input message="tns:getSessionCodeInformationRequest" name="getSessionCodeInformationRequest">
+    <wsdl:operation name="createBookingSessionCode">
+      <wsdl:input message="tns:createBookingSessionCodeRequest" name="createBookingSessionCodeRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getSessionCodeInformationResponse" name="getSessionCodeInformationResponse">
-    </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createPersonalBookingSessionCode">
-      <wsdl:input message="tns:createPersonalBookingSessionCodeRequest" name="createPersonalBookingSessionCodeRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:createPersonalBookingSessionCodeResponse" name="createPersonalBookingSessionCodeResponse">
+      <wsdl:output message="tns:createBookingSessionCodeResponse" name="createBookingSessionCodeResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="createVmsSessionCode">
@@ -274,61 +303,72 @@
       <wsdl:output message="tns:createVmsSessionCodeResponse" name="createVmsSessionCodeResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getTestroomSessionCode">
-      <wsdl:input message="tns:getTestroomSessionCodeRequest" name="getTestroomSessionCodeRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:getTestroomSessionCodeResponse" name="getTestroomSessionCodeResponse">
-    </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createPersonalGroupSessionCode">
-      <wsdl:input message="tns:createPersonalGroupSessionCodeRequest" name="createPersonalGroupSessionCodeRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:createPersonalGroupSessionCodeResponse" name="createPersonalGroupSessionCodeResponse">
-    </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="getPersonalBookingSessionCodes">
       <wsdl:input message="tns:getPersonalBookingSessionCodesRequest" name="getPersonalBookingSessionCodesRequest">
     </wsdl:input>
       <wsdl:output message="tns:getPersonalBookingSessionCodesResponse" name="getPersonalBookingSessionCodesResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deleteSessionCode">
-      <wsdl:input message="tns:deleteSessionCodeRequest" name="deleteSessionCodeRequest">
+    <wsdl:operation name="createPersonalBookingSessionCode">
+      <wsdl:input message="tns:createPersonalBookingSessionCodeRequest" name="createPersonalBookingSessionCodeRequest">
     </wsdl:input>
+      <wsdl:output message="tns:createPersonalBookingSessionCodeResponse" name="createPersonalBookingSessionCodeResponse">
+    </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createBookingSessionCode">
-      <wsdl:input message="tns:createBookingSessionCodeRequest" name="createBookingSessionCodeRequest">
+    <wsdl:operation name="success">
+      <wsdl:input message="tns:successRequest" name="successRequest">
     </wsdl:input>
-      <wsdl:output message="tns:createBookingSessionCodeResponse" name="createBookingSessionCodeResponse">
+      <wsdl:output message="tns:successResponse" name="successResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTestroomSessionCode">
+      <wsdl:input message="tns:getTestroomSessionCodeRequest" name="getTestroomSessionCodeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getTestroomSessionCodeResponse" name="getTestroomSessionCodeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSessionCodeInformation">
+      <wsdl:input message="tns:getSessionCodeInformationRequest" name="getSessionCodeInformationRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getSessionCodeInformationResponse" name="getSessionCodeInformationResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonalGroupSessionCodes">
+      <wsdl:input message="tns:getPersonalGroupSessionCodesRequest" name="getPersonalGroupSessionCodesRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getPersonalGroupSessionCodesResponse" name="getPersonalGroupSessionCodesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createAppointmentConfirmationSessionCode">
+      <wsdl:input message="tns:createAppointmentConfirmationSessionCodeRequest" name="createAppointmentConfirmationSessionCodeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createAppointmentConfirmationSessionCodeResponse" name="createAppointmentConfirmationSessionCodeResponse">
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SessionCodeSoap11" type="tns:SessionCode">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="getPersonalGroupSessionCodes">
+    <wsdl:operation name="deleteSessionCode">
       <soap:operation soapAction=""/>
-      <wsdl:input name="getPersonalGroupSessionCodesRequest">
+      <wsdl:input name="deleteSessionCodeRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getPersonalGroupSessionCodesResponse">
+    </wsdl:operation>
+    <wsdl:operation name="createPersonalGroupSessionCode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createPersonalGroupSessionCodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createPersonalGroupSessionCodeResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getSessionCodeInformation">
+    <wsdl:operation name="createBookingSessionCode">
       <soap:operation soapAction=""/>
-      <wsdl:input name="getSessionCodeInformationRequest">
+      <wsdl:input name="createBookingSessionCodeRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getSessionCodeInformationResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createPersonalBookingSessionCode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createPersonalBookingSessionCodeRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="createPersonalBookingSessionCodeResponse">
+      <wsdl:output name="createBookingSessionCodeResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
@@ -341,24 +381,6 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getTestroomSessionCode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getTestroomSessionCodeRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="getTestroomSessionCodeResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createPersonalGroupSessionCode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createPersonalGroupSessionCodeRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="createPersonalGroupSessionCodeResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="getPersonalBookingSessionCodes">
       <soap:operation soapAction=""/>
       <wsdl:input name="getPersonalBookingSessionCodesRequest">
@@ -368,25 +390,64 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deleteSessionCode">
+    <wsdl:operation name="createPersonalBookingSessionCode">
       <soap:operation soapAction=""/>
-      <wsdl:input name="deleteSessionCodeRequest">
+      <wsdl:input name="createPersonalBookingSessionCodeRequest">
         <soap:body use="literal"/>
       </wsdl:input>
+      <wsdl:output name="createPersonalBookingSessionCodeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createBookingSessionCode">
+    <wsdl:operation name="success">
       <soap:operation soapAction=""/>
-      <wsdl:input name="createBookingSessionCodeRequest">
+      <wsdl:input name="successRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="createBookingSessionCodeResponse">
+      <wsdl:output name="successResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTestroomSessionCode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getTestroomSessionCodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTestroomSessionCodeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSessionCodeInformation">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getSessionCodeInformationRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSessionCodeInformationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonalGroupSessionCodes">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPersonalGroupSessionCodesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPersonalGroupSessionCodesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createAppointmentConfirmationSessionCode">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createAppointmentConfirmationSessionCodeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createAppointmentConfirmationSessionCodeResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="SessionCodeService">
     <wsdl:port binding="tns:SessionCodeSoap11" name="SessionCodeSoap11">
-      <soap:address location="https://kivik.frentix.com:443/vitero/services/"/>
+      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -23,10 +23,9 @@ import javax.xml.bind.annotation.XmlType;
  *             &lt;complexContent&gt;
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *                 &lt;all&gt;
- *                   &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *                   &lt;element name="bookingid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *                   &lt;element name="expirationdate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *                   &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                   &lt;element name="registrationdeadline" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                   &lt;element name="role" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
  *                   &lt;element name="codelength" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
  *                 &lt;/all&gt;
  *               &lt;/restriction&gt;
@@ -45,21 +44,21 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
 
 })
-@XmlRootElement(name = "createPersonalBookingSessionCodeRequest")
-public class CreatePersonalBookingSessionCodeRequest {
+@XmlRootElement(name = "createAppointmentConfirmationSessionCodeRequest")
+public class CreateAppointmentConfirmationSessionCodeRequest {
 
     @XmlElement(required = true)
-    protected CreatePersonalBookingSessionCodeRequest.Sessioncode sessioncode;
+    protected CreateAppointmentConfirmationSessionCodeRequest.Sessioncode sessioncode;
 
     /**
      * Obtient la valeur de la propriété sessioncode.
      * 
      * @return
      *     possible object is
-     *     {@link CreatePersonalBookingSessionCodeRequest.Sessioncode }
+     *     {@link CreateAppointmentConfirmationSessionCodeRequest.Sessioncode }
      *     
      */
-    public CreatePersonalBookingSessionCodeRequest.Sessioncode getSessioncode() {
+    public CreateAppointmentConfirmationSessionCodeRequest.Sessioncode getSessioncode() {
         return sessioncode;
     }
 
@@ -68,10 +67,10 @@ public class CreatePersonalBookingSessionCodeRequest {
      * 
      * @param value
      *     allowed object is
-     *     {@link CreatePersonalBookingSessionCodeRequest.Sessioncode }
+     *     {@link CreateAppointmentConfirmationSessionCodeRequest.Sessioncode }
      *     
      */
-    public void setSessioncode(CreatePersonalBookingSessionCodeRequest.Sessioncode value) {
+    public void setSessioncode(CreateAppointmentConfirmationSessionCodeRequest.Sessioncode value) {
         this.sessioncode = value;
     }
 
@@ -86,10 +85,9 @@ public class CreatePersonalBookingSessionCodeRequest {
      *   &lt;complexContent&gt;
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
      *       &lt;all&gt;
-     *         &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
      *         &lt;element name="bookingid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
-     *         &lt;element name="expirationdate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
-     *         &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *         &lt;element name="registrationdeadline" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *         &lt;element name="role" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
      *         &lt;element name="codelength" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
      *       &lt;/all&gt;
      *     &lt;/restriction&gt;
@@ -105,27 +103,10 @@ public class CreatePersonalBookingSessionCodeRequest {
     })
     public static class Sessioncode {
 
-        protected int userid;
         protected int bookingid;
-        protected String expirationdate;
-        protected String timezone;
+        protected int registrationdeadline;
+        protected Integer role;
         protected Integer codelength;
-
-        /**
-         * Obtient la valeur de la propriété userid.
-         * 
-         */
-        public int getUserid() {
-            return userid;
-        }
-
-        /**
-         * Définit la valeur de la propriété userid.
-         * 
-         */
-        public void setUserid(int value) {
-            this.userid = value;
-        }
 
         /**
          * Obtient la valeur de la propriété bookingid.
@@ -144,51 +125,43 @@ public class CreatePersonalBookingSessionCodeRequest {
         }
 
         /**
-         * Obtient la valeur de la propriété expirationdate.
+         * Obtient la valeur de la propriété registrationdeadline.
+         * 
+         */
+        public int getRegistrationdeadline() {
+            return registrationdeadline;
+        }
+
+        /**
+         * Définit la valeur de la propriété registrationdeadline.
+         * 
+         */
+        public void setRegistrationdeadline(int value) {
+            this.registrationdeadline = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété role.
          * 
          * @return
          *     possible object is
-         *     {@link String }
+         *     {@link Integer }
          *     
          */
-        public String getExpirationdate() {
-            return expirationdate;
+        public Integer getRole() {
+            return role;
         }
 
         /**
-         * Définit la valeur de la propriété expirationdate.
+         * Définit la valeur de la propriété role.
          * 
          * @param value
          *     allowed object is
-         *     {@link String }
+         *     {@link Integer }
          *     
          */
-        public void setExpirationdate(String value) {
-            this.expirationdate = value;
-        }
-
-        /**
-         * Obtient la valeur de la propriété timezone.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getTimezone() {
-            return timezone;
-        }
-
-        /**
-         * Définit la valeur de la propriété timezone.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setTimezone(String value) {
-            this.timezone = value;
+        public void setRole(Integer value) {
+            this.role = value;
         }
 
         /**

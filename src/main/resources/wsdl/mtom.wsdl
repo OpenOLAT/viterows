@@ -93,10 +93,10 @@
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="Mtom">
-    <wsdl:operation name="loadFile">
-      <wsdl:input message="tns:loadFileRequest" name="loadFileRequest">
+    <wsdl:operation name="storeFile">
+      <wsdl:input message="tns:storeFileRequest" name="storeFileRequest">
     </wsdl:input>
-      <wsdl:output message="tns:loadFileResponse" name="loadFileResponse">
+      <wsdl:output message="tns:storeFileResponse" name="storeFileResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="loadAvatar">
@@ -105,25 +105,25 @@
       <wsdl:output message="tns:loadAvatarResponse" name="loadAvatarResponse">
     </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="loadFile">
+      <wsdl:input message="tns:loadFileRequest" name="loadFileRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:loadFileResponse" name="loadFileResponse">
+    </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="storeAvatar">
       <wsdl:input message="tns:storeAvatarRequest" name="storeAvatarRequest">
     </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="storeFile">
-      <wsdl:input message="tns:storeFileRequest" name="storeFileRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:storeFileResponse" name="storeFileResponse">
-    </wsdl:output>
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MtomSoap11" type="tns:Mtom">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="loadFile">
+    <wsdl:operation name="storeFile">
       <soap:operation soapAction=""/>
-      <wsdl:input name="loadFileRequest">
+      <wsdl:input name="storeFileRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="loadFileResponse">
+      <wsdl:output name="storeFileResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
@@ -136,25 +136,25 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="loadFile">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="loadFileRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="loadFileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="storeAvatar">
       <soap:operation soapAction=""/>
       <wsdl:input name="storeAvatarRequest">
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="storeFile">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="storeFileRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="storeFileResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="MtomService">
     <wsdl:port binding="tns:MtomSoap11" name="MtomSoap11">
-      <soap:address location="https://kivik.frentix.com:443/vitero/services/"/>
+      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -24,14 +24,15 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _SuccessRequest_QNAME = new QName("http://www.vitero.de/schema/group", "successRequest");
+    private final static QName _GetGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupRequest");
+    private final static QName _GetGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupResponse");
+    private final static QName _GetGroupByNameRequest_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupByNameRequest");
+    private final static QName _GetGroupByNameResponse_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupByNameResponse");
     private final static QName _CreateGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "createGroupResponse");
     private final static QName _DeleteGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "deleteGroupRequest");
-    private final static QName _GetGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupResponse");
     private final static QName _AddUserToGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "addUserToGroupRequest");
-    private final static QName _GetGroupByNameRequest_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupByNameRequest");
-    private final static QName _GetGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupRequest");
     private final static QName _RemoveUserFromGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "removeUserFromGroupRequest");
-    private final static QName _GetGroupByNameResponse_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupByNameResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.vitero.schema.group
@@ -65,22 +66,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetGroupListByCustomerRequest }
-     * 
-     */
-    public GetGroupListByCustomerRequest createGetGroupListByCustomerRequest() {
-        return new GetGroupListByCustomerRequest();
-    }
-
-    /**
-     * Create an instance of {@link ChangeEnabledRequest }
-     * 
-     */
-    public ChangeEnabledRequest createChangeEnabledRequest() {
-        return new ChangeEnabledRequest();
-    }
-
-    /**
      * Create an instance of {@link Groupid }
      * 
      */
@@ -97,22 +82,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ChangeGroupRoleRequest }
-     * 
-     */
-    public ChangeGroupRoleRequest createChangeGroupRoleRequest() {
-        return new ChangeGroupRoleRequest();
-    }
-
-    /**
-     * Create an instance of {@link UpdateGroupRequest.Group }
-     * 
-     */
-    public UpdateGroupRequest.Group createUpdateGroupRequestGroup() {
-        return new UpdateGroupRequest.Group();
-    }
-
-    /**
      * Create an instance of {@link Groupnamecustomerid }
      * 
      */
@@ -121,11 +90,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Groupiduserid }
+     * Create an instance of {@link GetGroupListByCustomerRequest }
      * 
      */
-    public Groupiduserid createGroupiduserid() {
-        return new Groupiduserid();
+    public GetGroupListByCustomerRequest createGetGroupListByCustomerRequest() {
+        return new GetGroupListByCustomerRequest();
     }
 
     /**
@@ -153,6 +122,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link UpdateGroupRequest.Group }
+     * 
+     */
+    public UpdateGroupRequest.Group createUpdateGroupRequestGroup() {
+        return new UpdateGroupRequest.Group();
+    }
+
+    /**
+     * Create an instance of {@link Groupiduserid }
+     * 
+     */
+    public Groupiduserid createGroupiduserid() {
+        return new Groupiduserid();
+    }
+
+    /**
+     * Create an instance of {@link ChangeGroupRoleRequest }
+     * 
+     */
+    public ChangeGroupRoleRequest createChangeGroupRoleRequest() {
+        return new ChangeGroupRoleRequest();
+    }
+
+    /**
+     * Create an instance of {@link ChangeEnabledRequest }
+     * 
+     */
+    public ChangeEnabledRequest createChangeEnabledRequest() {
+        return new ChangeEnabledRequest();
+    }
+
+    /**
      * Create an instance of {@link Groupidcustomerid }
      * 
      */
@@ -166,6 +167,51 @@ public class ObjectFactory {
      */
     public Completegrouptype.Participant createCompletegrouptypeParticipant() {
         return new Completegrouptype.Participant();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "successRequest")
+    public JAXBElement<String> createSuccessRequest(String value) {
+        return new JAXBElement<String>(_SuccessRequest_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Groupid }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupRequest")
+    public JAXBElement<Groupid> createGetGroupRequest(Groupid value) {
+        return new JAXBElement<Groupid>(_GetGroupRequest_QNAME, Groupid.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Group_Type }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupResponse")
+    public JAXBElement<Group_Type> createGetGroupResponse(Group_Type value) {
+        return new JAXBElement<Group_Type>(_GetGroupResponse_QNAME, Group_Type.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Groupnamecustomerid }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupByNameRequest")
+    public JAXBElement<Groupnamecustomerid> createGetGroupByNameRequest(Groupnamecustomerid value) {
+        return new JAXBElement<Groupnamecustomerid>(_GetGroupByNameRequest_QNAME, Groupnamecustomerid.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Group_Type }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupByNameResponse")
+    public JAXBElement<Group_Type> createGetGroupByNameResponse(Group_Type value) {
+        return new JAXBElement<Group_Type>(_GetGroupByNameResponse_QNAME, Group_Type.class, null, value);
     }
 
     /**
@@ -187,15 +233,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Group_Type }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupResponse")
-    public JAXBElement<Group_Type> createGetGroupResponse(Group_Type value) {
-        return new JAXBElement<Group_Type>(_GetGroupResponse_QNAME, Group_Type.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Groupiduserid }{@code >}}
      * 
      */
@@ -205,39 +242,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Groupnamecustomerid }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupByNameRequest")
-    public JAXBElement<Groupnamecustomerid> createGetGroupByNameRequest(Groupnamecustomerid value) {
-        return new JAXBElement<Groupnamecustomerid>(_GetGroupByNameRequest_QNAME, Groupnamecustomerid.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Groupid }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupRequest")
-    public JAXBElement<Groupid> createGetGroupRequest(Groupid value) {
-        return new JAXBElement<Groupid>(_GetGroupRequest_QNAME, Groupid.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Groupiduserid }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "removeUserFromGroupRequest")
     public JAXBElement<Groupiduserid> createRemoveUserFromGroupRequest(Groupiduserid value) {
         return new JAXBElement<Groupiduserid>(_RemoveUserFromGroupRequest_QNAME, Groupiduserid.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Group_Type }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupByNameResponse")
-    public JAXBElement<Group_Type> createGetGroupByNameResponse(Group_Type value) {
-        return new JAXBElement<Group_Type>(_GetGroupByNameResponse_QNAME, Group_Type.class, null, value);
     }
 
 }

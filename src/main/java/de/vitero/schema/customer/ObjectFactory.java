@@ -24,28 +24,21 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "getCustomerResponse");
-    private final static QName _RemoveUserFromCustomerRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "removeUserFromCustomerRequest");
-    private final static QName _AddUserToCustomerRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "addUserToCustomerRequest");
-    private final static QName _GetCustomerListRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "getCustomerListRequest");
-    private final static QName _DeleteCustomerRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "deleteCustomerRequest");
-    private final static QName _CreateCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "createCustomerResponse");
+    private final static QName _SuccessRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "successRequest");
     private final static QName _GetCustomerRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "getCustomerRequest");
+    private final static QName _GetCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "getCustomerResponse");
     private final static QName _GetCustomerByNameResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "getCustomerByNameResponse");
+    private final static QName _GetCustomerListRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "getCustomerListRequest");
+    private final static QName _CreateCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "createCustomerResponse");
+    private final static QName _DeleteCustomerRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "deleteCustomerRequest");
+    private final static QName _AddUserToCustomerRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "addUserToCustomerRequest");
+    private final static QName _RemoveUserFromCustomerRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "removeUserFromCustomerRequest");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.vitero.schema.customer
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link UpdateCustomerRequest }
-     * 
-     */
-    public UpdateCustomerRequest createUpdateCustomerRequest() {
-        return new UpdateCustomerRequest();
     }
 
     /**
@@ -57,27 +50,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link UpdateCustomerRequest }
+     * 
+     */
+    public UpdateCustomerRequest createUpdateCustomerRequest() {
+        return new UpdateCustomerRequest();
+    }
+
+    /**
      * Create an instance of {@link Customertype }
      * 
      */
     public Customertype createCustomertype() {
         return new Customertype();
-    }
-
-    /**
-     * Create an instance of {@link Customer_Type }
-     * 
-     */
-    public Customer_Type createCustomer_Type() {
-        return new Customer_Type();
-    }
-
-    /**
-     * Create an instance of {@link Customeriduserid }
-     * 
-     */
-    public Customeriduserid createCustomeriduserid() {
-        return new Customeriduserid();
     }
 
     /**
@@ -89,14 +74,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCustomerListResponse }
-     * 
-     */
-    public GetCustomerListResponse createGetCustomerListResponse() {
-        return new GetCustomerListResponse();
-    }
-
-    /**
      * Create an instance of {@link Customerid }
      * 
      */
@@ -105,11 +82,51 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Customer_Type }
+     * 
+     */
+    public Customer_Type createCustomer_Type() {
+        return new Customer_Type();
+    }
+
+    /**
      * Create an instance of {@link GetCustomerByNameRequest }
      * 
      */
     public GetCustomerByNameRequest createGetCustomerByNameRequest() {
         return new GetCustomerByNameRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetCustomerListResponse }
+     * 
+     */
+    public GetCustomerListResponse createGetCustomerListResponse() {
+        return new GetCustomerListResponse();
+    }
+
+    /**
+     * Create an instance of {@link CreateCustomerRequest.Customer }
+     * 
+     */
+    public CreateCustomerRequest.Customer createCreateCustomerRequestCustomer() {
+        return new CreateCustomerRequest.Customer();
+    }
+
+    /**
+     * Create an instance of {@link UpdateCustomerRequest.Customer }
+     * 
+     */
+    public UpdateCustomerRequest.Customer createUpdateCustomerRequestCustomer() {
+        return new UpdateCustomerRequest.Customer();
+    }
+
+    /**
+     * Create an instance of {@link Customeriduserid }
+     * 
+     */
+    public Customeriduserid createCustomeriduserid() {
+        return new Customeriduserid();
     }
 
     /**
@@ -129,22 +146,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UpdateCustomerRequest.Customer }
-     * 
-     */
-    public UpdateCustomerRequest.Customer createUpdateCustomerRequestCustomer() {
-        return new UpdateCustomerRequest.Customer();
-    }
-
-    /**
-     * Create an instance of {@link CreateCustomerRequest.Customer }
-     * 
-     */
-    public CreateCustomerRequest.Customer createCreateCustomerRequestCustomer() {
-        return new CreateCustomerRequest.Customer();
-    }
-
-    /**
      * Create an instance of {@link Customertype.User }
      * 
      */
@@ -153,57 +154,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customer_Type }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "getCustomerResponse")
-    public JAXBElement<Customer_Type> createGetCustomerResponse(Customer_Type value) {
-        return new JAXBElement<Customer_Type>(_GetCustomerResponse_QNAME, Customer_Type.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customeriduserid }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "removeUserFromCustomerRequest")
-    public JAXBElement<Customeriduserid> createRemoveUserFromCustomerRequest(Customeriduserid value) {
-        return new JAXBElement<Customeriduserid>(_RemoveUserFromCustomerRequest_QNAME, Customeriduserid.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customeriduserid }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "addUserToCustomerRequest")
-    public JAXBElement<Customeriduserid> createAddUserToCustomerRequest(Customeriduserid value) {
-        return new JAXBElement<Customeriduserid>(_AddUserToCustomerRequest_QNAME, Customeriduserid.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "getCustomerListRequest")
-    public JAXBElement<Object> createGetCustomerListRequest(Object value) {
-        return new JAXBElement<Object>(_GetCustomerListRequest_QNAME, Object.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "deleteCustomerRequest")
-    public JAXBElement<Customerid> createDeleteCustomerRequest(Customerid value) {
-        return new JAXBElement<Customerid>(_DeleteCustomerRequest_QNAME, Customerid.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "createCustomerResponse")
-    public JAXBElement<Customerid> createCreateCustomerResponse(Customerid value) {
-        return new JAXBElement<Customerid>(_CreateCustomerResponse_QNAME, Customerid.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "successRequest")
+    public JAXBElement<String> createSuccessRequest(String value) {
+        return new JAXBElement<String>(_SuccessRequest_QNAME, String.class, null, value);
     }
 
     /**
@@ -219,9 +175,63 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Customer_Type }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "getCustomerResponse")
+    public JAXBElement<Customer_Type> createGetCustomerResponse(Customer_Type value) {
+        return new JAXBElement<Customer_Type>(_GetCustomerResponse_QNAME, Customer_Type.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customer_Type }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "getCustomerByNameResponse")
     public JAXBElement<Customer_Type> createGetCustomerByNameResponse(Customer_Type value) {
         return new JAXBElement<Customer_Type>(_GetCustomerByNameResponse_QNAME, Customer_Type.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "getCustomerListRequest")
+    public JAXBElement<Object> createGetCustomerListRequest(Object value) {
+        return new JAXBElement<Object>(_GetCustomerListRequest_QNAME, Object.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "createCustomerResponse")
+    public JAXBElement<Customerid> createCreateCustomerResponse(Customerid value) {
+        return new JAXBElement<Customerid>(_CreateCustomerResponse_QNAME, Customerid.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "deleteCustomerRequest")
+    public JAXBElement<Customerid> createDeleteCustomerRequest(Customerid value) {
+        return new JAXBElement<Customerid>(_DeleteCustomerRequest_QNAME, Customerid.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customeriduserid }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "addUserToCustomerRequest")
+    public JAXBElement<Customeriduserid> createAddUserToCustomerRequest(Customeriduserid value) {
+        return new JAXBElement<Customeriduserid>(_AddUserToCustomerRequest_QNAME, Customeriduserid.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customeriduserid }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "removeUserFromCustomerRequest")
+    public JAXBElement<Customeriduserid> createRemoveUserFromCustomerRequest(Customeriduserid value) {
+        return new JAXBElement<Customeriduserid>(_RemoveUserFromCustomerRequest_QNAME, Customeriduserid.class, null, value);
     }
 
 }

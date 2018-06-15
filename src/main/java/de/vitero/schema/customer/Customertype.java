@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -16,30 +17,30 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="customertype">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="shortname" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="displayname" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="groupidlist" type="{http://www.vitero.de/schema/customer}idlist"/>
- *         &lt;element name="user" maxOccurs="unbounded" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                   &lt;element name="admin" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="customertype"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="shortname" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="displayname" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="groupidlist" type="{http://www.vitero.de/schema/customer}idlist"/&gt;
+ *         &lt;element name="user" maxOccurs="unbounded" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                   &lt;element name="admin" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -61,6 +62,7 @@ public class Customertype {
     protected String displayname;
     @XmlList
     @XmlElement(type = Integer.class)
+    @XmlSchemaType(name = "anySimpleType")
     protected List<Integer> groupidlist;
     protected List<Customertype.User> user;
 
@@ -193,16 +195,16 @@ public class Customertype {
      * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *         &lt;element name="admin" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;all&gt;
+     *         &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *         &lt;element name="admin" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+     *       &lt;/all&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 

@@ -3,6 +3,7 @@
     <xs:schema xmlns:viterocustomer="http://www.vitero.de/schema/customer" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/customer" version="1.0">
   
   <!-- AVAILABLE REQUESTS AND RESPONSES -->
+  <xs:element name="successRequest" type="xs:string"/> <!-- do not use -->
   <xs:element name="successResponse">
     <xs:complexType>
     <xs:all>
@@ -149,6 +150,10 @@
     <wsdl:part element="tns:addUserToCustomerRequest" name="addUserToCustomerRequest">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="successRequest">
+    <wsdl:part element="tns:successRequest" name="successRequest">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="getCustomerListRequest">
     <wsdl:part element="tns:getCustomerListRequest" name="getCustomerListRequest">
     </wsdl:part>
@@ -194,15 +199,25 @@
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="Customer">
-    <wsdl:operation name="moveAllUsersToCustomer">
-      <wsdl:input message="tns:moveAllUsersToCustomerRequest" name="moveAllUsersToCustomerRequest">
+    <wsdl:operation name="getCustomer">
+      <wsdl:input message="tns:getCustomerRequest" name="getCustomerRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getCustomerResponse" name="getCustomerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeUserFromCustomer">
+      <wsdl:input message="tns:removeUserFromCustomerRequest" name="removeUserFromCustomerRequest">
     </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="createCustomer">
-      <wsdl:input message="tns:createCustomerRequest" name="createCustomerRequest">
+    <wsdl:operation name="success">
+      <wsdl:input message="tns:successRequest" name="successRequest">
     </wsdl:input>
-      <wsdl:output message="tns:createCustomerResponse" name="createCustomerResponse">
+      <wsdl:output message="tns:successResponse" name="successResponse">
     </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUserToCustomer">
+      <wsdl:input message="tns:addUserToCustomerRequest" name="addUserToCustomerRequest">
+    </wsdl:input>
     </wsdl:operation>
     <wsdl:operation name="getCustomerList">
       <wsdl:input message="tns:getCustomerListRequest" name="getCustomerListRequest">
@@ -210,10 +225,10 @@
       <wsdl:output message="tns:getCustomerListResponse" name="getCustomerListResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getCustomer">
-      <wsdl:input message="tns:getCustomerRequest" name="getCustomerRequest">
+    <wsdl:operation name="createCustomer">
+      <wsdl:input message="tns:createCustomerRequest" name="createCustomerRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getCustomerResponse" name="getCustomerResponse">
+      <wsdl:output message="tns:createCustomerResponse" name="createCustomerResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getCustomerByName">
@@ -222,43 +237,54 @@
       <wsdl:output message="tns:getCustomerByNameResponse" name="getCustomerByNameResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateCustomer">
-      <wsdl:input message="tns:updateCustomerRequest" name="updateCustomerRequest">
-    </wsdl:input>
-    </wsdl:operation>
     <wsdl:operation name="moveUserToCustomer">
       <wsdl:input message="tns:moveUserToCustomerRequest" name="moveUserToCustomerRequest">
     </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="addUserToCustomer">
-      <wsdl:input message="tns:addUserToCustomerRequest" name="addUserToCustomerRequest">
+    <wsdl:operation name="moveAllUsersToCustomer">
+      <wsdl:input message="tns:moveAllUsersToCustomerRequest" name="moveAllUsersToCustomerRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomer">
+      <wsdl:input message="tns:updateCustomerRequest" name="updateCustomerRequest">
     </wsdl:input>
     </wsdl:operation>
     <wsdl:operation name="deleteCustomer">
       <wsdl:input message="tns:deleteCustomerRequest" name="deleteCustomerRequest">
     </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="removeUserFromCustomer">
-      <wsdl:input message="tns:removeUserFromCustomerRequest" name="removeUserFromCustomerRequest">
-    </wsdl:input>
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CustomerSoap11" type="tns:Customer">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="moveAllUsersToCustomer">
+    <wsdl:operation name="getCustomer">
       <soap:operation soapAction=""/>
-      <wsdl:input name="moveAllUsersToCustomerRequest">
+      <wsdl:input name="getCustomerRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeUserFromCustomer">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="removeUserFromCustomerRequest">
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="createCustomer">
+    <wsdl:operation name="success">
       <soap:operation soapAction=""/>
-      <wsdl:input name="createCustomerRequest">
+      <wsdl:input name="successRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="createCustomerResponse">
+      <wsdl:output name="successResponse">
         <soap:body use="literal"/>
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUserToCustomer">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="addUserToCustomerRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
     </wsdl:operation>
     <wsdl:operation name="getCustomerList">
       <soap:operation soapAction=""/>
@@ -269,12 +295,12 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getCustomer">
+    <wsdl:operation name="createCustomer">
       <soap:operation soapAction=""/>
-      <wsdl:input name="getCustomerRequest">
+      <wsdl:input name="createCustomerRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getCustomerResponse">
+      <wsdl:output name="createCustomerResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
@@ -287,21 +313,21 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="updateCustomerRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-    </wsdl:operation>
     <wsdl:operation name="moveUserToCustomer">
       <soap:operation soapAction=""/>
       <wsdl:input name="moveUserToCustomerRequest">
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="addUserToCustomer">
+    <wsdl:operation name="moveAllUsersToCustomer">
       <soap:operation soapAction=""/>
-      <wsdl:input name="addUserToCustomerRequest">
+      <wsdl:input name="moveAllUsersToCustomerRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomer">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="updateCustomerRequest">
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
@@ -311,16 +337,10 @@
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="removeUserFromCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="removeUserFromCustomerRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="CustomerService">
     <wsdl:port binding="tns:CustomerSoap11" name="CustomerSoap11">
-      <soap:address location="https://kivik.frentix.com:443/vitero/services/"/>
+      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

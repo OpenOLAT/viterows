@@ -15,75 +15,76 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="booking">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="bookingid" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="groupid" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="cafe" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="capture" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="phone" type="{http://www.vitero.de/schema/booking}phonetype"/>
- *         &lt;element name="pcstateokrequired" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="repetitionpattern" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="repetitionenddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="addexceptions" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="bookingtime" maxOccurs="unbounded" minOccurs="0">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="bookingtimeid" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                             &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                             &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                             &lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="subtractexceptions" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="bookingtime" maxOccurs="unbounded" minOccurs="0">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="booking"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="bookingid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="groupid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="cafe" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="capture" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="phone" type="{http://www.vitero.de/schema/booking}phonetype"/&gt;
+ *         &lt;element name="pcstateokrequired" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="eventname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="repetitionpattern" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="repetitionenddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="addexceptions" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="bookingtime" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="bookingtimeid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                             &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                             &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                             &lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="subtractexceptions" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="bookingtime" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -108,6 +109,7 @@ public class Booking_Type {
     protected String end;
     protected int startbuffer;
     protected int endbuffer;
+    protected String eventname;
     @XmlElement(required = true)
     protected String repetitionpattern;
     protected String repetitionenddate;
@@ -315,6 +317,30 @@ public class Booking_Type {
     }
 
     /**
+     * Obtient la valeur de la propriété eventname.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEventname() {
+        return eventname;
+    }
+
+    /**
+     * Définit la valeur de la propriété eventname.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEventname(String value) {
+        this.eventname = value;
+    }
+
+    /**
      * Obtient la valeur de la propriété repetitionpattern.
      * 
      * @return
@@ -417,30 +443,30 @@ public class Booking_Type {
      * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="bookingtime" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="bookingtimeid" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                   &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                   &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                   &lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="bookingtime" maxOccurs="unbounded" minOccurs="0"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;all&gt;
+     *                   &lt;element name="bookingtimeid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                   &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                   &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                   &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                   &lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                   &lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                 &lt;/all&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -489,20 +515,20 @@ public class Booking_Type {
          * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="bookingtimeid" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *         &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *         &lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *         &lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;all&gt;
+         *         &lt;element name="bookingtimeid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *         &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *         &lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *         &lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *       &lt;/all&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -645,26 +671,26 @@ public class Booking_Type {
      * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="bookingtime" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="bookingtime" maxOccurs="unbounded" minOccurs="0"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;all&gt;
+     *                   &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                   &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                 &lt;/all&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -713,16 +739,16 @@ public class Booking_Type {
          * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;all&gt;
+         *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *       &lt;/all&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 

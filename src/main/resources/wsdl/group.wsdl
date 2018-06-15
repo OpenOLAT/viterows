@@ -3,6 +3,7 @@
     <xs:schema xmlns:viterogroup="http://www.vitero.de/schema/group" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/group" version="1.0">
   
   <!-- AVAILABLE REQUESTS AND RESPONSES -->
+  <xs:element name="successRequest" type="xs:string"/> <!-- do not use -->
   <xs:element name="successResponse">
     <xs:complexType>
       <xs:all>
@@ -151,12 +152,12 @@
     <wsdl:part element="tns:getGroupResponse" name="getGroupResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupByNameRequest">
-    <wsdl:part element="tns:getGroupByNameRequest" name="getGroupByNameRequest">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="addUserToGroupRequest">
     <wsdl:part element="tns:addUserToGroupRequest" name="addUserToGroupRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGroupByNameRequest">
+    <wsdl:part element="tns:getGroupByNameRequest" name="getGroupByNameRequest">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="getGroupRequest">
@@ -173,6 +174,10 @@
   </wsdl:message>
   <wsdl:message name="removeUserFromGroupRequest">
     <wsdl:part element="tns:removeUserFromGroupRequest" name="removeUserFromGroupRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="successRequest">
+    <wsdl:part element="tns:successRequest" name="successRequest">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="changeEnabledRequest">
@@ -210,36 +215,14 @@
       <wsdl:output message="tns:createGroupResponse" name="createGroupResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="changeGroupRole">
-      <wsdl:input message="tns:changeGroupRoleRequest" name="changeGroupRoleRequest">
-    </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getGroupListByCustomer">
-      <wsdl:input message="tns:getGroupListByCustomerRequest" name="getGroupListByCustomerRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:getGroupListByCustomerResponse" name="getGroupListByCustomerResponse">
-    </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteGroup">
-      <wsdl:input message="tns:deleteGroupRequest" name="deleteGroupRequest">
-    </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="removeUserFromGroup">
-      <wsdl:input message="tns:removeUserFromGroupRequest" name="removeUserFromGroupRequest">
-    </wsdl:input>
-    </wsdl:operation>
     <wsdl:operation name="getGroup">
       <wsdl:input message="tns:getGroupRequest" name="getGroupRequest">
     </wsdl:input>
       <wsdl:output message="tns:getGroupResponse" name="getGroupResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateGroup">
-      <wsdl:input message="tns:updateGroupRequest" name="updateGroupRequest">
-    </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="changeEnabled">
-      <wsdl:input message="tns:changeEnabledRequest" name="changeEnabledRequest">
+    <wsdl:operation name="addUserToGroup">
+      <wsdl:input message="tns:addUserToGroupRequest" name="addUserToGroupRequest">
     </wsdl:input>
     </wsdl:operation>
     <wsdl:operation name="getGroupByName">
@@ -248,8 +231,36 @@
       <wsdl:output message="tns:getGroupByNameResponse" name="getGroupByNameResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="addUserToGroup">
-      <wsdl:input message="tns:addUserToGroupRequest" name="addUserToGroupRequest">
+    <wsdl:operation name="getGroupListByCustomer">
+      <wsdl:input message="tns:getGroupListByCustomerRequest" name="getGroupListByCustomerRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getGroupListByCustomerResponse" name="getGroupListByCustomerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeUserFromGroup">
+      <wsdl:input message="tns:removeUserFromGroupRequest" name="removeUserFromGroupRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="success">
+      <wsdl:input message="tns:successRequest" name="successRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:successResponse" name="successResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeEnabled">
+      <wsdl:input message="tns:changeEnabledRequest" name="changeEnabledRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGroup">
+      <wsdl:input message="tns:deleteGroupRequest" name="deleteGroupRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="changeGroupRole">
+      <wsdl:input message="tns:changeGroupRoleRequest" name="changeGroupRoleRequest">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="updateGroup">
+      <wsdl:input message="tns:updateGroupRequest" name="updateGroupRequest">
     </wsdl:input>
     </wsdl:operation>
   </wsdl:portType>
@@ -264,33 +275,6 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="changeGroupRole">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="changeGroupRoleRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getGroupListByCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getGroupListByCustomerRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="getGroupListByCustomerResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteGroup">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="deleteGroupRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="removeUserFromGroup">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="removeUserFromGroupRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-    </wsdl:operation>
     <wsdl:operation name="getGroup">
       <soap:operation soapAction=""/>
       <wsdl:input name="getGroupRequest">
@@ -300,15 +284,9 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateGroup">
+    <wsdl:operation name="addUserToGroup">
       <soap:operation soapAction=""/>
-      <wsdl:input name="updateGroupRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="changeEnabled">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="changeEnabledRequest">
+      <wsdl:input name="addUserToGroupRequest">
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
@@ -321,16 +299,58 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="addUserToGroup">
+    <wsdl:operation name="getGroupListByCustomer">
       <soap:operation soapAction=""/>
-      <wsdl:input name="addUserToGroupRequest">
+      <wsdl:input name="getGroupListByCustomerRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getGroupListByCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeUserFromGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="removeUserFromGroupRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="success">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="successRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="successResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeEnabled">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="changeEnabledRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deleteGroupRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="changeGroupRole">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="changeGroupRoleRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="updateGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="updateGroupRequest">
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="GroupService">
     <wsdl:port binding="tns:GroupSoap11" name="GroupSoap11">
-      <soap:address location="https://kivik.frentix.com:443/vitero/services/"/>
+      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

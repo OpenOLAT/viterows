@@ -3,6 +3,7 @@
     <xs:schema xmlns:viterouser="http://www.vitero.de/schema/user" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/user" version="1.0">
         
   <!-- AVAILABLE REQUESTS AND RESPONSES -->  
+  <xs:element name="successRequest" type="xs:string"/> <!-- do not use -->
   <xs:element name="successResponse">
     <xs:complexType>
     <xs:all>
@@ -94,6 +95,17 @@
     </xs:complexType>
   </xs:element>
     
+  <xs:element name="storeAvatarUsingBase64StringRequest">
+    <xs:complexType>
+  	  <xs:all>
+  	    <xs:element name="userid" type="xs:int"/>
+  	    <xs:element name="type" type="xs:int"/>
+  	    <xs:element name="filename" type="xs:string"/>
+  	    <xs:element name="file" type="xs:string"/>
+  	  </xs:all>
+    </xs:complexType>
+  </xs:element>
+      
       
   <!-- TYPES -->
   <xs:complexType name="userlist">
@@ -236,6 +248,10 @@
     <wsdl:part element="tns:getUserListByCustomerRequest" name="getUserListByCustomerRequest">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="successRequest">
+    <wsdl:part element="tns:successRequest" name="successRequest">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="getUserListByPositionRequest">
     <wsdl:part element="tns:getUserListByPositionRequest" name="getUserListByPositionRequest">
     </wsdl:part>
@@ -264,6 +280,10 @@
     <wsdl:part element="tns:getUserListByPositionResponse" name="getUserListByPositionResponse">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="storeAvatarUsingBase64StringRequest">
+    <wsdl:part element="tns:storeAvatarUsingBase64StringRequest" name="storeAvatarUsingBase64StringRequest">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="getUserListResponse">
     <wsdl:part element="tns:getUserListResponse" name="getUserListResponse">
     </wsdl:part>
@@ -285,16 +305,10 @@
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="User">
-    <wsdl:operation name="getUserListByCustomer">
-      <wsdl:input message="tns:getUserListByCustomerRequest" name="getUserListByCustomerRequest">
+    <wsdl:operation name="getUserListByGroup">
+      <wsdl:input message="tns:getUserListByGroupRequest" name="getUserListByGroupRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getUserListByCustomerResponse" name="getUserListByCustomerResponse">
-    </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createUser">
-      <wsdl:input message="tns:createUserRequest" name="createUserRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:createUserResponse" name="createUserResponse">
+      <wsdl:output message="tns:getUserListByGroupResponse" name="getUserListByGroupResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getUser">
@@ -303,10 +317,34 @@
       <wsdl:output message="tns:getUserResponse" name="getUserResponse">
     </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getUserList">
+      <wsdl:input message="tns:getUserListRequest" name="getUserListRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getUserListResponse" name="getUserListResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="success">
+      <wsdl:input message="tns:successRequest" name="successRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:successResponse" name="successResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserListByCustomer">
+      <wsdl:input message="tns:getUserListByCustomerRequest" name="getUserListByCustomerRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getUserListByCustomerResponse" name="getUserListByCustomerResponse">
+    </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getUserListByPosition">
       <wsdl:input message="tns:getUserListByPositionRequest" name="getUserListByPositionRequest">
     </wsdl:input>
       <wsdl:output message="tns:getUserListByPositionResponse" name="getUserListByPositionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUser">
+      <wsdl:input message="tns:createUserRequest" name="createUserRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createUserResponse" name="createUserResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getUserCount">
@@ -319,44 +357,27 @@
       <wsdl:input message="tns:deleteUserRequest" name="deleteUserRequest">
     </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="changePassword">
-      <wsdl:input message="tns:changePasswordRequest" name="changePasswordRequest">
+    <wsdl:operation name="storeAvatarUsingBase64String">
+      <wsdl:input message="tns:storeAvatarUsingBase64StringRequest" name="storeAvatarUsingBase64StringRequest">
     </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getUserList">
-      <wsdl:input message="tns:getUserListRequest" name="getUserListRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:getUserListResponse" name="getUserListResponse">
-    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="updateUser">
       <wsdl:input message="tns:updateUserRequest" name="updateUserRequest">
     </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="getUserListByGroup">
-      <wsdl:input message="tns:getUserListByGroupRequest" name="getUserListByGroupRequest">
+    <wsdl:operation name="changePassword">
+      <wsdl:input message="tns:changePasswordRequest" name="changePasswordRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getUserListByGroupResponse" name="getUserListByGroupResponse">
-    </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="UserSoap11" type="tns:User">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="getUserListByCustomer">
+    <wsdl:operation name="getUserListByGroup">
       <soap:operation soapAction=""/>
-      <wsdl:input name="getUserListByCustomerRequest">
+      <wsdl:input name="getUserListByGroupRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getUserListByCustomerResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createUser">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createUserRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="createUserResponse">
+      <wsdl:output name="getUserListByGroupResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
@@ -369,12 +390,48 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getUserList">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getUserListRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="success">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="successRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="successResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserListByCustomer">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getUserListByCustomerRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserListByCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getUserListByPosition">
       <soap:operation soapAction=""/>
       <wsdl:input name="getUserListByPositionRequest">
         <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output name="getUserListByPositionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUser">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createUserRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createUserResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
@@ -393,20 +450,11 @@
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="changePassword">
+    <wsdl:operation name="storeAvatarUsingBase64String">
       <soap:operation soapAction=""/>
-      <wsdl:input name="changePasswordRequest">
+      <wsdl:input name="storeAvatarUsingBase64StringRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getUserList">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getUserListRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="getUserListResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="updateUser">
       <soap:operation soapAction=""/>
@@ -414,19 +462,16 @@
         <soap:body use="literal"/>
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="getUserListByGroup">
+    <wsdl:operation name="changePassword">
       <soap:operation soapAction=""/>
-      <wsdl:input name="getUserListByGroupRequest">
+      <wsdl:input name="changePasswordRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getUserListByGroupResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="UserService">
     <wsdl:port binding="tns:UserSoap11" name="UserSoap11">
-      <soap:address location="https://kivik.frentix.com:443/vitero/services/"/>
+      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

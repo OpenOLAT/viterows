@@ -3,7 +3,6 @@ package de.vitero.schema.booking;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -18,10 +17,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
- *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="customerid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="customerid" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
  *         &lt;element name="eventname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
@@ -35,63 +33,44 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
 
 })
-@XmlRootElement(name = "getBookingListByDateRequest")
-public class GetBookingListByDateRequest {
+@XmlRootElement(name = "getBookingListByUserAndCustomerInFutureRequest")
+public class GetBookingListByUserAndCustomerInFutureRequest {
 
-    @XmlElement(required = true)
-    protected String start;
-    @XmlElement(required = true)
-    protected String end;
+    protected int userid;
+    protected int customerid;
     protected String timezone;
-    protected Integer customerid;
     protected String eventname;
 
     /**
-     * Obtient la valeur de la propriété start.
+     * Obtient la valeur de la propriété userid.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getStart() {
-        return start;
+    public int getUserid() {
+        return userid;
     }
 
     /**
-     * Définit la valeur de la propriété start.
+     * Définit la valeur de la propriété userid.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setStart(String value) {
-        this.start = value;
+    public void setUserid(int value) {
+        this.userid = value;
     }
 
     /**
-     * Obtient la valeur de la propriété end.
+     * Obtient la valeur de la propriété customerid.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getEnd() {
-        return end;
+    public int getCustomerid() {
+        return customerid;
     }
 
     /**
-     * Définit la valeur de la propriété end.
+     * Définit la valeur de la propriété customerid.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setEnd(String value) {
-        this.end = value;
+    public void setCustomerid(int value) {
+        this.customerid = value;
     }
 
     /**
@@ -116,30 +95,6 @@ public class GetBookingListByDateRequest {
      */
     public void setTimezone(String value) {
         this.timezone = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété customerid.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getCustomerid() {
-        return customerid;
-    }
-
-    /**
-     * Définit la valeur de la propriété customerid.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setCustomerid(Integer value) {
-        this.customerid = value;
     }
 
     /**

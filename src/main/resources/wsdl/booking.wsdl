@@ -3,6 +3,7 @@
     <xs:schema xmlns:viterobooking="http://www.vitero.de/schema/booking" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/booking" version="1.0">
        
   <!-- AVAILABLE REQUESTS AND RESPONSES -->  
+  <xs:element name="successRequest" type="xs:string"/> <!-- do not use -->
   <xs:element name="successResponse">
     <xs:complexType>
     <xs:all>
@@ -27,6 +28,7 @@
   		<xs:element name="start" type="xs:string"/>
   		<xs:element name="end" type="xs:string"/>
   		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
@@ -37,6 +39,7 @@
   	  <xs:all>
   		<xs:element name="groupid" type="xs:int"/>
   		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
@@ -49,20 +52,48 @@
   		<xs:element name="start" type="xs:string"/>
   		<xs:element name="end" type="xs:string"/>
   		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:element name="getBookingListByUserAndDateResponse" type="viterobooking:bookinglist"/>
+  
+  <xs:element name="getBookingListByUserAndDateAndCustomerRequest">
+    <xs:complexType>
+  	  <xs:all>
+  		<xs:element name="userid" type="xs:int"/>
+  		<xs:element name="customerid" type="xs:int"/>
+  		<xs:element name="start" type="xs:string"/>
+  		<xs:element name="end" type="xs:string"/>
+  		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
+  	  </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBookingListByUserAndDateAndCustomerResponse" type="viterobooking:bookinglist"/>
   
   <xs:element name="getBookingListByUserInFutureRequest">
     <xs:complexType>
   	  <xs:all>
   		<xs:element name="userid" type="xs:int"/>
   		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:element name="getBookingListByUserInFutureResponse" type="viterobooking:bookinglist"/>
+  
+  <xs:element name="getBookingListByUserAndCustomerInFutureRequest">
+    <xs:complexType>
+  	  <xs:all>
+  		<xs:element name="userid" type="xs:int"/>
+  		<xs:element name="customerid" type="xs:int"/>
+  		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
+  	  </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBookingListByUserAndCustomerInFutureResponse" type="viterobooking:bookinglist"/>
 
   <xs:element name="getBookingListByDateRequest">
     <xs:complexType>
@@ -71,6 +102,7 @@
   		<xs:element name="end" type="xs:string"/>
   		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
   		<xs:element minOccurs="0" name="customerid" type="xs:int"/>
+  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
@@ -102,6 +134,7 @@
 	    <xs:element minOccurs="0" name="startbuffer" type="xs:int"/>
 	    <xs:element minOccurs="0" name="endbuffer" type="xs:int"/>
 	    <xs:element minOccurs="0" name="timezone" type="xs:string"/>
+	    <xs:element minOccurs="0" name="eventname" type="xs:string"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
@@ -140,6 +173,7 @@
       <xs:element minOccurs="0" name="repetitionpattern" type="xs:string"/>
       <xs:element minOccurs="0" name="repetitionenddate" type="xs:string"/>
       <xs:element minOccurs="0" name="timezone" type="xs:string"/>
+      <xs:element minOccurs="0" name="eventname" type="xs:string"/>
     </xs:all>
   </xs:complexType>
   
@@ -156,6 +190,7 @@
       <xs:element name="end" type="xs:string"/>
       <xs:element name="startbuffer" type="xs:int"/>
       <xs:element name="endbuffer" type="xs:int"/>
+      <xs:element minOccurs="0" name="eventname" type="xs:string"/>
       <xs:element name="repetitionpattern" type="xs:string"/>     
       <xs:element minOccurs="0" name="repetitionenddate" type="xs:string"/>
       <xs:element minOccurs="0" name="addexceptions">
@@ -260,68 +295,48 @@
     <wsdl:part element="tns:getBookingByIdRequest" name="getBookingByIdRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByDateResponse">
-    <wsdl:part element="tns:getBookingListByDateResponse" name="getBookingListByDateResponse">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="getBookingByIdResponse">
     <wsdl:part element="tns:getBookingByIdResponse" name="getBookingByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBookingListByDateResponse">
+    <wsdl:part element="tns:getBookingListByDateResponse" name="getBookingListByDateResponse">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="getBookingListByUserInFutureResponse">
     <wsdl:part element="tns:getBookingListByUserInFutureResponse" name="getBookingListByUserInFutureResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successResponse">
-    <wsdl:part element="tns:successResponse" name="successResponse">
+  <wsdl:message name="getBookingListByUserAndCustomerInFutureResponse">
+    <wsdl:part element="tns:getBookingListByUserAndCustomerInFutureResponse" name="getBookingListByUserAndCustomerInFutureResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createBookingResponse">
-    <wsdl:part element="tns:createBookingResponse" name="createBookingResponse">
+  <wsdl:message name="successResponse">
+    <wsdl:part element="tns:successResponse" name="successResponse">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="getBookingByBookingTimeIdResponse">
     <wsdl:part element="tns:getBookingByBookingTimeIdResponse" name="getBookingByBookingTimeIdResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingTimeByIdRequest">
-    <wsdl:part element="tns:getBookingTimeByIdRequest" name="getBookingTimeByIdRequest">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="getBookingListByGroupInFutureResponse">
     <wsdl:part element="tns:getBookingListByGroupInFutureResponse" name="getBookingListByGroupInFutureResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByDateRequest">
-    <wsdl:part element="tns:getBookingListByDateRequest" name="getBookingListByDateRequest">
+  <wsdl:message name="getBookingTimeByIdRequest">
+    <wsdl:part element="tns:getBookingTimeByIdRequest" name="getBookingTimeByIdRequest">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="deleteBookingResponse">
     <wsdl:part element="tns:deleteBookingResponse" name="deleteBookingResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="deleteBookingRequest">
-    <wsdl:part element="tns:deleteBookingRequest" name="deleteBookingRequest">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="getBookingTimeByIdResponse">
     <wsdl:part element="tns:getBookingTimeByIdResponse" name="getBookingTimeByIdResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByUserAndDateRequest">
-    <wsdl:part element="tns:getBookingListByUserAndDateRequest" name="getBookingListByUserAndDateRequest">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getBookingListByUserInFutureRequest">
-    <wsdl:part element="tns:getBookingListByUserInFutureRequest" name="getBookingListByUserInFutureRequest">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="getBookingListByUserAndDateResponse">
     <wsdl:part element="tns:getBookingListByUserAndDateResponse" name="getBookingListByUserAndDateResponse">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getBookingListByGroupInFutureRequest">
-    <wsdl:part element="tns:getBookingListByGroupInFutureRequest" name="getBookingListByGroupInFutureRequest">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="getBookingListByGroupAndDateResponse">
@@ -336,27 +351,59 @@
     <wsdl:part element="tns:getBookingListByGroupAndDateRequest" name="getBookingListByGroupAndDateRequest">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="successRequest">
+    <wsdl:part element="tns:successRequest" name="successRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createBookingResponse">
+    <wsdl:part element="tns:createBookingResponse" name="createBookingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBookingListByDateRequest">
+    <wsdl:part element="tns:getBookingListByDateRequest" name="getBookingListByDateRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteBookingRequest">
+    <wsdl:part element="tns:deleteBookingRequest" name="deleteBookingRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBookingListByUserAndDateRequest">
+    <wsdl:part element="tns:getBookingListByUserAndDateRequest" name="getBookingListByUserAndDateRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBookingListByGroupInFutureRequest">
+    <wsdl:part element="tns:getBookingListByGroupInFutureRequest" name="getBookingListByGroupInFutureRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBookingListByUserInFutureRequest">
+    <wsdl:part element="tns:getBookingListByUserInFutureRequest" name="getBookingListByUserInFutureRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBookingListByUserAndDateAndCustomerRequest">
+    <wsdl:part element="tns:getBookingListByUserAndDateAndCustomerRequest" name="getBookingListByUserAndDateAndCustomerRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBookingListByUserAndDateAndCustomerResponse">
+    <wsdl:part element="tns:getBookingListByUserAndDateAndCustomerResponse" name="getBookingListByUserAndDateAndCustomerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBookingListByUserAndCustomerInFutureRequest">
+    <wsdl:part element="tns:getBookingListByUserAndCustomerInFutureRequest" name="getBookingListByUserAndCustomerInFutureRequest">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="createBookingRequest">
     <wsdl:part element="tns:createBookingRequest" name="createBookingRequest">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="Booking">
-    <wsdl:operation name="deleteBooking">
-      <wsdl:input message="tns:deleteBookingRequest" name="deleteBookingRequest">
+    <wsdl:operation name="updateBooking">
+      <wsdl:input message="tns:updateBookingRequest" name="updateBookingRequest">
     </wsdl:input>
-      <wsdl:output message="tns:deleteBookingResponse" name="deleteBookingResponse">
-    </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingTimeById">
-      <wsdl:input message="tns:getBookingTimeByIdRequest" name="getBookingTimeByIdRequest">
+    <wsdl:operation name="getBookingById">
+      <wsdl:input message="tns:getBookingByIdRequest" name="getBookingByIdRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getBookingTimeByIdResponse" name="getBookingTimeByIdResponse">
-    </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getBookingListByGroupAndDate">
-      <wsdl:input message="tns:getBookingListByGroupAndDateRequest" name="getBookingListByGroupAndDateRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:getBookingListByGroupAndDateResponse" name="getBookingListByGroupAndDateResponse">
+      <wsdl:output message="tns:getBookingByIdResponse" name="getBookingByIdResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getBookingListByDate">
@@ -371,26 +418,22 @@
       <wsdl:output message="tns:getBookingListByUserInFutureResponse" name="getBookingListByUserInFutureResponse">
     </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getBookingListByUserAndCustomerInFuture">
+      <wsdl:input message="tns:getBookingListByUserAndCustomerInFutureRequest" name="getBookingListByUserAndCustomerInFutureRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getBookingListByUserAndCustomerInFutureResponse" name="getBookingListByUserAndCustomerInFutureResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="success">
+      <wsdl:input message="tns:successRequest" name="successRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:successResponse" name="successResponse">
+    </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getBookingByBookingTimeId">
       <wsdl:input message="tns:getBookingByBookingTimeIdRequest" name="getBookingByBookingTimeIdRequest">
     </wsdl:input>
       <wsdl:output message="tns:getBookingByBookingTimeIdResponse" name="getBookingByBookingTimeIdResponse">
-    </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updateBooking">
-      <wsdl:input message="tns:updateBookingRequest" name="updateBookingRequest">
-    </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getBookingListByUserAndDate">
-      <wsdl:input message="tns:getBookingListByUserAndDateRequest" name="getBookingListByUserAndDateRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:getBookingListByUserAndDateResponse" name="getBookingListByUserAndDateResponse">
-    </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createBooking">
-      <wsdl:input message="tns:createBookingRequest" name="createBookingRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:createBookingResponse" name="createBookingResponse">
     </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getBookingListByGroupInFuture">
@@ -399,39 +442,57 @@
       <wsdl:output message="tns:getBookingListByGroupInFutureResponse" name="getBookingListByGroupInFutureResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingById">
-      <wsdl:input message="tns:getBookingByIdRequest" name="getBookingByIdRequest">
+    <wsdl:operation name="getBookingTimeById">
+      <wsdl:input message="tns:getBookingTimeByIdRequest" name="getBookingTimeByIdRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getBookingByIdResponse" name="getBookingByIdResponse">
+      <wsdl:output message="tns:getBookingTimeByIdResponse" name="getBookingTimeByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBooking">
+      <wsdl:input message="tns:deleteBookingRequest" name="deleteBookingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:deleteBookingResponse" name="deleteBookingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookingListByUserAndDate">
+      <wsdl:input message="tns:getBookingListByUserAndDateRequest" name="getBookingListByUserAndDateRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getBookingListByUserAndDateResponse" name="getBookingListByUserAndDateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookingListByGroupAndDate">
+      <wsdl:input message="tns:getBookingListByGroupAndDateRequest" name="getBookingListByGroupAndDateRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getBookingListByGroupAndDateResponse" name="getBookingListByGroupAndDateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createBooking">
+      <wsdl:input message="tns:createBookingRequest" name="createBookingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:createBookingResponse" name="createBookingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookingListByUserAndDateAndCustomer">
+      <wsdl:input message="tns:getBookingListByUserAndDateAndCustomerRequest" name="getBookingListByUserAndDateAndCustomerRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getBookingListByUserAndDateAndCustomerResponse" name="getBookingListByUserAndDateAndCustomerResponse">
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BookingSoap11" type="tns:Booking">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="deleteBooking">
+    <wsdl:operation name="updateBooking">
       <soap:operation soapAction=""/>
-      <wsdl:input name="deleteBookingRequest">
+      <wsdl:input name="updateBookingRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="deleteBookingResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingTimeById">
+    <wsdl:operation name="getBookingById">
       <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingTimeByIdRequest">
+      <wsdl:input name="getBookingByIdRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getBookingTimeByIdResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getBookingListByGroupAndDate">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingListByGroupAndDateRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="getBookingListByGroupAndDateResponse">
+      <wsdl:output name="getBookingByIdResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
@@ -453,36 +514,30 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getBookingListByUserAndCustomerInFuture">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getBookingListByUserAndCustomerInFutureRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBookingListByUserAndCustomerInFutureResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="success">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="successRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="successResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getBookingByBookingTimeId">
       <soap:operation soapAction=""/>
       <wsdl:input name="getBookingByBookingTimeIdRequest">
         <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output name="getBookingByBookingTimeIdResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updateBooking">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="updateBookingRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getBookingListByUserAndDate">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingListByUserAndDateRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="getBookingListByUserAndDateResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createBooking">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createBookingRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="createBookingResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
@@ -495,19 +550,64 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingById">
+    <wsdl:operation name="getBookingTimeById">
       <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingByIdRequest">
+      <wsdl:input name="getBookingTimeByIdRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getBookingByIdResponse">
+      <wsdl:output name="getBookingTimeByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBooking">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deleteBookingRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteBookingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookingListByUserAndDate">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getBookingListByUserAndDateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBookingListByUserAndDateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookingListByGroupAndDate">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getBookingListByGroupAndDateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBookingListByGroupAndDateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createBooking">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createBookingRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createBookingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookingListByUserAndDateAndCustomer">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getBookingListByUserAndDateAndCustomerRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBookingListByUserAndDateAndCustomerResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="BookingService">
     <wsdl:port binding="tns:BookingSoap11" name="BookingSoap11">
-      <soap:address location="https://kivik.frentix.com:443/vitero/services/"/>
+      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

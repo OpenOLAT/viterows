@@ -13,26 +13,26 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="bookingtime">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="bookingtimeid" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="bookingid" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="groupid" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="cafe" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="capture" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="phone" type="{http://www.vitero.de/schema/booking}phonetype"/>
- *         &lt;element name="pcstateokrequired" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="bookingtime"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="bookingtimeid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="bookingid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="groupid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="cafe" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="capture" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="phone" type="{http://www.vitero.de/schema/booking}phonetype"/&gt;
+ *         &lt;element name="pcstateokrequired" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

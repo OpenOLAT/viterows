@@ -24,52 +24,20 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _LoadFileRequest_QNAME = new QName("http://www.vitero.de/schema/mtom", "loadFileRequest");
+    private final static QName _LoadFileResponse_QNAME = new QName("http://www.vitero.de/schema/mtom", "loadFileResponse");
     private final static QName _StoreFileRequest_QNAME = new QName("http://www.vitero.de/schema/mtom", "storeFileRequest");
     private final static QName _StoreFileResponse_QNAME = new QName("http://www.vitero.de/schema/mtom", "storeFileResponse");
     private final static QName _LoadAvatarRequest_QNAME = new QName("http://www.vitero.de/schema/mtom", "loadAvatarRequest");
     private final static QName _LoadAvatarResponse_QNAME = new QName("http://www.vitero.de/schema/mtom", "loadAvatarResponse");
-    private final static QName _LoadFileResponse_QNAME = new QName("http://www.vitero.de/schema/mtom", "loadFileResponse");
-    private final static QName _SuccessResponse_QNAME = new QName("http://www.vitero.de/schema/mtom", "successResponse");
     private final static QName _StoreAvatarRequest_QNAME = new QName("http://www.vitero.de/schema/mtom", "storeAvatarRequest");
-    private final static QName _LoadFileRequest_QNAME = new QName("http://www.vitero.de/schema/mtom", "loadFileRequest");
+    private final static QName _SuccessResponse_QNAME = new QName("http://www.vitero.de/schema/mtom", "successResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.vitero.schema.mtom
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link FileWrapper }
-     * 
-     */
-    public FileWrapper createFileWrapper() {
-        return new FileWrapper();
-    }
-
-    /**
-     * Create an instance of {@link SuccessResponse }
-     * 
-     */
-    public SuccessResponse createSuccessResponse() {
-        return new SuccessResponse();
-    }
-
-    /**
-     * Create an instance of {@link AvatarWrapper }
-     * 
-     */
-    public AvatarWrapper createAvatarWrapper() {
-        return new AvatarWrapper();
-    }
-
-    /**
-     * Create an instance of {@link AvatarInformation }
-     * 
-     */
-    public AvatarInformation createAvatarInformation() {
-        return new AvatarInformation();
     }
 
     /**
@@ -81,11 +49,61 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link FileWrapper }
+     * 
+     */
+    public FileWrapper createFileWrapper() {
+        return new FileWrapper();
+    }
+
+    /**
+     * Create an instance of {@link AvatarInformation }
+     * 
+     */
+    public AvatarInformation createAvatarInformation() {
+        return new AvatarInformation();
+    }
+
+    /**
+     * Create an instance of {@link AvatarWrapper }
+     * 
+     */
+    public AvatarWrapper createAvatarWrapper() {
+        return new AvatarWrapper();
+    }
+
+    /**
      * Create an instance of {@link CompleteAvatarWrapper }
      * 
      */
     public CompleteAvatarWrapper createCompleteAvatarWrapper() {
         return new CompleteAvatarWrapper();
+    }
+
+    /**
+     * Create an instance of {@link SuccessResponse }
+     * 
+     */
+    public SuccessResponse createSuccessResponse() {
+        return new SuccessResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IdWrapper }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "loadFileRequest")
+    public JAXBElement<IdWrapper> createLoadFileRequest(IdWrapper value) {
+        return new JAXBElement<IdWrapper>(_LoadFileRequest_QNAME, IdWrapper.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FileWrapper }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "loadFileResponse")
+    public JAXBElement<FileWrapper> createLoadFileResponse(FileWrapper value) {
+        return new JAXBElement<FileWrapper>(_LoadFileResponse_QNAME, FileWrapper.class, null, value);
     }
 
     /**
@@ -125,24 +143,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FileWrapper }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "loadFileResponse")
-    public JAXBElement<FileWrapper> createLoadFileResponse(FileWrapper value) {
-        return new JAXBElement<FileWrapper>(_LoadFileResponse_QNAME, FileWrapper.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "successResponse")
-    public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
-        return new JAXBElement<SuccessResponse>(_SuccessResponse_QNAME, SuccessResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CompleteAvatarWrapper }{@code >}}
      * 
      */
@@ -152,12 +152,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link IdWrapper }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "loadFileRequest")
-    public JAXBElement<IdWrapper> createLoadFileRequest(IdWrapper value) {
-        return new JAXBElement<IdWrapper>(_LoadFileRequest_QNAME, IdWrapper.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "successResponse")
+    public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_SuccessResponse_QNAME, SuccessResponse.class, null, value);
     }
 
 }

@@ -12,16 +12,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="sourceAndDestNodeId">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="sourcenodeid" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="destnodeid" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="sourceAndDestNodeId"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="sourcenodeid" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="destnodeid" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

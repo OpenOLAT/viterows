@@ -24,12 +24,13 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetBookableModulesForGroupResponse_QNAME = new QName("http://www.vitero.de/schema/licence", "getBookableModulesForGroupResponse");
+    private final static QName _SuccessRequest_QNAME = new QName("http://www.vitero.de/schema/licence", "successRequest");
     private final static QName _GetBookableModulesForGroupRequest_QNAME = new QName("http://www.vitero.de/schema/licence", "getBookableModulesForGroupRequest");
-    private final static QName _GetModulesForCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/licence", "getModulesForCustomerResponse");
-    private final static QName _GetAllModulesResponse_QNAME = new QName("http://www.vitero.de/schema/licence", "getAllModulesResponse");
+    private final static QName _GetBookableModulesForGroupResponse_QNAME = new QName("http://www.vitero.de/schema/licence", "getBookableModulesForGroupResponse");
     private final static QName _GetBookableRoomsForGroupRequest_QNAME = new QName("http://www.vitero.de/schema/licence", "getBookableRoomsForGroupRequest");
     private final static QName _IsPhoneAvailableRequest_QNAME = new QName("http://www.vitero.de/schema/licence", "isPhoneAvailableRequest");
+    private final static QName _GetModulesForCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/licence", "getModulesForCustomerResponse");
+    private final static QName _GetAllModulesResponse_QNAME = new QName("http://www.vitero.de/schema/licence", "getAllModulesResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.vitero.schema.licence
@@ -63,22 +64,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAllModulesRequest }
-     * 
-     */
-    public GetAllModulesRequest createGetAllModulesRequest() {
-        return new GetAllModulesRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetModulesForCustomerRequest }
-     * 
-     */
-    public GetModulesForCustomerRequest createGetModulesForCustomerRequest() {
-        return new GetModulesForCustomerRequest();
-    }
-
-    /**
      * Create an instance of {@link SuccessResponse }
      * 
      */
@@ -103,6 +88,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GroupHasBookableModuleRequest }
+     * 
+     */
+    public GroupHasBookableModuleRequest createGroupHasBookableModuleRequest() {
+        return new GroupHasBookableModuleRequest();
+    }
+
+    /**
      * Create an instance of {@link GroupHasBookableModuleResponse }
      * 
      */
@@ -119,11 +112,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GroupHasBookableModuleRequest }
+     * Create an instance of {@link GetModulesForCustomerRequest }
      * 
      */
-    public GroupHasBookableModuleRequest createGroupHasBookableModuleRequest() {
-        return new GroupHasBookableModuleRequest();
+    public GetModulesForCustomerRequest createGetModulesForCustomerRequest() {
+        return new GetModulesForCustomerRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetAllModulesRequest }
+     * 
+     */
+    public GetAllModulesRequest createGetAllModulesRequest() {
+        return new GetAllModulesRequest();
     }
 
     /**
@@ -135,12 +136,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "getBookableModulesForGroupResponse")
-    public JAXBElement<Modulestype> createGetBookableModulesForGroupResponse(Modulestype value) {
-        return new JAXBElement<Modulestype>(_GetBookableModulesForGroupResponse_QNAME, Modulestype.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "successRequest")
+    public JAXBElement<String> createSuccessRequest(String value) {
+        return new JAXBElement<String>(_SuccessRequest_QNAME, String.class, null, value);
     }
 
     /**
@@ -156,18 +157,9 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "getModulesForCustomerResponse")
-    public JAXBElement<Modulestype> createGetModulesForCustomerResponse(Modulestype value) {
-        return new JAXBElement<Modulestype>(_GetModulesForCustomerResponse_QNAME, Modulestype.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "getAllModulesResponse")
-    public JAXBElement<Modulestype> createGetAllModulesResponse(Modulestype value) {
-        return new JAXBElement<Modulestype>(_GetAllModulesResponse_QNAME, Modulestype.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "getBookableModulesForGroupResponse")
+    public JAXBElement<Modulestype> createGetBookableModulesForGroupResponse(Modulestype value) {
+        return new JAXBElement<Modulestype>(_GetBookableModulesForGroupResponse_QNAME, Modulestype.class, null, value);
     }
 
     /**
@@ -186,6 +178,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "isPhoneAvailableRequest")
     public JAXBElement<Grouprequesttype> createIsPhoneAvailableRequest(Grouprequesttype value) {
         return new JAXBElement<Grouprequesttype>(_IsPhoneAvailableRequest_QNAME, Grouprequesttype.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "getModulesForCustomerResponse")
+    public JAXBElement<Modulestype> createGetModulesForCustomerResponse(Modulestype value) {
+        return new JAXBElement<Modulestype>(_GetModulesForCustomerResponse_QNAME, Modulestype.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "getAllModulesResponse")
+    public JAXBElement<Modulestype> createGetAllModulesResponse(Modulestype value) {
+        return new JAXBElement<Modulestype>(_GetAllModulesResponse_QNAME, Modulestype.class, null, value);
     }
 
 }
