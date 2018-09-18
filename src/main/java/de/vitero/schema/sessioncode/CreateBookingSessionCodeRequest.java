@@ -24,9 +24,10 @@ import javax.xml.bind.annotation.XmlType;
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *                 &lt;all&gt;
  *                   &lt;element name="bookingid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *                   &lt;element name="expirationdate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *                   &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *                   &lt;element name="codelength" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *                   &lt;element name="role" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *                   &lt;element name="allownotexistingusers" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *                   &lt;element name="allownotassignedusers" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *                 &lt;/all&gt;
  *               &lt;/restriction&gt;
  *             &lt;/complexContent&gt;
@@ -86,9 +87,10 @@ public class CreateBookingSessionCodeRequest {
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
      *       &lt;all&gt;
      *         &lt;element name="bookingid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
-     *         &lt;element name="expirationdate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
-     *         &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
      *         &lt;element name="codelength" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+     *         &lt;element name="role" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+     *         &lt;element name="allownotexistingusers" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+     *         &lt;element name="allownotassignedusers" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
      *       &lt;/all&gt;
      *     &lt;/restriction&gt;
      *   &lt;/complexContent&gt;
@@ -104,9 +106,10 @@ public class CreateBookingSessionCodeRequest {
     public static class Sessioncode {
 
         protected int bookingid;
-        protected String expirationdate;
-        protected String timezone;
         protected Integer codelength;
+        protected Integer role;
+        protected Boolean allownotexistingusers;
+        protected Boolean allownotassignedusers;
 
         /**
          * Obtient la valeur de la propriété bookingid.
@@ -122,54 +125,6 @@ public class CreateBookingSessionCodeRequest {
          */
         public void setBookingid(int value) {
             this.bookingid = value;
-        }
-
-        /**
-         * Obtient la valeur de la propriété expirationdate.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getExpirationdate() {
-            return expirationdate;
-        }
-
-        /**
-         * Définit la valeur de la propriété expirationdate.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setExpirationdate(String value) {
-            this.expirationdate = value;
-        }
-
-        /**
-         * Obtient la valeur de la propriété timezone.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getTimezone() {
-            return timezone;
-        }
-
-        /**
-         * Définit la valeur de la propriété timezone.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setTimezone(String value) {
-            this.timezone = value;
         }
 
         /**
@@ -194,6 +149,78 @@ public class CreateBookingSessionCodeRequest {
          */
         public void setCodelength(Integer value) {
             this.codelength = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété role.
+         * 
+         * @return
+         *     possible object is
+         *     {@link Integer }
+         *     
+         */
+        public Integer getRole() {
+            return role;
+        }
+
+        /**
+         * Définit la valeur de la propriété role.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link Integer }
+         *     
+         */
+        public void setRole(Integer value) {
+            this.role = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété allownotexistingusers.
+         * 
+         * @return
+         *     possible object is
+         *     {@link Boolean }
+         *     
+         */
+        public Boolean isAllownotexistingusers() {
+            return allownotexistingusers;
+        }
+
+        /**
+         * Définit la valeur de la propriété allownotexistingusers.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link Boolean }
+         *     
+         */
+        public void setAllownotexistingusers(Boolean value) {
+            this.allownotexistingusers = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété allownotassignedusers.
+         * 
+         * @return
+         *     possible object is
+         *     {@link Boolean }
+         *     
+         */
+        public Boolean isAllownotassignedusers() {
+            return allownotassignedusers;
+        }
+
+        /**
+         * Définit la valeur de la propriété allownotassignedusers.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link Boolean }
+         *     
+         */
+        public void setAllownotassignedusers(Boolean value) {
+            this.allownotassignedusers = value;
         }
 
     }

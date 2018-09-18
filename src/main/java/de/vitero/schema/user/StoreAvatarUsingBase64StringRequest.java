@@ -22,6 +22,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="filename" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="file" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="strictwsdl" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -43,6 +44,7 @@ public class StoreAvatarUsingBase64StringRequest {
     protected String filename;
     @XmlElement(required = true)
     protected String file;
+    protected Boolean strictwsdl;
 
     /**
      * Obtient la valeur de la propriété userid.
@@ -122,6 +124,30 @@ public class StoreAvatarUsingBase64StringRequest {
      */
     public void setFile(String value) {
         this.file = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété strictwsdl.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isStrictwsdl() {
+        return strictwsdl;
+    }
+
+    /**
+     * Définit la valeur de la propriété strictwsdl.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setStrictwsdl(Boolean value) {
+        this.strictwsdl = value;
     }
 
 }

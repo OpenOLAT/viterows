@@ -34,6 +34,12 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="pcstate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="technicalnote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="forcenewpassword" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="accountnotlocked" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="domainForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="principalNameForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="sidForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -66,6 +72,12 @@ public class Completeusertype {
     protected String street;
     protected String pcstate;
     protected String technicalnote;
+    protected Boolean forcenewpassword;
+    protected Boolean accountnotlocked;
+    protected String password;
+    protected String domainForIwa;
+    protected String principalNameForIwa;
+    protected String sidForIwa;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -489,6 +501,150 @@ public class Completeusertype {
      */
     public void setTechnicalnote(String value) {
         this.technicalnote = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété forcenewpassword.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isForcenewpassword() {
+        return forcenewpassword;
+    }
+
+    /**
+     * Définit la valeur de la propriété forcenewpassword.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setForcenewpassword(Boolean value) {
+        this.forcenewpassword = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété accountnotlocked.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isAccountnotlocked() {
+        return accountnotlocked;
+    }
+
+    /**
+     * Définit la valeur de la propriété accountnotlocked.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setAccountnotlocked(Boolean value) {
+        this.accountnotlocked = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété password.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * Définit la valeur de la propriété password.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPassword(String value) {
+        this.password = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété domainForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDomainForIwa() {
+        return domainForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété domainForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDomainForIwa(String value) {
+        this.domainForIwa = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété principalNameForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPrincipalNameForIwa() {
+        return principalNameForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété principalNameForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPrincipalNameForIwa(String value) {
+        this.principalNameForIwa = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété sidForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSidForIwa() {
+        return sidForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété sidForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSidForIwa(String value) {
+        this.sidForIwa = value;
     }
 
 }

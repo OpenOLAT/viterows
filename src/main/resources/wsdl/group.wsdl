@@ -1,356 +1,500 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/group" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/group" targetNamespace="http://www.vitero.de/schema/group">
-  <wsdl:types>
-    <xs:schema xmlns:viterogroup="http://www.vitero.de/schema/group" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/group" version="1.0">
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/group" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/group" targetNamespace="http://www.vitero.de/schema/group">
+  <wsdl:types xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:viterogroup="http://www.vitero.de/schema/group" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/group" version="1.0">
   
   <!-- AVAILABLE REQUESTS AND RESPONSES -->
-  <xs:element name="successRequest" type="xs:string"/> <!-- do not use -->
-  <xs:element name="successResponse">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="request" type="xs:string"/>
+  <xs:element name="successRequest" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/> <!-- do not use -->
+  <xs:element name="successResponse" type="viterogroup:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="getGroupRequest" type="viterogroup:groupid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="getGroupResponse" type="viterogroup:group" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="getGroupByNameRequest" type="viterogroup:groupnamecustomerid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="getGroupByNameResponse" type="viterogroup:group" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="getGroupListByCustomerRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
-  
-  <xs:element name="getGroupRequest" type="viterogroup:groupid"/>
-  <xs:element name="getGroupResponse" type="viterogroup:group"/>
-  
-  <xs:element name="getGroupByNameRequest" type="viterogroup:groupnamecustomerid"/>
-  <xs:element name="getGroupByNameResponse" type="viterogroup:group"/>
-  
-  <xs:element name="getGroupListByCustomerRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="customerid" type="xs:int"/>
-      </xs:all>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getGroupListByCustomerResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element maxOccurs="unbounded" minOccurs="0" name="group" type="viterogroup:grouptype"/>
+  <xs:element name="getGroupListByCustomerResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="group" type="viterogroup:grouptype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="createGroupRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="group" type="viterogroup:groupnamecustomerid"/>
+  <xs:element name="createGroupRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="group" type="viterogroup:groupnamecustomerid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="createGroupResponse" type="viterogroup:groupid"/>
+  <xs:element name="createGroupResponse" type="viterogroup:groupid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="updateGroupRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="group">
-      	  <xs:complexType>
-      	    <xs:all>
-      	      <xs:element name="id" type="xs:int"/>
-      	      <xs:element name="name" type="xs:string"/>
+  <xs:element name="updateGroupRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="group" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      	  <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      	    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      	      <xs:element name="id" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      	      <xs:element name="name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      	      <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       	    </xs:all>
       	  </xs:complexType>
         </xs:element>
       </xs:all>
     </xs:complexType>
   </xs:element>
+  <xs:element name="updateGroupResponse" type="viterogroup:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="deleteGroupRequest" type="viterogroup:groupid"/>
+  <xs:element name="deleteGroupRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	    <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	    <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteGroupResponse" type="viterogroup:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="addUserToGroupRequest" type="viterogroup:groupiduserid"/>
+  <xs:element name="addUserToGroupRequest" type="viterogroup:groupiduseridstrict" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="addUserToGroupResponse" type="viterogroup:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="removeUserFromGroupRequest" type="viterogroup:groupiduserid"/>
+  <xs:element name="removeUserFromGroupRequest" type="viterogroup:groupiduseridstrict" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="removeUserFromGroupResponse" type="viterogroup:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="changeGroupRoleRequest">
-  	<xs:complexType>
-      <xs:all>
-        <xs:element name="groupid" type="xs:int"/>
-  		<xs:element name="userid" type="xs:int"/>
-  		<xs:element name="role" type="xs:int"/>
+  <xs:element name="changeGroupRoleRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="role" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  </xs:all>
+  	</xs:complexType>
+  </xs:element>
+  <xs:element name="changeGroupRoleResponse" type="viterogroup:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="changeEnabledRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="enabled" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  </xs:all>
+  	</xs:complexType>
+  </xs:element>
+  <xs:element name="changeEnabledResponse" type="viterogroup:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="isUserInGroupRequest" type="viterogroup:groupiduserid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="isUserInGroupResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="groupmember" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:all>
   	</xs:complexType>
   </xs:element>
   
-  <xs:element name="changeEnabledRequest">
-  	<xs:complexType>
-      <xs:all>
-        <xs:element name="groupid" type="xs:int"/>
-  		<xs:element name="userid" type="xs:int"/>
-  		<xs:element name="enabled" type="xs:boolean"/>
-  	  </xs:all>
-  	</xs:complexType>
+  <xs:element name="getParticipantRequest" type="viterogroup:groupiduserid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="getParticipantResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="role" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		<xs:element name="enabled" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	  </xs:all>
+	</xs:complexType>
   </xs:element>
-      
+  
   <!-- TYPES -->
-  <xs:complexType name="group">
-  	<xs:all>
-  		<xs:element name="group" type="viterogroup:completegrouptype"/>
+  <xs:complexType name="group" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="group" type="viterogroup:completegrouptype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	</xs:all>
   </xs:complexType>
   
-  <xs:complexType name="completegrouptype">
-  	<xs:sequence>
-  		<xs:element name="id" type="xs:int"/>
-  		<xs:element name="name" type="xs:string"/>
-  		<xs:element name="customerid" type="xs:int"/>
-  		<xs:element maxOccurs="unbounded" minOccurs="0" name="participant">
-  		  <xs:complexType>
-  		    <xs:all>
-  		      <xs:element name="userid" type="xs:int"/>
-  		      <xs:element name="role" type="xs:int"/>
-  		      <xs:element name="enabled" type="xs:boolean"/>
+  <xs:complexType name="completegrouptype" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="id" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element maxOccurs="unbounded" minOccurs="0" name="participant" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		  <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		      <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		      <xs:element name="role" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		      <xs:element name="enabled" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   		    </xs:all>
   		  </xs:complexType>
   		</xs:element>
   	</xs:sequence>
   </xs:complexType>
   
-   <xs:complexType name="grouptype">
-  	<xs:all>
-  		<xs:element name="id" type="xs:int"/>
-  		<xs:element name="name" type="xs:string"/>
-  		<xs:element name="customerid" type="xs:int"/>
+   <xs:complexType name="grouptype" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="id" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	</xs:all>
   </xs:complexType>
  
-  <xs:complexType name="groupnamecustomerid">
-  	<xs:all>
-  	  <xs:element name="groupname" type="xs:string"/>
-  	  <xs:element name="customerid" type="xs:int"/>
+  <xs:complexType name="groupnamecustomerid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:element name="groupname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  <xs:element name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	</xs:all>
   </xs:complexType>
   
-  <xs:complexType name="groupidcustomerid">
-  	<xs:all>
-  	  <xs:element name="groupid" type="xs:int"/>
-  	  <xs:element name="customerid" type="xs:int"/>
+  <xs:complexType name="groupidcustomerid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  <xs:element name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	</xs:all>
   </xs:complexType>
   
-  <xs:complexType name="groupiduserid">
-  	<xs:all>
-  	  <xs:element name="groupid" type="xs:int"/>
-  	  <xs:element name="userid" type="xs:int"/>
+  <xs:complexType name="groupiduserid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	</xs:all>
+  </xs:complexType>
+  
+  <xs:complexType name="groupiduseridstrict" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>  	  
   	</xs:all>
   </xs:complexType>
 
   <!-- a single groupid -->
-  <xs:complexType name="groupid">
-  	<xs:all>
-  	  <xs:element name="groupid" type="xs:int"/>
+  <xs:complexType name="groupid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	</xs:all>
   </xs:complexType>
+
+  <xs:complexType name="successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="request" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    </xs:all>
+  </xs:complexType>
+
 </xs:schema>
   </wsdl:types>
-  <wsdl:message name="createGroupResponse">
-    <wsdl:part element="tns:createGroupResponse" name="createGroupResponse">
+  <wsdl:message name="changeGroupRoleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:changeGroupRoleRequest" name="changeGroupRoleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupResponse">
-    <wsdl:part element="tns:getGroupResponse" name="getGroupResponse">
+  <wsdl:message name="getParticipantRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getParticipantRequest" name="getParticipantRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="addUserToGroupRequest">
-    <wsdl:part element="tns:addUserToGroupRequest" name="addUserToGroupRequest">
+  <wsdl:message name="deleteGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:deleteGroupResponse" name="deleteGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupByNameRequest">
-    <wsdl:part element="tns:getGroupByNameRequest" name="getGroupByNameRequest">
+  <wsdl:message name="createGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createGroupRequest" name="createGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupRequest">
-    <wsdl:part element="tns:getGroupRequest" name="getGroupRequest">
+  <wsdl:message name="getParticipantResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getParticipantResponse" name="getParticipantResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupListByCustomerResponse">
-    <wsdl:part element="tns:getGroupListByCustomerResponse" name="getGroupListByCustomerResponse">
+  <wsdl:message name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createGroupRequest">
-    <wsdl:part element="tns:createGroupRequest" name="createGroupRequest">
+  <wsdl:message name="getGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getGroupResponse" name="getGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="removeUserFromGroupRequest">
-    <wsdl:part element="tns:removeUserFromGroupRequest" name="removeUserFromGroupRequest">
+  <wsdl:message name="deleteGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:deleteGroupRequest" name="deleteGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successRequest">
-    <wsdl:part element="tns:successRequest" name="successRequest">
+  <wsdl:message name="addUserToGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:addUserToGroupRequest" name="addUserToGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="changeEnabledRequest">
-    <wsdl:part element="tns:changeEnabledRequest" name="changeEnabledRequest">
+  <wsdl:message name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="deleteGroupRequest">
-    <wsdl:part element="tns:deleteGroupRequest" name="deleteGroupRequest">
+  <wsdl:message name="changeEnabledResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:changeEnabledResponse" name="changeEnabledResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successResponse">
-    <wsdl:part element="tns:successResponse" name="successResponse">
+  <wsdl:message name="getGroupByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getGroupByNameResponse" name="getGroupByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupListByCustomerRequest">
-    <wsdl:part element="tns:getGroupListByCustomerRequest" name="getGroupListByCustomerRequest">
+  <wsdl:message name="getGroupListByCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getGroupListByCustomerRequest" name="getGroupListByCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="changeGroupRoleRequest">
-    <wsdl:part element="tns:changeGroupRoleRequest" name="changeGroupRoleRequest">
+  <wsdl:message name="addUserToGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:addUserToGroupResponse" name="addUserToGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="updateGroupRequest">
-    <wsdl:part element="tns:updateGroupRequest" name="updateGroupRequest">
+  <wsdl:message name="isUserInGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:isUserInGroupRequest" name="isUserInGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupByNameResponse">
-    <wsdl:part element="tns:getGroupByNameResponse" name="getGroupByNameResponse">
+  <wsdl:message name="isUserInGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:isUserInGroupResponse" name="isUserInGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="Group">
-    <wsdl:operation name="createGroup">
-      <wsdl:input message="tns:createGroupRequest" name="createGroupRequest">
+  <wsdl:message name="changeGroupRoleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:changeGroupRoleResponse" name="changeGroupRoleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createGroupResponse" name="createGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:updateGroupResponse" name="updateGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGroupByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getGroupByNameRequest" name="getGroupByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeUserFromGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:removeUserFromGroupRequest" name="removeUserFromGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeEnabledRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:changeEnabledRequest" name="changeEnabledRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getGroupRequest" name="getGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:updateGroupRequest" name="updateGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGroupListByCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getGroupListByCustomerResponse" name="getGroupListByCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeUserFromGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:removeUserFromGroupResponse" name="removeUserFromGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Group" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="changeGroupRole" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:changeGroupRoleRequest" name="changeGroupRoleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:createGroupResponse" name="createGroupResponse">
+      <wsdl:output message="tns:changeGroupRoleResponse" name="changeGroupRoleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroup">
-      <wsdl:input message="tns:getGroupRequest" name="getGroupRequest">
+    <wsdl:operation name="getParticipant" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getParticipantRequest" name="getParticipantRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getGroupResponse" name="getGroupResponse">
+      <wsdl:output message="tns:getParticipantResponse" name="getParticipantResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="addUserToGroup">
-      <wsdl:input message="tns:addUserToGroupRequest" name="addUserToGroupRequest">
+    <wsdl:operation name="deleteGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:deleteGroupRequest" name="deleteGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getGroupByName">
-      <wsdl:input message="tns:getGroupByNameRequest" name="getGroupByNameRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:getGroupByNameResponse" name="getGroupByNameResponse">
+      <wsdl:output message="tns:deleteGroupResponse" name="deleteGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroupListByCustomer">
-      <wsdl:input message="tns:getGroupListByCustomerRequest" name="getGroupListByCustomerRequest">
+    <wsdl:operation name="createGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:createGroupRequest" name="createGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getGroupListByCustomerResponse" name="getGroupListByCustomerResponse">
+      <wsdl:output message="tns:createGroupResponse" name="createGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="removeUserFromGroup">
-      <wsdl:input message="tns:removeUserFromGroupRequest" name="removeUserFromGroupRequest">
+    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="success">
-      <wsdl:input message="tns:successRequest" name="successRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:successResponse" name="successResponse">
+      <wsdl:output message="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="changeEnabled">
-      <wsdl:input message="tns:changeEnabledRequest" name="changeEnabledRequest">
+    <wsdl:operation name="getGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getGroupRequest" name="getGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
+      <wsdl:output message="tns:getGroupResponse" name="getGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deleteGroup">
-      <wsdl:input message="tns:deleteGroupRequest" name="deleteGroupRequest">
+    <wsdl:operation name="addUserToGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:addUserToGroupRequest" name="addUserToGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
+      <wsdl:output message="tns:addUserToGroupResponse" name="addUserToGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="changeGroupRole">
-      <wsdl:input message="tns:changeGroupRoleRequest" name="changeGroupRoleRequest">
+    <wsdl:operation name="changeEnabled" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:changeEnabledRequest" name="changeEnabledRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
+      <wsdl:output message="tns:changeEnabledResponse" name="changeEnabledResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateGroup">
-      <wsdl:input message="tns:updateGroupRequest" name="updateGroupRequest">
+    <wsdl:operation name="getGroupByName" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getGroupByNameRequest" name="getGroupByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
+      <wsdl:output message="tns:getGroupByNameResponse" name="getGroupByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGroupListByCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getGroupListByCustomerRequest" name="getGroupListByCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:getGroupListByCustomerResponse" name="getGroupListByCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isUserInGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:isUserInGroupRequest" name="isUserInGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:isUserInGroupResponse" name="isUserInGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:updateGroupRequest" name="updateGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:updateGroupResponse" name="updateGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeUserFromGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:removeUserFromGroupRequest" name="removeUserFromGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:removeUserFromGroupResponse" name="removeUserFromGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="GroupSoap11" type="tns:Group">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="createGroup">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createGroupRequest">
-        <soap:body use="literal"/>
+  <wsdl:binding name="GroupSoap11" type="tns:Group" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="changeGroupRole" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="changeGroupRoleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="createGroupResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="changeGroupRoleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroup">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getGroupRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getParticipant" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getParticipantRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getGroupResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getParticipantResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="addUserToGroup">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="addUserToGroupRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="deleteGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="deleteGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getGroupByName">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getGroupByNameRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="getGroupByNameResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="deleteGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroupListByCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getGroupListByCustomerRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="createGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="createGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getGroupListByCustomerResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="createGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="removeUserFromGroup">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="removeUserFromGroupRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="success">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="successRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="successResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="changeEnabled">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="changeEnabledRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
+      <wsdl:output name="getGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deleteGroup">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="deleteGroupRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="addUserToGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="addUserToGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
+      <wsdl:output name="addUserToGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="changeGroupRole">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="changeGroupRoleRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="changeEnabled" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="changeEnabledRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
+      <wsdl:output name="changeEnabledResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateGroup">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="updateGroupRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getGroupByName" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getGroupByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
+      <wsdl:output name="getGroupByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGroupListByCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getGroupListByCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="getGroupListByCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isUserInGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="isUserInGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="isUserInGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="updateGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="updateGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeUserFromGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="removeUserFromGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="removeUserFromGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="GroupService">
-    <wsdl:port binding="tns:GroupSoap11" name="GroupSoap11">
-      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
+  <wsdl:service name="GroupService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:port binding="tns:GroupSoap11" name="GroupSoap11" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:address location="https://vms3.vitero.de:443/vitero/services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

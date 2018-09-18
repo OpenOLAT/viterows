@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *                   &lt;element name="registrationdeadline" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *                   &lt;element name="role" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
  *                   &lt;element name="codelength" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *                   &lt;element name="registrationlimit" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
  *                 &lt;/all&gt;
  *               &lt;/restriction&gt;
  *             &lt;/complexContent&gt;
@@ -89,6 +90,7 @@ public class CreateAppointmentConfirmationSessionCodeRequest {
      *         &lt;element name="registrationdeadline" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
      *         &lt;element name="role" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
      *         &lt;element name="codelength" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+     *         &lt;element name="registrationlimit" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
      *       &lt;/all&gt;
      *     &lt;/restriction&gt;
      *   &lt;/complexContent&gt;
@@ -107,6 +109,7 @@ public class CreateAppointmentConfirmationSessionCodeRequest {
         protected int registrationdeadline;
         protected Integer role;
         protected Integer codelength;
+        protected Integer registrationlimit;
 
         /**
          * Obtient la valeur de la propriété bookingid.
@@ -186,6 +189,30 @@ public class CreateAppointmentConfirmationSessionCodeRequest {
          */
         public void setCodelength(Integer value) {
             this.codelength = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété registrationlimit.
+         * 
+         * @return
+         *     possible object is
+         *     {@link Integer }
+         *     
+         */
+        public Integer getRegistrationlimit() {
+            return registrationlimit;
+        }
+
+        /**
+         * Définit la valeur de la propriété registrationlimit.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link Integer }
+         *     
+         */
+        public void setRegistrationlimit(Integer value) {
+            this.registrationlimit = value;
         }
 
     }

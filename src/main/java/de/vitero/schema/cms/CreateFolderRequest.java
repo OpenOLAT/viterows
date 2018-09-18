@@ -22,6 +22,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="authorid" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
  *         &lt;element name="displaytype" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="visible" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -42,6 +43,7 @@ public class CreateFolderRequest {
     protected String name;
     protected Integer authorid;
     protected Integer displaytype;
+    protected Integer visible;
 
     /**
      * Obtient la valeur de la propriété nodeid.
@@ -129,6 +131,30 @@ public class CreateFolderRequest {
      */
     public void setDisplaytype(Integer value) {
         this.displaytype = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété visible.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getVisible() {
+        return visible;
+    }
+
+    /**
+     * Définit la valeur de la propriété visible.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setVisible(Integer value) {
+        this.visible = value;
     }
 
 }

@@ -24,7 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="shortname" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="displayname" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="groupidlist" type="{http://www.vitero.de/schema/customer}idlist"/&gt;
+ *         &lt;element name="customernumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="groupidlist" type="{http://www.vitero.de/schema/customer}idlist" minOccurs="0"/&gt;
  *         &lt;element name="user" maxOccurs="unbounded" minOccurs="0"&gt;
  *           &lt;complexType&gt;
  *             &lt;complexContent&gt;
@@ -50,6 +51,7 @@ import javax.xml.bind.annotation.XmlType;
     "id",
     "shortname",
     "displayname",
+    "customernumber",
     "groupidlist",
     "user"
 })
@@ -60,6 +62,7 @@ public class Customertype {
     protected String shortname;
     @XmlElement(required = true)
     protected String displayname;
+    protected String customernumber;
     @XmlList
     @XmlElement(type = Integer.class)
     @XmlSchemaType(name = "anySimpleType")
@@ -128,6 +131,30 @@ public class Customertype {
      */
     public void setDisplayname(String value) {
         this.displayname = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété customernumber.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCustomernumber() {
+        return customernumber;
+    }
+
+    /**
+     * Définit la valeur de la propriété customernumber.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCustomernumber(String value) {
+        this.customernumber = value;
     }
 
     /**

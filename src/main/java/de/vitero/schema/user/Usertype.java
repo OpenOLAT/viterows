@@ -26,6 +26,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="company" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="locale" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="domainForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="principalNameForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="sidForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -53,6 +56,9 @@ public class Usertype {
     protected String company;
     protected String locale;
     protected String timezone;
+    protected String domainForIwa;
+    protected String principalNameForIwa;
+    protected String sidForIwa;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -260,6 +266,78 @@ public class Usertype {
      */
     public void setTimezone(String value) {
         this.timezone = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété domainForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDomainForIwa() {
+        return domainForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété domainForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDomainForIwa(String value) {
+        this.domainForIwa = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété principalNameForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPrincipalNameForIwa() {
+        return principalNameForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété principalNameForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPrincipalNameForIwa(String value) {
+        this.principalNameForIwa = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété sidForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSidForIwa() {
+        return sidForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété sidForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSidForIwa(String value) {
+        this.sidForIwa = value;
     }
 
 }

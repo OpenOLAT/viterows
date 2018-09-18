@@ -1,224 +1,229 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/booking" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/booking" targetNamespace="http://www.vitero.de/schema/booking">
-  <wsdl:types>
-    <xs:schema xmlns:viterobooking="http://www.vitero.de/schema/booking" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/booking" version="1.0">
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/booking" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/booking" targetNamespace="http://www.vitero.de/schema/booking">
+  <wsdl:types xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:viterobooking="http://www.vitero.de/schema/booking" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/booking" version="1.0">
        
   <!-- AVAILABLE REQUESTS AND RESPONSES -->  
-  <xs:element name="successRequest" type="xs:string"/> <!-- do not use -->
-  <xs:element name="successResponse">
-    <xs:complexType>
-    <xs:all>
-      <xs:element name="request" type="xs:string"/>
-    </xs:all>
-  </xs:complexType>
-  </xs:element>
+  <xs:element name="successRequest" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/> <!-- do not use -->
+  <xs:element name="successResponse" type="viterobooking:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getBookingByIdRequest" type="viterobooking:bookingid"/>
-  <xs:element name="getBookingByIdResponse" type="viterobooking:bookingtype"/>
+  <xs:element name="getBookingByIdRequest" type="viterobooking:bookingid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="getBookingByIdResponse" type="viterobooking:bookingtype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getBookingByBookingTimeIdRequest" type="viterobooking:bookingtimeid"/>
-  <xs:element name="getBookingByBookingTimeIdResponse" type="viterobooking:bookingtype"/>
+  <xs:element name="getBookingByBookingTimeIdRequest" type="viterobooking:bookingtimeid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="getBookingByBookingTimeIdResponse" type="viterobooking:bookingtype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getBookingTimeByIdRequest" type="viterobooking:bookingtimeid"/>
-  <xs:element name="getBookingTimeByIdResponse" type="viterobooking:bookingtimetype"/>
+  <xs:element name="getBookingTimeByIdRequest" type="viterobooking:bookingtimeid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="getBookingTimeByIdResponse" type="viterobooking:bookingtimetype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       
-  <xs:element name="getBookingListByGroupAndDateRequest">
-    <xs:complexType>
-  	  <xs:all>
-  		<xs:element name="groupid" type="xs:int"/>
-  		<xs:element name="start" type="xs:string"/>
-  		<xs:element name="end" type="xs:string"/>
-  		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
-  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
+  <xs:element name="getBookingListByGroupAndDateRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="start" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="end" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getBookingListByGroupAndDateResponse" type="viterobooking:bookinglist"/>
+  <xs:element name="getBookingListByGroupAndDateResponse" type="viterobooking:bookinglist" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getBookingListByGroupInFutureRequest">
-    <xs:complexType>
-  	  <xs:all>
-  		<xs:element name="groupid" type="xs:int"/>
-  		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
-  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
+  <xs:element name="getBookingListByGroupInFutureRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getBookingListByGroupInFutureResponse" type="viterobooking:bookinglist"/>
+  <xs:element name="getBookingListByGroupInFutureResponse" type="viterobooking:bookinglist" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getBookingListByUserAndDateRequest">
-    <xs:complexType>
-  	  <xs:all>
-  		<xs:element name="userid" type="xs:int"/>
-  		<xs:element name="start" type="xs:string"/>
-  		<xs:element name="end" type="xs:string"/>
-  		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
-  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
+  <xs:element name="getBookingListByUserAndDateRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="start" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="end" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getBookingListByUserAndDateResponse" type="viterobooking:bookinglist"/>
+  <xs:element name="getBookingListByUserAndDateResponse" type="viterobooking:bookinglist" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getBookingListByUserAndDateAndCustomerRequest">
-    <xs:complexType>
-  	  <xs:all>
-  		<xs:element name="userid" type="xs:int"/>
-  		<xs:element name="customerid" type="xs:int"/>
-  		<xs:element name="start" type="xs:string"/>
-  		<xs:element name="end" type="xs:string"/>
-  		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
-  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
+  <xs:element name="getBookingListByUserAndDateAndCustomerRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="start" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="end" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getBookingListByUserAndDateAndCustomerResponse" type="viterobooking:bookinglist"/>
+  <xs:element name="getBookingListByUserAndDateAndCustomerResponse" type="viterobooking:bookinglist" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getBookingListByUserInFutureRequest">
-    <xs:complexType>
-  	  <xs:all>
-  		<xs:element name="userid" type="xs:int"/>
-  		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
-  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
+  <xs:element name="getBookingListByUserInFutureRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getBookingListByUserInFutureResponse" type="viterobooking:bookinglist"/>
+  <xs:element name="getBookingListByUserInFutureResponse" type="viterobooking:bookinglist" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getBookingListByUserAndCustomerInFutureRequest">
-    <xs:complexType>
-  	  <xs:all>
-  		<xs:element name="userid" type="xs:int"/>
-  		<xs:element name="customerid" type="xs:int"/>
-  		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
-  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
+  <xs:element name="getBookingListByUserAndCustomerInFutureRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getBookingListByUserAndCustomerInFutureResponse" type="viterobooking:bookinglist"/>
+  <xs:element name="getBookingListByUserAndCustomerInFutureResponse" type="viterobooking:bookinglist" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
 
-  <xs:element name="getBookingListByDateRequest">
-    <xs:complexType>
-  	  <xs:all>
-  		<xs:element name="start" type="xs:string"/>
-  		<xs:element name="end" type="xs:string"/>
-  		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
-  		<xs:element minOccurs="0" name="customerid" type="xs:int"/>
-  		<xs:element minOccurs="0" name="eventname" type="xs:string"/>
+  <xs:element name="getBookingListByDateRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="start" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element name="end" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  		<xs:element minOccurs="0" name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getBookingListByDateResponse" type="viterobooking:bookinglist"/> 
+  <xs:element name="getBookingListByDateResponse" type="viterobooking:bookinglist" xmlns:xs="http://www.w3.org/2001/XMLSchema"/> 
   
-  <xs:element name="createBookingRequest">
-    <xs:complexType>
-  	  <xs:all>
-  		<xs:element name="booking" type="viterobooking:newbookingtype"/>
+  <xs:element name="createBookingRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="booking" type="viterobooking:newbookingtype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="createBookingResponse">
-    <xs:complexType>
-  	  <xs:all>
-  	    <xs:element name="bookingid" type="xs:int"/>
-  	    <xs:element minOccurs="0" name="bookingcollision" type="xs:boolean"/>
-  	    <xs:element minOccurs="0" name="modulecollision" type="xs:boolean"/>
+  <xs:element name="createBookingResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	    <xs:element name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	    <xs:element minOccurs="0" name="bookingcollision" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	    <xs:element minOccurs="0" name="modulecollision" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:all>
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="updateBookingRequest">
-    <xs:complexType>
-  	  <xs:all>
-  	    <xs:element name="bookingid" type="xs:int"/>
-	    <xs:element minOccurs="0" name="start" type="xs:string"/>
-	    <xs:element minOccurs="0" name="end" type="xs:string"/>
-	    <xs:element minOccurs="0" name="startbuffer" type="xs:int"/>
-	    <xs:element minOccurs="0" name="endbuffer" type="xs:int"/>
-	    <xs:element minOccurs="0" name="timezone" type="xs:string"/>
-	    <xs:element minOccurs="0" name="eventname" type="xs:string"/>
+  <xs:element name="updateBookingRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	    <xs:element name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="start" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="end" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="startbuffer" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="endbuffer" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="eventname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="eventcomment" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="eventcompany" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="eventreferent" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="eventsubtitle" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	    <xs:element minOccurs="0" name="html5client" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
+  <xs:element name="updateBookingResponse" type="viterobooking:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="deleteBookingRequest">
-    <xs:complexType>
-  	  <xs:all>
-  	    <xs:element name="bookingid" type="xs:int"/>
+  <xs:element name="deleteBookingRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	    <xs:element name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:all>
   	</xs:complexType>
   </xs:element>  
-  <xs:element name="deleteBookingResponse">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="deletestate" type="xs:integer"/>
-        <xs:element minOccurs="0" name="eventlocked" type="xs:boolean"/>
-        <xs:element minOccurs="0" name="eventsinpast" type="xs:integer"/>
+  <xs:element name="deleteBookingResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="deletestate" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="eventlocked" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="eventsinpast" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
   
   <!-- TYPES -->
-  <xs:complexType name="newbookingtype">
-    <xs:all>
-      <xs:element name="start" type="xs:string"/>
-      <xs:element name="end" type="xs:string"/>
-      <xs:element name="startbuffer" type="xs:int"/>
-      <xs:element name="endbuffer" type="xs:int"/>
-      <xs:element name="groupid" type="xs:int"/>
-      <xs:element name="roomsize" type="xs:int"/>
-      <xs:element minOccurs="0" name="ignorefaults" type="xs:boolean"/>
-      <xs:element minOccurs="0" name="cafe" type="xs:boolean"/>
-      <xs:element minOccurs="0" name="capture" type="xs:boolean"/>
-      <xs:element minOccurs="0" name="phone" type="viterobooking:phonetype"/>
-      <xs:element minOccurs="0" name="pcstateokrequired" type="xs:boolean"/>
-      <xs:element minOccurs="0" name="repetitionpattern" type="xs:string"/>
-      <xs:element minOccurs="0" name="repetitionenddate" type="xs:string"/>
-      <xs:element minOccurs="0" name="timezone" type="xs:string"/>
-      <xs:element minOccurs="0" name="eventname" type="xs:string"/>
+  <xs:complexType name="newbookingtype" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="start" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="end" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="startbuffer" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="endbuffer" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="roomsize" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="ignorefaults" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="cafe" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="capture" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="phone" type="viterobooking:phonetype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="pcstateokrequired" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="repetitionpattern" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="repetitionenddate" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="eventname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="eventcomment" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="eventcompany" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="eventreferent" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="eventsubtitle" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="audience" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="html5client" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     </xs:all>
   </xs:complexType>
   
-  <xs:complexType name="booking">
-    <xs:all>
-      <xs:element name="bookingid" type="xs:int"/>
-      <xs:element name="groupid" type="xs:int"/>
-      <xs:element name="roomsize" type="xs:int"/>
-      <xs:element name="cafe" type="xs:boolean"/>
-      <xs:element name="capture" type="xs:boolean"/>
-      <xs:element name="phone" type="viterobooking:phonetype"/>
-      <xs:element name="pcstateokrequired" type="xs:boolean"/>
-      <xs:element name="start" type="xs:string"/>
-      <xs:element name="end" type="xs:string"/>
-      <xs:element name="startbuffer" type="xs:int"/>
-      <xs:element name="endbuffer" type="xs:int"/>
-      <xs:element minOccurs="0" name="eventname" type="xs:string"/>
-      <xs:element name="repetitionpattern" type="xs:string"/>     
-      <xs:element minOccurs="0" name="repetitionenddate" type="xs:string"/>
-      <xs:element minOccurs="0" name="addexceptions">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="bookingtime">
-              <xs:complexType>
-			    <xs:all>
-			      <xs:element name="bookingtimeid" type="xs:int"/>
-			      <xs:element name="roomsize" type="xs:int"/>
-			      <xs:element name="start" type="xs:string"/>
-			      <xs:element name="end" type="xs:string"/>
-			      <xs:element name="startbuffer" type="xs:int"/>
-			      <xs:element name="endbuffer" type="xs:int"/>
+  <xs:complexType name="booking" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="roomsize" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="cafe" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="capture" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="phone" type="viterobooking:phonetype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="pcstateokrequired" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="start" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="end" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="startbuffer" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="endbuffer" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="eventname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="eventcomment" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	  <xs:element minOccurs="0" name="eventcompany" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	  <xs:element minOccurs="0" name="eventreferent" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	  <xs:element minOccurs="0" name="eventsubtitle" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="repetitionpattern" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>     
+      <xs:element minOccurs="0" name="repetitionenddate" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="html5client" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="addexceptions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="bookingtime" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			      <xs:element name="bookingtimeid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			      <xs:element name="roomsize" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			      <xs:element name="start" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			      <xs:element name="end" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			      <xs:element name="startbuffer" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			      <xs:element name="endbuffer" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
 			    </xs:all>
 			  </xs:complexType>
             </xs:element>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element minOccurs="0" name="subtractexceptions">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="bookingtime">
-			  <xs:complexType>
-			    <xs:all>
-			      <xs:element name="start" type="xs:string"/>
-			      <xs:element name="end" type="xs:string"/>
+      <xs:element minOccurs="0" name="subtractexceptions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="bookingtime" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			  <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			      <xs:element name="start" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			      <xs:element name="end" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
 			    </xs:all>
 			  </xs:complexType>            
             </xs:element>
@@ -228,386 +233,402 @@
     </xs:all>
   </xs:complexType>
   
-  <xs:complexType name="bookingtime">
-    <xs:all>
-      <xs:element name="bookingtimeid" type="xs:int"/>
-      <xs:element name="bookingid" type="xs:int"/>
-      <xs:element name="groupid" type="xs:int"/>
-      <xs:element name="roomsize" type="xs:int"/>
-      <xs:element name="cafe" type="xs:boolean"/>
-      <xs:element name="capture" type="xs:boolean"/>
-      <xs:element name="phone" type="viterobooking:phonetype"/>
-      <xs:element name="pcstateokrequired" type="xs:boolean"/>
-      <xs:element name="start" type="xs:string"/>
-      <xs:element name="end" type="xs:string"/>
-      <xs:element name="startbuffer" type="xs:int"/>
-      <xs:element name="endbuffer" type="xs:int"/>      
+  <xs:complexType name="bookingtime" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="bookingtimeid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="roomsize" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="cafe" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="capture" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="phone" type="viterobooking:phonetype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="pcstateokrequired" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="start" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="end" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="startbuffer" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="endbuffer" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>      
     </xs:all>
   </xs:complexType>
   
-  <xs:complexType name="bookingtype">
-    <xs:all>
-      <xs:element name="booking" type="viterobooking:booking"/>
+  <xs:complexType name="bookingtype" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="booking" type="viterobooking:booking" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     </xs:all>
   </xs:complexType>
   
-  <xs:complexType name="bookingtimetype">
-    <xs:all>
-      <xs:element name="bookingtime" type="viterobooking:bookingtime"/>
+  <xs:complexType name="bookingtimetype" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="bookingtime" type="viterobooking:bookingtime" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     </xs:all>
   </xs:complexType>
     
-  <xs:complexType name="bookinglist">
-    <xs:sequence>
-  	  <xs:element maxOccurs="unbounded" minOccurs="0" name="booking" type="viterobooking:booking"/>
+  <xs:complexType name="bookinglist" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:element maxOccurs="unbounded" minOccurs="0" name="booking" type="viterobooking:booking" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	</xs:sequence>
   </xs:complexType>
   
-  <xs:complexType name="bookingid">
-  	<xs:all>
-  	  <xs:element name="bookingid" type="xs:int"/>
-  	  <xs:element minOccurs="0" name="timezone" type="xs:string"/>
+  <xs:complexType name="bookingid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:element name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  <xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	</xs:all>
   </xs:complexType>
   
-  <xs:complexType name="bookingtimeid">
-  	<xs:all>
-  	  <xs:element name="bookingtimeid" type="xs:int"/>
-  	  <xs:element minOccurs="0" name="timezone" type="xs:string"/>
+  <xs:complexType name="bookingtimeid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:element name="bookingtimeid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  <xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	</xs:all>
   </xs:complexType>
   
-  <xs:complexType name="phonetype">
-  	<xs:all>
-  	  <xs:element name="phoneconference" type="xs:boolean"/>
-  	  <xs:element minOccurs="0" name="showdialogue" type="xs:boolean"/>
-  	  <xs:element minOccurs="0" name="dialout" type="xs:boolean"/>
+  <xs:complexType name="phonetype" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:element name="phoneconference" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  <xs:element minOccurs="0" name="showdialogue" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  <xs:element minOccurs="0" name="dialout" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  <xs:element minOccurs="0" name="dialoutphoneparticipant" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>  	  
   	</xs:all>
+  </xs:complexType>
+  
+  <xs:complexType name="successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="request" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    </xs:all>
   </xs:complexType>
   
 </xs:schema>
   </wsdl:types>
-  <wsdl:message name="updateBookingRequest">
-    <wsdl:part element="tns:updateBookingRequest" name="updateBookingRequest">
+  <wsdl:message name="createBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createBookingRequest" name="createBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingByIdRequest">
-    <wsdl:part element="tns:getBookingByIdRequest" name="getBookingByIdRequest">
+  <wsdl:message name="getBookingByBookingTimeIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingByBookingTimeIdResponse" name="getBookingByBookingTimeIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingByIdResponse">
-    <wsdl:part element="tns:getBookingByIdResponse" name="getBookingByIdResponse">
+  <wsdl:message name="getBookingByBookingTimeIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingByBookingTimeIdRequest" name="getBookingByBookingTimeIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByDateResponse">
-    <wsdl:part element="tns:getBookingListByDateResponse" name="getBookingListByDateResponse">
+  <wsdl:message name="getBookingTimeByIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingTimeByIdResponse" name="getBookingTimeByIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByUserInFutureResponse">
-    <wsdl:part element="tns:getBookingListByUserInFutureResponse" name="getBookingListByUserInFutureResponse">
+  <wsdl:message name="getBookingListByUserAndDateAndCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByUserAndDateAndCustomerRequest" name="getBookingListByUserAndDateAndCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByUserAndCustomerInFutureResponse">
-    <wsdl:part element="tns:getBookingListByUserAndCustomerInFutureResponse" name="getBookingListByUserAndCustomerInFutureResponse">
+  <wsdl:message name="getBookingByIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingByIdResponse" name="getBookingByIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successResponse">
-    <wsdl:part element="tns:successResponse" name="successResponse">
+  <wsdl:message name="getBookingListByGroupInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByGroupInFutureResponse" name="getBookingListByGroupInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingByBookingTimeIdResponse">
-    <wsdl:part element="tns:getBookingByBookingTimeIdResponse" name="getBookingByBookingTimeIdResponse">
+  <wsdl:message name="updateBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:updateBookingRequest" name="updateBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByGroupInFutureResponse">
-    <wsdl:part element="tns:getBookingListByGroupInFutureResponse" name="getBookingListByGroupInFutureResponse">
+  <wsdl:message name="getBookingListByDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByDateRequest" name="getBookingListByDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingTimeByIdRequest">
-    <wsdl:part element="tns:getBookingTimeByIdRequest" name="getBookingTimeByIdRequest">
+  <wsdl:message name="getBookingListByUserAndDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByUserAndDateRequest" name="getBookingListByUserAndDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="deleteBookingResponse">
-    <wsdl:part element="tns:deleteBookingResponse" name="deleteBookingResponse">
+  <wsdl:message name="getBookingTimeByIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingTimeByIdRequest" name="getBookingTimeByIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingTimeByIdResponse">
-    <wsdl:part element="tns:getBookingTimeByIdResponse" name="getBookingTimeByIdResponse">
+  <wsdl:message name="getBookingListByUserAndCustomerInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByUserAndCustomerInFutureResponse" name="getBookingListByUserAndCustomerInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByUserAndDateResponse">
-    <wsdl:part element="tns:getBookingListByUserAndDateResponse" name="getBookingListByUserAndDateResponse">
+  <wsdl:message name="getBookingListByUserInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByUserInFutureRequest" name="getBookingListByUserInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByGroupAndDateResponse">
-    <wsdl:part element="tns:getBookingListByGroupAndDateResponse" name="getBookingListByGroupAndDateResponse">
+  <wsdl:message name="getBookingByIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingByIdRequest" name="getBookingByIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingByBookingTimeIdRequest">
-    <wsdl:part element="tns:getBookingByBookingTimeIdRequest" name="getBookingByBookingTimeIdRequest">
+  <wsdl:message name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByGroupAndDateRequest">
-    <wsdl:part element="tns:getBookingListByGroupAndDateRequest" name="getBookingListByGroupAndDateRequest">
+  <wsdl:message name="getBookingListByUserAndDateAndCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByUserAndDateAndCustomerResponse" name="getBookingListByUserAndDateAndCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successRequest">
-    <wsdl:part element="tns:successRequest" name="successRequest">
+  <wsdl:message name="deleteBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:deleteBookingResponse" name="deleteBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createBookingResponse">
-    <wsdl:part element="tns:createBookingResponse" name="createBookingResponse">
+  <wsdl:message name="getBookingListByGroupAndDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByGroupAndDateRequest" name="getBookingListByGroupAndDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByDateRequest">
-    <wsdl:part element="tns:getBookingListByDateRequest" name="getBookingListByDateRequest">
+  <wsdl:message name="getBookingListByGroupInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByGroupInFutureRequest" name="getBookingListByGroupInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="deleteBookingRequest">
-    <wsdl:part element="tns:deleteBookingRequest" name="deleteBookingRequest">
+  <wsdl:message name="getBookingListByUserAndCustomerInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByUserAndCustomerInFutureRequest" name="getBookingListByUserAndCustomerInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByUserAndDateRequest">
-    <wsdl:part element="tns:getBookingListByUserAndDateRequest" name="getBookingListByUserAndDateRequest">
+  <wsdl:message name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByGroupInFutureRequest">
-    <wsdl:part element="tns:getBookingListByGroupInFutureRequest" name="getBookingListByGroupInFutureRequest">
+  <wsdl:message name="getBookingListByGroupAndDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByGroupAndDateResponse" name="getBookingListByGroupAndDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByUserInFutureRequest">
-    <wsdl:part element="tns:getBookingListByUserInFutureRequest" name="getBookingListByUserInFutureRequest">
+  <wsdl:message name="getBookingListByUserInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByUserInFutureResponse" name="getBookingListByUserInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByUserAndDateAndCustomerRequest">
-    <wsdl:part element="tns:getBookingListByUserAndDateAndCustomerRequest" name="getBookingListByUserAndDateAndCustomerRequest">
+  <wsdl:message name="deleteBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:deleteBookingRequest" name="deleteBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByUserAndDateAndCustomerResponse">
-    <wsdl:part element="tns:getBookingListByUserAndDateAndCustomerResponse" name="getBookingListByUserAndDateAndCustomerResponse">
+  <wsdl:message name="getBookingListByUserAndDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByUserAndDateResponse" name="getBookingListByUserAndDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookingListByUserAndCustomerInFutureRequest">
-    <wsdl:part element="tns:getBookingListByUserAndCustomerInFutureRequest" name="getBookingListByUserAndCustomerInFutureRequest">
+  <wsdl:message name="getBookingListByDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getBookingListByDateResponse" name="getBookingListByDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createBookingRequest">
-    <wsdl:part element="tns:createBookingRequest" name="createBookingRequest">
+  <wsdl:message name="createBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createBookingResponse" name="createBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="Booking">
-    <wsdl:operation name="updateBooking">
-      <wsdl:input message="tns:updateBookingRequest" name="updateBookingRequest">
+  <wsdl:message name="updateBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:updateBookingResponse" name="updateBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Booking" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="createBooking" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:createBookingRequest" name="createBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getBookingById">
-      <wsdl:input message="tns:getBookingByIdRequest" name="getBookingByIdRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:getBookingByIdResponse" name="getBookingByIdResponse">
+      <wsdl:output message="tns:createBookingResponse" name="createBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByDate">
-      <wsdl:input message="tns:getBookingListByDateRequest" name="getBookingListByDateRequest">
+    <wsdl:operation name="getBookingByBookingTimeId" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getBookingByBookingTimeIdRequest" name="getBookingByBookingTimeIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getBookingListByDateResponse" name="getBookingListByDateResponse">
+      <wsdl:output message="tns:getBookingByBookingTimeIdResponse" name="getBookingByBookingTimeIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByUserInFuture">
-      <wsdl:input message="tns:getBookingListByUserInFutureRequest" name="getBookingListByUserInFutureRequest">
+    <wsdl:operation name="getBookingTimeById" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getBookingTimeByIdRequest" name="getBookingTimeByIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getBookingListByUserInFutureResponse" name="getBookingListByUserInFutureResponse">
+      <wsdl:output message="tns:getBookingTimeByIdResponse" name="getBookingTimeByIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByUserAndCustomerInFuture">
-      <wsdl:input message="tns:getBookingListByUserAndCustomerInFutureRequest" name="getBookingListByUserAndCustomerInFutureRequest">
+    <wsdl:operation name="getBookingListByUserAndDateAndCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getBookingListByUserAndDateAndCustomerRequest" name="getBookingListByUserAndDateAndCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getBookingListByUserAndCustomerInFutureResponse" name="getBookingListByUserAndCustomerInFutureResponse">
+      <wsdl:output message="tns:getBookingListByUserAndDateAndCustomerResponse" name="getBookingListByUserAndDateAndCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="success">
-      <wsdl:input message="tns:successRequest" name="successRequest">
+    <wsdl:operation name="getBookingById" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getBookingByIdRequest" name="getBookingByIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:successResponse" name="successResponse">
+      <wsdl:output message="tns:getBookingByIdResponse" name="getBookingByIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingByBookingTimeId">
-      <wsdl:input message="tns:getBookingByBookingTimeIdRequest" name="getBookingByBookingTimeIdRequest">
+    <wsdl:operation name="getBookingListByGroupInFuture" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getBookingListByGroupInFutureRequest" name="getBookingListByGroupInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getBookingByBookingTimeIdResponse" name="getBookingByBookingTimeIdResponse">
+      <wsdl:output message="tns:getBookingListByGroupInFutureResponse" name="getBookingListByGroupInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByGroupInFuture">
-      <wsdl:input message="tns:getBookingListByGroupInFutureRequest" name="getBookingListByGroupInFutureRequest">
+    <wsdl:operation name="updateBooking" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:updateBookingRequest" name="updateBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getBookingListByGroupInFutureResponse" name="getBookingListByGroupInFutureResponse">
+      <wsdl:output message="tns:updateBookingResponse" name="updateBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingTimeById">
-      <wsdl:input message="tns:getBookingTimeByIdRequest" name="getBookingTimeByIdRequest">
+    <wsdl:operation name="getBookingListByDate" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getBookingListByDateRequest" name="getBookingListByDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getBookingTimeByIdResponse" name="getBookingTimeByIdResponse">
+      <wsdl:output message="tns:getBookingListByDateResponse" name="getBookingListByDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deleteBooking">
-      <wsdl:input message="tns:deleteBookingRequest" name="deleteBookingRequest">
+    <wsdl:operation name="getBookingListByUserAndDate" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getBookingListByUserAndDateRequest" name="getBookingListByUserAndDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:deleteBookingResponse" name="deleteBookingResponse">
+      <wsdl:output message="tns:getBookingListByUserAndDateResponse" name="getBookingListByUserAndDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByUserAndDate">
-      <wsdl:input message="tns:getBookingListByUserAndDateRequest" name="getBookingListByUserAndDateRequest">
+    <wsdl:operation name="getBookingListByUserAndCustomerInFuture" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getBookingListByUserAndCustomerInFutureRequest" name="getBookingListByUserAndCustomerInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getBookingListByUserAndDateResponse" name="getBookingListByUserAndDateResponse">
+      <wsdl:output message="tns:getBookingListByUserAndCustomerInFutureResponse" name="getBookingListByUserAndCustomerInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByGroupAndDate">
-      <wsdl:input message="tns:getBookingListByGroupAndDateRequest" name="getBookingListByGroupAndDateRequest">
+    <wsdl:operation name="getBookingListByUserInFuture" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getBookingListByUserInFutureRequest" name="getBookingListByUserInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getBookingListByGroupAndDateResponse" name="getBookingListByGroupAndDateResponse">
+      <wsdl:output message="tns:getBookingListByUserInFutureResponse" name="getBookingListByUserInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createBooking">
-      <wsdl:input message="tns:createBookingRequest" name="createBookingRequest">
+    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:createBookingResponse" name="createBookingResponse">
+      <wsdl:output message="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByUserAndDateAndCustomer">
-      <wsdl:input message="tns:getBookingListByUserAndDateAndCustomerRequest" name="getBookingListByUserAndDateAndCustomerRequest">
+    <wsdl:operation name="deleteBooking" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:deleteBookingRequest" name="deleteBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getBookingListByUserAndDateAndCustomerResponse" name="getBookingListByUserAndDateAndCustomerResponse">
+      <wsdl:output message="tns:deleteBookingResponse" name="deleteBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookingListByGroupAndDate" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getBookingListByGroupAndDateRequest" name="getBookingListByGroupAndDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:getBookingListByGroupAndDateResponse" name="getBookingListByGroupAndDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BookingSoap11" type="tns:Booking">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="updateBooking">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="updateBookingRequest">
-        <soap:body use="literal"/>
+  <wsdl:binding name="BookingSoap11" type="tns:Booking" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="createBooking" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="createBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getBookingById">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingByIdRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="getBookingByIdResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="createBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByDate">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingListByDateRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getBookingByBookingTimeId" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getBookingByBookingTimeIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getBookingListByDateResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getBookingByBookingTimeIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByUserInFuture">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingListByUserInFutureRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getBookingTimeById" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getBookingTimeByIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getBookingListByUserInFutureResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getBookingTimeByIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByUserAndCustomerInFuture">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingListByUserAndCustomerInFutureRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getBookingListByUserAndDateAndCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getBookingListByUserAndDateAndCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getBookingListByUserAndCustomerInFutureResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getBookingListByUserAndDateAndCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="success">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="successRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getBookingById" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getBookingByIdRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="successResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getBookingByIdResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingByBookingTimeId">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingByBookingTimeIdRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getBookingListByGroupInFuture" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getBookingListByGroupInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getBookingByBookingTimeIdResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getBookingListByGroupInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByGroupInFuture">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingListByGroupInFutureRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="updateBooking" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="updateBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getBookingListByGroupInFutureResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="updateBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingTimeById">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingTimeByIdRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getBookingListByDate" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getBookingListByDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getBookingTimeByIdResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getBookingListByDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deleteBooking">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="deleteBookingRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getBookingListByUserAndDate" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getBookingListByUserAndDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="deleteBookingResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getBookingListByUserAndDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByUserAndDate">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingListByUserAndDateRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getBookingListByUserAndCustomerInFuture" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getBookingListByUserAndCustomerInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getBookingListByUserAndDateResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getBookingListByUserAndCustomerInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByGroupAndDate">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingListByGroupAndDateRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getBookingListByUserInFuture" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getBookingListByUserInFutureRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getBookingListByGroupAndDateResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getBookingListByUserInFutureResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createBooking">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createBookingRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="createBookingResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookingListByUserAndDateAndCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getBookingListByUserAndDateAndCustomerRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="deleteBooking" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="deleteBookingRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getBookingListByUserAndDateAndCustomerResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="deleteBookingResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookingListByGroupAndDate" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getBookingListByGroupAndDateRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="getBookingListByGroupAndDateResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="BookingService">
-    <wsdl:port binding="tns:BookingSoap11" name="BookingSoap11">
-      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
+  <wsdl:service name="BookingService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:port binding="tns:BookingSoap11" name="BookingSoap11" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:address location="https://vms3.vitero.de:443/vitero/services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

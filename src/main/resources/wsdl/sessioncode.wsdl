@@ -1,133 +1,183 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/sessioncode" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/sessioncode" targetNamespace="http://www.vitero.de/schema/sessioncode">
-  <wsdl:types>
-    <xs:schema xmlns:viterosessioncode="http://www.vitero.de/schema/sessioncode" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/sessioncode" version="1.0">
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/sessioncode" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/sessioncode" targetNamespace="http://www.vitero.de/schema/sessioncode">
+  <wsdl:types xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:viterosessioncode="http://www.vitero.de/schema/sessioncode" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/sessioncode" version="1.0">
         
   <!-- AVAILABLE REQUESTS AND RESPONSES -->
-  <xs:element name="successRequest" type="xs:string"/> <!-- do not use -->  
-  <xs:element name="successResponse">
-    <xs:complexType>
-    <xs:all>
-      <xs:element name="request" type="xs:string"/>
-    </xs:all>
-  </xs:complexType>
-  </xs:element>
+  <xs:element name="successRequest" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/> <!-- do not use -->  
+  <xs:element name="successResponse" type="viterosessioncode:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="createBookingSessionCodeRequest">
-    <xs:complexType>
-  	  <xs:all>
-	    <xs:element name="sessioncode">
-	      <xs:complexType>
-			<xs:all>
-			  <xs:element name="bookingid" type="xs:int"/>
-			  <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>  
-			  <xs:element minOccurs="0" name="timezone" type="xs:string"/>
-			  <xs:element minOccurs="0" name="codelength" type="xs:int"/>        
+  <xs:element name="createBookingSessionCodeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	    <xs:element name="sessioncode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	      <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			  <xs:element name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>	  
+			  <xs:element minOccurs="0" name="codelength" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			  <xs:element minOccurs="0" name="role" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/> 
+			  <xs:element minOccurs="0" name="allownotexistingusers" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			  <xs:element minOccurs="0" name="allownotassignedusers" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
 		    </xs:all>
 		  </xs:complexType>
 	    </xs:element>
 	  </xs:all>
 	</xs:complexType>
   </xs:element> 
-  <xs:element name="createBookingSessionCodeResponse" type="viterosessioncode:codetype"/>
+  <xs:element name="createBookingSessionCodeResponse" type="viterosessioncode:codetype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="createPersonalBookingSessionCodeRequest">
-    <xs:complexType>
-  	  <xs:all>
-	    <xs:element name="sessioncode">
-	      <xs:complexType>
-			<xs:all>
-			  <xs:element name="userid" type="xs:int"/>
-			  <xs:element name="bookingid" type="xs:int"/>
-			  <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>  
-			  <xs:element minOccurs="0" name="timezone" type="xs:string"/>
-			  <xs:element minOccurs="0" name="codelength" type="xs:int"/>        
-		    </xs:all>
-		  </xs:complexType>
-	    </xs:element>
-	  </xs:all>
-	</xs:complexType>
-  </xs:element> 
-  <xs:element name="createPersonalBookingSessionCodeResponse" type="viterosessioncode:codetype"/>
-  
-  <xs:element name="createPersonalGroupSessionCodeRequest">
-    <xs:complexType>
-  	  <xs:all>
-  		<xs:element name="sessioncode">
-  		  <xs:complexType>
-		    <xs:all>
-		      <xs:element name="userid" type="xs:int"/>
-		      <xs:element name="groupid" type="xs:int"/>
-		      <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>  
-		      <xs:element minOccurs="0" name="timezone" type="xs:string"/>
-		      <xs:element minOccurs="0" name="codelength" type="xs:int"/>        
-		      <xs:element minOccurs="0" name="allownotassignedusers" type="xs:boolean"/>  
+  <xs:element name="createGroupSessionCodeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="sessioncode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		  <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		      <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		      <xs:element minOccurs="0" name="expirationdate" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>  
+		      <xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		      <xs:element minOccurs="0" name="codelength" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			  <xs:element minOccurs="0" name="role" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/> 
+			  <xs:element minOccurs="0" name="allownotexistingusers" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			  <xs:element minOccurs="0" name="allownotassignedusers" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
 		    </xs:all>
 		  </xs:complexType>
   		</xs:element>
   	  </xs:all>
     </xs:complexType>
   </xs:element> 
-  <xs:element name="createPersonalGroupSessionCodeResponse" type="viterosessioncode:codetype"/>
+  <xs:element name="createGroupSessionCodeResponse" type="viterosessioncode:codetype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="createVmsSessionCodeRequest">
-    <xs:complexType>
-  	  <xs:all>
-  		<xs:element name="sessioncode">
-  		  <xs:complexType>
-		    <xs:all>
-		      <xs:element name="userid" type="xs:int"/>
-		      <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>  
-		      <xs:element minOccurs="0" name="timezone" type="xs:string"/>
-		      <xs:element minOccurs="0" name="codelength" type="xs:int"/>        
-		    </xs:all>
-		  </xs:complexType>
-  		</xs:element>
-  	  </xs:all>
-    </xs:complexType>
-  </xs:element> 
-  <xs:element name="createVmsSessionCodeResponse" type="viterosessioncode:codetype"/>
   
-  <xs:element name="createAppointmentConfirmationSessionCodeRequest">
-    <xs:complexType>
-  	  <xs:all>
-	    <xs:element name="sessioncode">
-	      <xs:complexType>
-			<xs:all>
-			  <xs:element name="bookingid" type="xs:int"/>
-			  <xs:element name="registrationdeadline" type="xs:int"/>     
-			  <xs:element minOccurs="0" name="role" type="xs:int"/> 
-			  <xs:element minOccurs="0" name="codelength" type="xs:int"/>        
+  <xs:element name="createPersonalBookingSessionCodeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	    <xs:element name="sessioncode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	      <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			  <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			  <xs:element name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			  <xs:element minOccurs="0" name="expirationdate" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>  
+			  <xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			  <xs:element minOccurs="0" name="codelength" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>        
 		    </xs:all>
 		  </xs:complexType>
 	    </xs:element>
 	  </xs:all>
 	</xs:complexType>
   </xs:element> 
-  <xs:element name="createAppointmentConfirmationSessionCodeResponse" type="viterosessioncode:codetype"/>
+  <xs:element name="createPersonalBookingSessionCodeResponse" type="viterosessioncode:codetype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="createPersonalGroupSessionCodeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="sessioncode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		  <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		      <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		      <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		      <xs:element minOccurs="0" name="expirationdate" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>  
+		      <xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		      <xs:element minOccurs="0" name="codelength" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>        
+		      <xs:element minOccurs="0" name="allownotassignedusers" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>  
+		    </xs:all>
+		  </xs:complexType>
+  		</xs:element>
+  	  </xs:all>
+    </xs:complexType>
+  </xs:element> 
+  <xs:element name="createPersonalGroupSessionCodeResponse" type="viterosessioncode:codetype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="createVmsSessionCodeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element name="sessioncode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		  <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		      <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		      <xs:element minOccurs="0" name="expirationdate" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>  
+		      <xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		      <xs:element minOccurs="0" name="codelength" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>        
+		    </xs:all>
+		  </xs:complexType>
+  		</xs:element>
+  	  </xs:all>
+    </xs:complexType>
+  </xs:element> 
+  <xs:element name="createVmsSessionCodeResponse" type="viterosessioncode:codetype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="createAppointmentConfirmationSessionCodeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	    <xs:element name="sessioncode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	      <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			  <xs:element name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			  <xs:element name="registrationdeadline" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>     
+			  <xs:element minOccurs="0" name="role" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/> 
+			  <xs:element minOccurs="0" name="codelength" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			  <xs:element minOccurs="0" name="registrationlimit" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>            
+		    </xs:all>
+		  </xs:complexType>
+	    </xs:element>
+	  </xs:all>
+	</xs:complexType>
+  </xs:element> 
+  <xs:element name="createAppointmentConfirmationSessionCodeResponse" type="viterosessioncode:codetype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       
-  <xs:element name="deleteSessionCodeRequest" type="viterosessioncode:codetype"/>
-  
-  <xs:element name="getSessionCodeInformationRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="code" type="xs:string"/>
-		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+  <xs:element name="createWebaccessSessionCodeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	  <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	    <xs:element name="sessioncode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	      <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			  <xs:element name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>   
+			  <xs:element minOccurs="0" name="codelength" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>        
+		    </xs:all>
+		  </xs:complexType>
+	    </xs:element>
+	  </xs:all>
+	</xs:complexType>
+  </xs:element> 
+  <xs:element name="createWebaccessSessionCodeResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="code" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>    
+        <xs:element name="browserurl" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element name="appurl" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>  
       </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getSessionCodeInformationResponse">
-  	<xs:complexType>
-  		<xs:all>
-  			<xs:element name="sessioncode">
-  				<xs:complexType>
-  					<xs:all>
-  						<xs:element name="type" type="xs:string"/>
-  						<xs:element name="userid" type="xs:int"/>
-				        <xs:element minOccurs="0" name="bookingid" type="xs:int"/>
-				        <xs:element minOccurs="0" name="groupid" type="xs:int"/>
-				        <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>  
-				        <xs:element name="allownotexistingusers" type="xs:boolean"/>
-				        <xs:element name="allownotassignedusers" type="xs:boolean"/>
+  
+  <xs:element name="deleteSessionCodeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="code" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteSessionCodeResponse" type="viterosessioncode:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="getSessionCodeInformationRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="code" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		<xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSessionCodeInformationResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  			<xs:element name="sessioncode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  				<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  					<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  						<xs:element name="type" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  						<xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+				        <xs:element minOccurs="0" name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+				        <xs:element minOccurs="0" name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+				        <xs:element minOccurs="0" name="expirationdate" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>  
+				        <xs:element name="allownotexistingusers" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+				        <xs:element name="allownotassignedusers" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   					</xs:all>
   				</xs:complexType>
   			</xs:element>
@@ -135,319 +185,380 @@
   	</xs:complexType>
   </xs:element>
   
-  <xs:element name="getPersonalBookingSessionCodesRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="userid" type="xs:int"/>
-		<xs:element name="bookingid" type="xs:int"/>
-		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+  <xs:element name="getPersonalBookingSessionCodesRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		<xs:element name="bookingid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		<xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getPersonalBookingSessionCodesResponse">
-  	<xs:complexType>
-  		<xs:sequence>
-  			<xs:element maxOccurs="unbounded" minOccurs="0" name="sessioncode" type="viterosessioncode:sessioncodebyidtype"/>
+  <xs:element name="getPersonalBookingSessionCodesResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  			<xs:element maxOccurs="unbounded" minOccurs="0" name="sessioncode" type="viterosessioncode:sessioncodebyidtype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   		</xs:sequence>
   	</xs:complexType>
   </xs:element>
   
-  <xs:element name="getPersonalGroupSessionCodesRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="userid" type="xs:int"/>
-		<xs:element name="groupid" type="xs:int"/>
-		<xs:element minOccurs="0" name="timezone" type="xs:string"/>
+  <xs:element name="getPersonalGroupSessionCodesRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		<xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		<xs:element minOccurs="0" name="timezone" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getPersonalGroupSessionCodesResponse">
-  	<xs:complexType>
-  		<xs:sequence>
-  			<xs:element maxOccurs="unbounded" minOccurs="0" name="sessioncode" type="viterosessioncode:sessioncodebyidtype"/>
+  <xs:element name="getPersonalGroupSessionCodesResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  			<xs:element maxOccurs="unbounded" minOccurs="0" name="sessioncode" type="viterosessioncode:sessioncodebyidtype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   		</xs:sequence>
   	</xs:complexType>
   </xs:element>
 
-  <xs:element name="getTestroomSessionCodeRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="userid" type="xs:int"/>
+  <xs:element name="getTestroomSessionCodeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getTestroomSessionCodeResponse" type="viterosessioncode:codetype"/>
+  <xs:element name="getTestroomSessionCodeResponse" type="viterosessioncode:codetype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       
   <!-- TYPES -->  
-  <xs:complexType name="codetype">
-    <xs:all>
-      <xs:element name="code" type="xs:string"/>    
+  <xs:complexType name="codetype" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="code" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>    
     </xs:all>
   </xs:complexType>
   
-  <xs:complexType name="sessioncodebyidtype">
-	<xs:all>
-	  <xs:element name="code" type="xs:string"/>  						
-      <xs:element minOccurs="0" name="expirationdate" type="xs:string"/>		
-      <xs:element minOccurs="0" name="allownotassignedusers" type="xs:boolean"/>	
-      <xs:element minOccurs="0" name="allownotexistingusers" type="xs:boolean"/>					        
+  <xs:complexType name="sessioncodebyidtype" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	  <xs:element name="code" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>  						
+      <xs:element minOccurs="0" name="expirationdate" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>		
+      <xs:element minOccurs="0" name="allownotassignedusers" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>	
+      <xs:element minOccurs="0" name="allownotexistingusers" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>					        
 	</xs:all>
   </xs:complexType>
 
+  <xs:complexType name="successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="request" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    </xs:all>
+  </xs:complexType>
+  
 </xs:schema>
   </wsdl:types>
-  <wsdl:message name="deleteSessionCodeRequest">
-    <wsdl:part element="tns:deleteSessionCodeRequest" name="deleteSessionCodeRequest">
+  <wsdl:message name="createPersonalGroupSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createPersonalGroupSessionCodeResponse" name="createPersonalGroupSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createPersonalGroupSessionCodeResponse">
-    <wsdl:part element="tns:createPersonalGroupSessionCodeResponse" name="createPersonalGroupSessionCodeResponse">
+  <wsdl:message name="createWebaccessSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createWebaccessSessionCodeResponse" name="createWebaccessSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createBookingSessionCodeRequest">
-    <wsdl:part element="tns:createBookingSessionCodeRequest" name="createBookingSessionCodeRequest">
+  <wsdl:message name="getPersonalGroupSessionCodesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getPersonalGroupSessionCodesResponse" name="getPersonalGroupSessionCodesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createVmsSessionCodeResponse">
-    <wsdl:part element="tns:createVmsSessionCodeResponse" name="createVmsSessionCodeResponse">
+  <wsdl:message name="createAppointmentConfirmationSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createAppointmentConfirmationSessionCodeRequest" name="createAppointmentConfirmationSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getPersonalBookingSessionCodesResponse">
-    <wsdl:part element="tns:getPersonalBookingSessionCodesResponse" name="getPersonalBookingSessionCodesResponse">
+  <wsdl:message name="createAppointmentConfirmationSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createAppointmentConfirmationSessionCodeResponse" name="createAppointmentConfirmationSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createVmsSessionCodeRequest">
-    <wsdl:part element="tns:createVmsSessionCodeRequest" name="createVmsSessionCodeRequest">
+  <wsdl:message name="getPersonalBookingSessionCodesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getPersonalBookingSessionCodesResponse" name="getPersonalBookingSessionCodesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createBookingSessionCodeResponse">
-    <wsdl:part element="tns:createBookingSessionCodeResponse" name="createBookingSessionCodeResponse">
+  <wsdl:message name="deleteSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:deleteSessionCodeResponse" name="deleteSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createPersonalBookingSessionCodeRequest">
-    <wsdl:part element="tns:createPersonalBookingSessionCodeRequest" name="createPersonalBookingSessionCodeRequest">
+  <wsdl:message name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createPersonalGroupSessionCodeRequest">
-    <wsdl:part element="tns:createPersonalGroupSessionCodeRequest" name="createPersonalGroupSessionCodeRequest">
+  <wsdl:message name="createBookingSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createBookingSessionCodeRequest" name="createBookingSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successResponse">
-    <wsdl:part element="tns:successResponse" name="successResponse">
+  <wsdl:message name="createBookingSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createBookingSessionCodeResponse" name="createBookingSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getTestroomSessionCodeResponse">
-    <wsdl:part element="tns:getTestroomSessionCodeResponse" name="getTestroomSessionCodeResponse">
+  <wsdl:message name="createPersonalBookingSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createPersonalBookingSessionCodeResponse" name="createPersonalBookingSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getSessionCodeInformationResponse">
-    <wsdl:part element="tns:getSessionCodeInformationResponse" name="getSessionCodeInformationResponse">
+  <wsdl:message name="deleteSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:deleteSessionCodeRequest" name="deleteSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getPersonalGroupSessionCodesResponse">
-    <wsdl:part element="tns:getPersonalGroupSessionCodesResponse" name="getPersonalGroupSessionCodesResponse">
+  <wsdl:message name="getPersonalBookingSessionCodesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getPersonalBookingSessionCodesRequest" name="getPersonalBookingSessionCodesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getSessionCodeInformationRequest">
-    <wsdl:part element="tns:getSessionCodeInformationRequest" name="getSessionCodeInformationRequest">
+  <wsdl:message name="getSessionCodeInformationRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getSessionCodeInformationRequest" name="getSessionCodeInformationRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successRequest">
-    <wsdl:part element="tns:successRequest" name="successRequest">
+  <wsdl:message name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createPersonalBookingSessionCodeResponse">
-    <wsdl:part element="tns:createPersonalBookingSessionCodeResponse" name="createPersonalBookingSessionCodeResponse">
+  <wsdl:message name="createWebaccessSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createWebaccessSessionCodeRequest" name="createWebaccessSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getPersonalBookingSessionCodesRequest">
-    <wsdl:part element="tns:getPersonalBookingSessionCodesRequest" name="getPersonalBookingSessionCodesRequest">
+  <wsdl:message name="createGroupSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createGroupSessionCodeRequest" name="createGroupSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createAppointmentConfirmationSessionCodeRequest">
-    <wsdl:part element="tns:createAppointmentConfirmationSessionCodeRequest" name="createAppointmentConfirmationSessionCodeRequest">
+  <wsdl:message name="getSessionCodeInformationResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getSessionCodeInformationResponse" name="getSessionCodeInformationResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getPersonalGroupSessionCodesRequest">
-    <wsdl:part element="tns:getPersonalGroupSessionCodesRequest" name="getPersonalGroupSessionCodesRequest">
+  <wsdl:message name="createGroupSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createGroupSessionCodeResponse" name="createGroupSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getTestroomSessionCodeRequest">
-    <wsdl:part element="tns:getTestroomSessionCodeRequest" name="getTestroomSessionCodeRequest">
+  <wsdl:message name="createVmsSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createVmsSessionCodeResponse" name="createVmsSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createAppointmentConfirmationSessionCodeResponse">
-    <wsdl:part element="tns:createAppointmentConfirmationSessionCodeResponse" name="createAppointmentConfirmationSessionCodeResponse">
+  <wsdl:message name="createVmsSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createVmsSessionCodeRequest" name="createVmsSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="SessionCode">
-    <wsdl:operation name="deleteSessionCode">
-      <wsdl:input message="tns:deleteSessionCodeRequest" name="deleteSessionCodeRequest">
+  <wsdl:message name="getTestroomSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getTestroomSessionCodeRequest" name="getTestroomSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createPersonalBookingSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createPersonalBookingSessionCodeRequest" name="createPersonalBookingSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createPersonalGroupSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createPersonalGroupSessionCodeRequest" name="createPersonalGroupSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonalGroupSessionCodesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getPersonalGroupSessionCodesRequest" name="getPersonalGroupSessionCodesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTestroomSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getTestroomSessionCodeResponse" name="getTestroomSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="createPersonalGroupSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:createPersonalGroupSessionCodeRequest" name="createPersonalGroupSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="createPersonalGroupSessionCode">
-      <wsdl:input message="tns:createPersonalGroupSessionCodeRequest" name="createPersonalGroupSessionCodeRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:createPersonalGroupSessionCodeResponse" name="createPersonalGroupSessionCodeResponse">
+      <wsdl:output message="tns:createPersonalGroupSessionCodeResponse" name="createPersonalGroupSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createBookingSessionCode">
-      <wsdl:input message="tns:createBookingSessionCodeRequest" name="createBookingSessionCodeRequest">
+    <wsdl:operation name="createWebaccessSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:createWebaccessSessionCodeRequest" name="createWebaccessSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:createBookingSessionCodeResponse" name="createBookingSessionCodeResponse">
+      <wsdl:output message="tns:createWebaccessSessionCodeResponse" name="createWebaccessSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createVmsSessionCode">
-      <wsdl:input message="tns:createVmsSessionCodeRequest" name="createVmsSessionCodeRequest">
+    <wsdl:operation name="getPersonalGroupSessionCodes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getPersonalGroupSessionCodesRequest" name="getPersonalGroupSessionCodesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:createVmsSessionCodeResponse" name="createVmsSessionCodeResponse">
+      <wsdl:output message="tns:getPersonalGroupSessionCodesResponse" name="getPersonalGroupSessionCodesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getPersonalBookingSessionCodes">
-      <wsdl:input message="tns:getPersonalBookingSessionCodesRequest" name="getPersonalBookingSessionCodesRequest">
+    <wsdl:operation name="createAppointmentConfirmationSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:createAppointmentConfirmationSessionCodeRequest" name="createAppointmentConfirmationSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getPersonalBookingSessionCodesResponse" name="getPersonalBookingSessionCodesResponse">
+      <wsdl:output message="tns:createAppointmentConfirmationSessionCodeResponse" name="createAppointmentConfirmationSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createPersonalBookingSessionCode">
-      <wsdl:input message="tns:createPersonalBookingSessionCodeRequest" name="createPersonalBookingSessionCodeRequest">
+    <wsdl:operation name="getPersonalBookingSessionCodes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getPersonalBookingSessionCodesRequest" name="getPersonalBookingSessionCodesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:createPersonalBookingSessionCodeResponse" name="createPersonalBookingSessionCodeResponse">
+      <wsdl:output message="tns:getPersonalBookingSessionCodesResponse" name="getPersonalBookingSessionCodesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="success">
-      <wsdl:input message="tns:successRequest" name="successRequest">
+    <wsdl:operation name="deleteSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:deleteSessionCodeRequest" name="deleteSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:successResponse" name="successResponse">
+      <wsdl:output message="tns:deleteSessionCodeResponse" name="deleteSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getTestroomSessionCode">
-      <wsdl:input message="tns:getTestroomSessionCodeRequest" name="getTestroomSessionCodeRequest">
+    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getTestroomSessionCodeResponse" name="getTestroomSessionCodeResponse">
+      <wsdl:output message="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getSessionCodeInformation">
-      <wsdl:input message="tns:getSessionCodeInformationRequest" name="getSessionCodeInformationRequest">
+    <wsdl:operation name="createBookingSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:createBookingSessionCodeRequest" name="createBookingSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getSessionCodeInformationResponse" name="getSessionCodeInformationResponse">
+      <wsdl:output message="tns:createBookingSessionCodeResponse" name="createBookingSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getPersonalGroupSessionCodes">
-      <wsdl:input message="tns:getPersonalGroupSessionCodesRequest" name="getPersonalGroupSessionCodesRequest">
+    <wsdl:operation name="createPersonalBookingSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:createPersonalBookingSessionCodeRequest" name="createPersonalBookingSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getPersonalGroupSessionCodesResponse" name="getPersonalGroupSessionCodesResponse">
+      <wsdl:output message="tns:createPersonalBookingSessionCodeResponse" name="createPersonalBookingSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createAppointmentConfirmationSessionCode">
-      <wsdl:input message="tns:createAppointmentConfirmationSessionCodeRequest" name="createAppointmentConfirmationSessionCodeRequest">
+    <wsdl:operation name="getSessionCodeInformation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getSessionCodeInformationRequest" name="getSessionCodeInformationRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:createAppointmentConfirmationSessionCodeResponse" name="createAppointmentConfirmationSessionCodeResponse">
+      <wsdl:output message="tns:getSessionCodeInformationResponse" name="getSessionCodeInformationResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGroupSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:createGroupSessionCodeRequest" name="createGroupSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:createGroupSessionCodeResponse" name="createGroupSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createVmsSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:createVmsSessionCodeRequest" name="createVmsSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:createVmsSessionCodeResponse" name="createVmsSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTestroomSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getTestroomSessionCodeRequest" name="getTestroomSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:getTestroomSessionCodeResponse" name="getTestroomSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="SessionCodeSoap11" type="tns:SessionCode">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="deleteSessionCode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="deleteSessionCodeRequest">
-        <soap:body use="literal"/>
+  <wsdl:binding name="SessionCodeSoap11" type="tns:SessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="createPersonalGroupSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="createPersonalGroupSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="createPersonalGroupSessionCode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createPersonalGroupSessionCodeRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="createPersonalGroupSessionCodeResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="createPersonalGroupSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createBookingSessionCode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createBookingSessionCodeRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="createWebaccessSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="createWebaccessSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="createBookingSessionCodeResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="createWebaccessSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createVmsSessionCode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createVmsSessionCodeRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getPersonalGroupSessionCodes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getPersonalGroupSessionCodesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="createVmsSessionCodeResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getPersonalGroupSessionCodesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getPersonalBookingSessionCodes">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getPersonalBookingSessionCodesRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="createAppointmentConfirmationSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="createAppointmentConfirmationSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getPersonalBookingSessionCodesResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="createAppointmentConfirmationSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createPersonalBookingSessionCode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createPersonalBookingSessionCodeRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getPersonalBookingSessionCodes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getPersonalBookingSessionCodesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="createPersonalBookingSessionCodeResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getPersonalBookingSessionCodesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="success">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="successRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="deleteSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="deleteSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="successResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="deleteSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getTestroomSessionCode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getTestroomSessionCodeRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getTestroomSessionCodeResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getSessionCodeInformation">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getSessionCodeInformationRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="createBookingSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="createBookingSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getSessionCodeInformationResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="createBookingSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getPersonalGroupSessionCodes">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getPersonalGroupSessionCodesRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="createPersonalBookingSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="createPersonalBookingSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getPersonalGroupSessionCodesResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="createPersonalBookingSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createAppointmentConfirmationSessionCode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createAppointmentConfirmationSessionCodeRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getSessionCodeInformation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getSessionCodeInformationRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="createAppointmentConfirmationSessionCodeResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getSessionCodeInformationResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGroupSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="createGroupSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="createGroupSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createVmsSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="createVmsSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="createVmsSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTestroomSessionCode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getTestroomSessionCodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="getTestroomSessionCodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="SessionCodeService">
-    <wsdl:port binding="tns:SessionCodeSoap11" name="SessionCodeSoap11">
-      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
+  <wsdl:service name="SessionCodeService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:port binding="tns:SessionCodeSoap11" name="SessionCodeSoap11" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:address location="https://vms3.vitero.de:443/vitero/services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

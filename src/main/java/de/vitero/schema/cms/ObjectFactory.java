@@ -25,12 +25,17 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _SuccessRequest_QNAME = new QName("http://www.vitero.de/schema/cms", "successRequest");
+    private final static QName _SuccessResponse_QNAME = new QName("http://www.vitero.de/schema/cms", "successResponse");
     private final static QName _GetGroupFolderResponse_QNAME = new QName("http://www.vitero.de/schema/cms", "getGroupFolderResponse");
     private final static QName _GetCustomerFolderResponse_QNAME = new QName("http://www.vitero.de/schema/cms", "getCustomerFolderResponse");
-    private final static QName _CreateFolderResponse_QNAME = new QName("http://www.vitero.de/schema/cms", "createFolderResponse");
-    private final static QName _DeleteNodeRequest_QNAME = new QName("http://www.vitero.de/schema/cms", "deleteNodeRequest");
+    private final static QName _DeleteNodeResponse_QNAME = new QName("http://www.vitero.de/schema/cms", "deleteNodeResponse");
+    private final static QName _RenameNodeResponse_QNAME = new QName("http://www.vitero.de/schema/cms", "renameNodeResponse");
     private final static QName _CopyNodeRequest_QNAME = new QName("http://www.vitero.de/schema/cms", "copyNodeRequest");
+    private final static QName _CopyNodeResponse_QNAME = new QName("http://www.vitero.de/schema/cms", "copyNodeResponse");
     private final static QName _MoveNodeRequest_QNAME = new QName("http://www.vitero.de/schema/cms", "moveNodeRequest");
+    private final static QName _MoveNodeResponse_QNAME = new QName("http://www.vitero.de/schema/cms", "moveNodeResponse");
+    private final static QName _ChangeDisplaytypeResponse_QNAME = new QName("http://www.vitero.de/schema/cms", "changeDisplaytypeResponse");
+    private final static QName _ChangeVisibilityResponse_QNAME = new QName("http://www.vitero.de/schema/cms", "changeVisibilityResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.vitero.schema.cms
@@ -80,11 +85,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Nodeid }
+     * Create an instance of {@link CreateFolderResponse }
      * 
      */
-    public Nodeid createNodeid() {
-        return new Nodeid();
+    public CreateFolderResponse createCreateFolderResponse() {
+        return new CreateFolderResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteNodeRequest }
+     * 
+     */
+    public DeleteNodeRequest createDeleteNodeRequest() {
+        return new DeleteNodeRequest();
     }
 
     /**
@@ -109,6 +122,30 @@ public class ObjectFactory {
      */
     public ChangeDisplaytypeRequest createChangeDisplaytypeRequest() {
         return new ChangeDisplaytypeRequest();
+    }
+
+    /**
+     * Create an instance of {@link ChangeVisibilityRequest }
+     * 
+     */
+    public ChangeVisibilityRequest createChangeVisibilityRequest() {
+        return new ChangeVisibilityRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetDisplaytypeRequest }
+     * 
+     */
+    public GetDisplaytypeRequest createGetDisplaytypeRequest() {
+        return new GetDisplaytypeRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetDisplaytypeResponse }
+     * 
+     */
+    public GetDisplaytypeResponse createGetDisplaytypeResponse() {
+        return new GetDisplaytypeResponse();
     }
 
     /**
@@ -145,6 +182,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/cms", name = "successResponse")
+    public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_SuccessResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link WrappedFolder }{@code >}}
      * 
      */
@@ -163,21 +209,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Nodeid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/cms", name = "createFolderResponse")
-    public JAXBElement<Nodeid> createCreateFolderResponse(Nodeid value) {
-        return new JAXBElement<Nodeid>(_CreateFolderResponse_QNAME, Nodeid.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/cms", name = "deleteNodeResponse")
+    public JAXBElement<SuccessResponse> createDeleteNodeResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_DeleteNodeResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Nodeid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/cms", name = "deleteNodeRequest")
-    public JAXBElement<Nodeid> createDeleteNodeRequest(Nodeid value) {
-        return new JAXBElement<Nodeid>(_DeleteNodeRequest_QNAME, Nodeid.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/cms", name = "renameNodeResponse")
+    public JAXBElement<SuccessResponse> createRenameNodeResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_RenameNodeResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
@@ -190,12 +236,48 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/cms", name = "copyNodeResponse")
+    public JAXBElement<SuccessResponse> createCopyNodeResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_CopyNodeResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SourceAndDestNodeId }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/cms", name = "moveNodeRequest")
     public JAXBElement<SourceAndDestNodeId> createMoveNodeRequest(SourceAndDestNodeId value) {
         return new JAXBElement<SourceAndDestNodeId>(_MoveNodeRequest_QNAME, SourceAndDestNodeId.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/cms", name = "moveNodeResponse")
+    public JAXBElement<SuccessResponse> createMoveNodeResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_MoveNodeResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/cms", name = "changeDisplaytypeResponse")
+    public JAXBElement<SuccessResponse> createChangeDisplaytypeResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_ChangeDisplaytypeResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/cms", name = "changeVisibilityResponse")
+    public JAXBElement<SuccessResponse> createChangeVisibilityResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_ChangeVisibilityResponse_QNAME, SuccessResponse.class, null, value);
     }
 
 }

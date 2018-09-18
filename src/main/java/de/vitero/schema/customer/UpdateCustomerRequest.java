@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *                   &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *                   &lt;element name="shortname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *                   &lt;element name="displayname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                   &lt;element name="strictwsdl" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *                 &lt;/all&gt;
  *               &lt;/restriction&gt;
  *             &lt;/complexContent&gt;
@@ -87,6 +88,7 @@ public class UpdateCustomerRequest {
      *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
      *         &lt;element name="shortname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
      *         &lt;element name="displayname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *         &lt;element name="strictwsdl" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
      *       &lt;/all&gt;
      *     &lt;/restriction&gt;
      *   &lt;/complexContent&gt;
@@ -104,6 +106,7 @@ public class UpdateCustomerRequest {
         protected int id;
         protected String shortname;
         protected String displayname;
+        protected Boolean strictwsdl;
 
         /**
          * Obtient la valeur de la propriété id.
@@ -167,6 +170,30 @@ public class UpdateCustomerRequest {
          */
         public void setDisplayname(String value) {
             this.displayname = value;
+        }
+
+        /**
+         * Obtient la valeur de la propriété strictwsdl.
+         * 
+         * @return
+         *     possible object is
+         *     {@link Boolean }
+         *     
+         */
+        public Boolean isStrictwsdl() {
+            return strictwsdl;
+        }
+
+        /**
+         * Définit la valeur de la propriété strictwsdl.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link Boolean }
+         *     
+         */
+        public void setStrictwsdl(Boolean value) {
+            this.strictwsdl = value;
         }
 
     }

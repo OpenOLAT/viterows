@@ -32,6 +32,12 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="repetitionenddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="eventname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="eventcomment" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="eventcompany" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="eventreferent" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="eventsubtitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="audience" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="html5client" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -63,6 +69,13 @@ public class Newbookingtype {
     protected String repetitionenddate;
     protected String timezone;
     protected String eventname;
+    protected String eventcomment;
+    protected String eventcompany;
+    protected String eventreferent;
+    protected String eventsubtitle;
+    protected Boolean audience;
+    @XmlElement(name = "html5client")
+    protected Boolean html5Client;
 
     /**
      * Obtient la valeur de la propriété start.
@@ -390,6 +403,150 @@ public class Newbookingtype {
      */
     public void setEventname(String value) {
         this.eventname = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété eventcomment.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEventcomment() {
+        return eventcomment;
+    }
+
+    /**
+     * Définit la valeur de la propriété eventcomment.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEventcomment(String value) {
+        this.eventcomment = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété eventcompany.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEventcompany() {
+        return eventcompany;
+    }
+
+    /**
+     * Définit la valeur de la propriété eventcompany.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEventcompany(String value) {
+        this.eventcompany = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété eventreferent.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEventreferent() {
+        return eventreferent;
+    }
+
+    /**
+     * Définit la valeur de la propriété eventreferent.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEventreferent(String value) {
+        this.eventreferent = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété eventsubtitle.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEventsubtitle() {
+        return eventsubtitle;
+    }
+
+    /**
+     * Définit la valeur de la propriété eventsubtitle.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEventsubtitle(String value) {
+        this.eventsubtitle = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété audience.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isAudience() {
+        return audience;
+    }
+
+    /**
+     * Définit la valeur de la propriété audience.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setAudience(Boolean value) {
+        this.audience = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété html5Client.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isHtml5Client() {
+        return html5Client;
+    }
+
+    /**
+     * Définit la valeur de la propriété html5Client.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setHtml5Client(Boolean value) {
+        this.html5Client = value;
     }
 
 }

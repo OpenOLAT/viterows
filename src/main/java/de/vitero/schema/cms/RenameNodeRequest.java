@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;all&gt;
  *         &lt;element name="nodeid" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="strictwsdl" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,6 +39,7 @@ public class RenameNodeRequest {
     protected long nodeid;
     @XmlElement(required = true)
     protected String name;
+    protected Boolean strictwsdl;
 
     /**
      * Obtient la valeur de la propriété nodeid.
@@ -77,6 +79,30 @@ public class RenameNodeRequest {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété strictwsdl.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isStrictwsdl() {
+        return strictwsdl;
+    }
+
+    /**
+     * Définit la valeur de la propriété strictwsdl.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setStrictwsdl(Boolean value) {
+        this.strictwsdl = value;
     }
 
 }

@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="sourcecustomerid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="destcustomerid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="strictwsdl" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,6 +39,7 @@ public class MoveUserToCustomerRequest {
     protected int userid;
     protected int sourcecustomerid;
     protected int destcustomerid;
+    protected Boolean strictwsdl;
 
     /**
      * Obtient la valeur de la propriété userid.
@@ -85,6 +87,30 @@ public class MoveUserToCustomerRequest {
      */
     public void setDestcustomerid(int value) {
         this.destcustomerid = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété strictwsdl.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isStrictwsdl() {
+        return strictwsdl;
+    }
+
+    /**
+     * Définit la valeur de la propriété strictwsdl.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setStrictwsdl(Boolean value) {
+        this.strictwsdl = value;
     }
 
 }

@@ -1,346 +1,419 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/customer" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/customer" targetNamespace="http://www.vitero.de/schema/customer">
-  <wsdl:types>
-    <xs:schema xmlns:viterocustomer="http://www.vitero.de/schema/customer" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/customer" version="1.0">
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/customer" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/customer" targetNamespace="http://www.vitero.de/schema/customer">
+  <wsdl:types xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:viterocustomer="http://www.vitero.de/schema/customer" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/customer" version="1.0">
   
   <!-- AVAILABLE REQUESTS AND RESPONSES -->
-  <xs:element name="successRequest" type="xs:string"/> <!-- do not use -->
-  <xs:element name="successResponse">
-    <xs:complexType>
-    <xs:all>
-      <xs:element name="request" type="xs:string"/>
-    </xs:all>
-  </xs:complexType>
-  </xs:element>
+  <xs:element name="successRequest" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/> <!-- do not use -->
+  <xs:element name="successResponse" type="viterocustomer:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getCustomerRequest" type="viterocustomer:customerid"/>
-  <xs:element name="getCustomerResponse" type="viterocustomer:customer"/>
+  <xs:element name="getCustomerRequest" type="viterocustomer:customerid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="getCustomerResponse" type="viterocustomer:customer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getCustomerByNameRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="customername" type="xs:string"/>
+  <xs:element name="getCustomerByNameRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="customername" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getCustomerByNameResponse" type="viterocustomer:customer"/>
+  <xs:element name="getCustomerByNameResponse" type="viterocustomer:customer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getCustomerListRequest"/>
-  <xs:element name="getCustomerListResponse">
-    <xs:complexType>
-      <xs:sequence>
-  		<xs:element maxOccurs="unbounded" minOccurs="0" name="customer" type="viterocustomer:customertype"/>
+  <xs:element name="getCustomerListRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element minOccurs="0" name="children" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  	  </xs:all>
+  	</xs:complexType>
+  </xs:element>
+  <xs:element name="getCustomerListResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  		<xs:element maxOccurs="unbounded" minOccurs="0" name="customer" type="viterocustomer:customertype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	  </xs:sequence>
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="createCustomerRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="customer">
-          <xs:complexType>
-            <xs:all>
-              <xs:element name="shortname" type="xs:string"/>
-              <xs:element name="displayname" type="xs:string"/>
+  <xs:element name="createCustomerRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="customer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <xs:element name="shortname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+              <xs:element name="displayname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
             </xs:all>
           </xs:complexType>
         </xs:element>
       </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="createCustomerResponse" type="viterocustomer:customerid"/>
+  <xs:element name="createCustomerResponse" type="viterocustomer:customerid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="updateCustomerRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element maxOccurs="1" minOccurs="1" name="customer">
-          <xs:complexType>
-            <xs:all>
-              <xs:element name="id" type="xs:int"/>
-              <xs:element minOccurs="0" name="shortname" type="xs:string"/>
-              <xs:element minOccurs="0" name="displayname" type="xs:string"/>
+  <xs:element name="updateCustomerRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element maxOccurs="1" minOccurs="1" name="customer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <xs:element name="id" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+              <xs:element minOccurs="0" name="shortname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+              <xs:element minOccurs="0" name="displayname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+              <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
             </xs:all>
           </xs:complexType>
         </xs:element>
       </xs:all>
     </xs:complexType>
   </xs:element>
+  <xs:element name="updateCustomerResponse" type="viterocustomer:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="deleteCustomerRequest" type="viterocustomer:customerid"/>
-  
-  <xs:element name="addUserToCustomerRequest" type="viterocustomer:customeriduserid"/>
-  
-  <xs:element name="removeUserFromCustomerRequest" type="viterocustomer:customeriduserid"/>
-  
-  <xs:element name="moveUserToCustomerRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="userid" type="xs:int"/>
-        <xs:element name="sourcecustomerid" type="xs:int"/>
-        <xs:element name="destcustomerid" type="xs:int"/>
+  <xs:element name="deleteCustomerRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
+  <xs:element name="deleteCustomerResponse" type="viterocustomer:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="moveAllUsersToCustomerRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="sourcecustomerid" type="xs:int"/>
-        <xs:element name="destcustomerid" type="xs:int"/>
+  <xs:element name="addUserToCustomerRequest" type="viterocustomer:customeriduserid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="addUserToCustomerResponse" type="viterocustomer:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="removeUserFromCustomerRequest" type="viterocustomer:customeriduserid" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="removeUserFromCustomerResponse" type="viterocustomer:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="moveUserToCustomerRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element name="sourcecustomerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element name="destcustomerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
+  <xs:element name="moveUserToResponse" type="viterocustomer:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="moveAllUsersToCustomerRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="sourcecustomerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element name="destcustomerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="moveAllUsersToCustomerResponse" type="viterocustomer:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
   <!-- TYPES -->  
-  <xs:complexType name="customer">
-    <xs:all>
-      <xs:element name="customer" type="viterocustomer:customertype"/>
+  <xs:complexType name="customer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="customer" type="viterocustomer:customertype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     </xs:all>
   </xs:complexType>
   
-  <xs:complexType name="customertype">
-    <xs:sequence>
-      <xs:element name="id" type="xs:int"/>
-      <xs:element name="shortname" type="xs:string"/>
-      <xs:element name="displayname" type="xs:string"/>
-      <xs:element name="groupidlist" type="viterocustomer:idlist"/>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="user">
-        <xs:complexType>
-          <xs:all>
-            <xs:element name="userid" type="xs:int"/>
-            <xs:element name="admin" type="xs:boolean"/>
+  <xs:complexType name="customertype" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="id" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="shortname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="displayname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="customernumber" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="groupidlist" type="viterocustomer:idlist" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="user" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+            <xs:element name="admin" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
           </xs:all>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
   
-  <xs:complexType name="customerid">
-    <xs:all>
-      <xs:element name="customerid" type="xs:int"/>
+  <xs:complexType name="customerid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     </xs:all>
   </xs:complexType>
   
-  <xs:complexType name="customeriduserid">
-    <xs:all>
-      <xs:element name="customerid" type="xs:int"/>
-      <xs:element name="userid" type="xs:int"/>
+  <xs:complexType name="customeriduserid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="userid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     </xs:all>
   </xs:complexType>
   
   <!-- a list of ids -->
-  <xs:simpleType name="idlist">
-	<xs:list itemType="xs:int"/>
+  <xs:simpleType name="idlist" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:list itemType="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   </xs:simpleType>
 
+  <xs:complexType name="successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="request" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    </xs:all>
+  </xs:complexType>
+  
 </xs:schema>
   </wsdl:types>
-  <wsdl:message name="getCustomerResponse">
-    <wsdl:part element="tns:getCustomerResponse" name="getCustomerResponse">
+  <wsdl:message name="addUserToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:addUserToCustomerRequest" name="addUserToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="removeUserFromCustomerRequest">
-    <wsdl:part element="tns:removeUserFromCustomerRequest" name="removeUserFromCustomerRequest">
+  <wsdl:message name="getCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getCustomerRequest" name="getCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successResponse">
-    <wsdl:part element="tns:successResponse" name="successResponse">
+  <wsdl:message name="removeUserFromCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:removeUserFromCustomerResponse" name="removeUserFromCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="addUserToCustomerRequest">
-    <wsdl:part element="tns:addUserToCustomerRequest" name="addUserToCustomerRequest">
+  <wsdl:message name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successRequest">
-    <wsdl:part element="tns:successRequest" name="successRequest">
+  <wsdl:message name="getCustomerByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getCustomerByNameRequest" name="getCustomerByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getCustomerListRequest">
-    <wsdl:part element="tns:getCustomerListRequest" name="getCustomerListRequest">
+  <wsdl:message name="getCustomerByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getCustomerByNameResponse" name="getCustomerByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getCustomerListResponse">
-    <wsdl:part element="tns:getCustomerListResponse" name="getCustomerListResponse">
+  <wsdl:message name="getCustomerListResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getCustomerListResponse" name="getCustomerListResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createCustomerResponse">
-    <wsdl:part element="tns:createCustomerResponse" name="createCustomerResponse">
+  <wsdl:message name="deleteCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:deleteCustomerResponse" name="deleteCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getCustomerByNameResponse">
-    <wsdl:part element="tns:getCustomerByNameResponse" name="getCustomerByNameResponse">
+  <wsdl:message name="moveUserToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:moveUserToCustomerRequest" name="moveUserToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getCustomerByNameRequest">
-    <wsdl:part element="tns:getCustomerByNameRequest" name="getCustomerByNameRequest">
+  <wsdl:message name="updateCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:updateCustomerRequest" name="updateCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="moveUserToCustomerRequest">
-    <wsdl:part element="tns:moveUserToCustomerRequest" name="moveUserToCustomerRequest">
+  <wsdl:message name="updateCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:updateCustomerResponse" name="updateCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="moveAllUsersToCustomerRequest">
-    <wsdl:part element="tns:moveAllUsersToCustomerRequest" name="moveAllUsersToCustomerRequest">
+  <wsdl:message name="createCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createCustomerResponse" name="createCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="updateCustomerRequest">
-    <wsdl:part element="tns:updateCustomerRequest" name="updateCustomerRequest">
+  <wsdl:message name="getCustomerListRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getCustomerListRequest" name="getCustomerListRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="deleteCustomerRequest">
-    <wsdl:part element="tns:deleteCustomerRequest" name="deleteCustomerRequest">
+  <wsdl:message name="addUserToCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:addUserToCustomerResponse" name="addUserToCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createCustomerRequest">
-    <wsdl:part element="tns:createCustomerRequest" name="createCustomerRequest">
+  <wsdl:message name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getCustomerRequest">
-    <wsdl:part element="tns:getCustomerRequest" name="getCustomerRequest">
+  <wsdl:message name="getCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getCustomerResponse" name="getCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="Customer">
-    <wsdl:operation name="getCustomer">
-      <wsdl:input message="tns:getCustomerRequest" name="getCustomerRequest">
+  <wsdl:message name="moveUserToResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:moveUserToResponse" name="moveUserToResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="moveAllUsersToCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:moveAllUsersToCustomerResponse" name="moveAllUsersToCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createCustomerRequest" name="createCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:deleteCustomerRequest" name="deleteCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="moveAllUsersToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:moveAllUsersToCustomerRequest" name="moveAllUsersToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeUserFromCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:removeUserFromCustomerRequest" name="removeUserFromCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Customer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="addUserToCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:addUserToCustomerRequest" name="addUserToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getCustomerResponse" name="getCustomerResponse">
+      <wsdl:output message="tns:addUserToCustomerResponse" name="addUserToCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="removeUserFromCustomer">
-      <wsdl:input message="tns:removeUserFromCustomerRequest" name="removeUserFromCustomerRequest">
+    <wsdl:operation name="getCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getCustomerRequest" name="getCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="success">
-      <wsdl:input message="tns:successRequest" name="successRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:successResponse" name="successResponse">
+      <wsdl:output message="tns:getCustomerResponse" name="getCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="addUserToCustomer">
-      <wsdl:input message="tns:addUserToCustomerRequest" name="addUserToCustomerRequest">
+    <wsdl:operation name="removeUserFromCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:removeUserFromCustomerRequest" name="removeUserFromCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getCustomerList">
-      <wsdl:input message="tns:getCustomerListRequest" name="getCustomerListRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:getCustomerListResponse" name="getCustomerListResponse">
+      <wsdl:output message="tns:removeUserFromCustomerResponse" name="removeUserFromCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createCustomer">
-      <wsdl:input message="tns:createCustomerRequest" name="createCustomerRequest">
+    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:createCustomerResponse" name="createCustomerResponse">
+      <wsdl:output message="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getCustomerByName">
-      <wsdl:input message="tns:getCustomerByNameRequest" name="getCustomerByNameRequest">
+    <wsdl:operation name="getCustomerByName" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getCustomerByNameRequest" name="getCustomerByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getCustomerByNameResponse" name="getCustomerByNameResponse">
+      <wsdl:output message="tns:getCustomerByNameResponse" name="getCustomerByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="moveUserToCustomer">
-      <wsdl:input message="tns:moveUserToCustomerRequest" name="moveUserToCustomerRequest">
+    <wsdl:operation name="getCustomerList" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getCustomerListRequest" name="getCustomerListRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:getCustomerListResponse" name="getCustomerListResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:deleteCustomerRequest" name="deleteCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:deleteCustomerResponse" name="deleteCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="moveUserToCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:moveUserToCustomerRequest" name="moveUserToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="moveAllUsersToCustomer">
-      <wsdl:input message="tns:moveAllUsersToCustomerRequest" name="moveAllUsersToCustomerRequest">
+    <wsdl:operation name="updateCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:updateCustomerRequest" name="updateCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
+      <wsdl:output message="tns:updateCustomerResponse" name="updateCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateCustomer">
-      <wsdl:input message="tns:updateCustomerRequest" name="updateCustomerRequest">
+    <wsdl:operation name="createCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:createCustomerRequest" name="createCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
+      <wsdl:output message="tns:createCustomerResponse" name="createCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deleteCustomer">
-      <wsdl:input message="tns:deleteCustomerRequest" name="deleteCustomerRequest">
+    <wsdl:operation name="moveAllUsersToCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:moveAllUsersToCustomerRequest" name="moveAllUsersToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
+      <wsdl:output message="tns:moveAllUsersToCustomerResponse" name="moveAllUsersToCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="CustomerSoap11" type="tns:Customer">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="getCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getCustomerRequest">
-        <soap:body use="literal"/>
+  <wsdl:binding name="CustomerSoap11" type="tns:Customer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="addUserToCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="addUserToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getCustomerResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="addUserToCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="removeUserFromCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="removeUserFromCustomerRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="success">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="successRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="successResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="addUserToCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="addUserToCustomerRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="removeUserFromCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="removeUserFromCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="getCustomerList">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getCustomerListRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="getCustomerListResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="removeUserFromCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createCustomerRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="createCustomerResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getCustomerByName">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getCustomerByNameRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getCustomerByName" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getCustomerByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getCustomerByNameResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getCustomerByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="moveUserToCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="moveUserToCustomerRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getCustomerList" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getCustomerListRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="getCustomerListResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="deleteCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="deleteCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="moveUserToCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="moveUserToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="moveAllUsersToCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="moveAllUsersToCustomerRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="updateCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="updateCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
+      <wsdl:output name="updateCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="updateCustomerRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="createCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="createCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="deleteCustomer">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="deleteCustomerRequest">
-        <soap:body use="literal"/>
+      <wsdl:output name="createCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation> 
+    <wsdl:operation name="moveAllUsersToCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="moveAllUsersToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
+      <wsdl:output name="moveAllUsersToCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="CustomerService">
-    <wsdl:port binding="tns:CustomerSoap11" name="CustomerSoap11">
-      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
+  <wsdl:service name="CustomerService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:port binding="tns:CustomerSoap11" name="CustomerSoap11" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:address location="https://vms3.vitero.de:443/vitero/services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

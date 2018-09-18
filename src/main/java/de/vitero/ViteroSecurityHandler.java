@@ -53,7 +53,7 @@ public class ViteroSecurityHandler implements SOAPHandler<SOAPMessageContext> {
 	
 	@Override
 	public Set<QName> getHeaders() {
-		return new TreeSet<QName>();
+		return new TreeSet<>();
 	}
 	
 	@Override

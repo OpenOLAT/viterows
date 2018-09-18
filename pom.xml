@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openolat</groupId>
 	<artifactId>viterows</artifactId>
-	<version>6.0</version>
+	<version>9.0</version>
 	<packaging>jar</packaging>
 	<name>vitero WS</name>
 	<url>http://www.openolat.org/</url>
@@ -40,6 +40,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -75,6 +76,7 @@
 										<extraarg>-client</extraarg>
 									</extraargs>
 								</wsdlOption>
+								<!-- 
 								<wsdlOption>
 									<wsdl>${project.basedir}/src/main/resources/wsdl/customer.wsdl</wsdl>
 									<wsdlLocation>classpath:wsdl/customer.wsdl</wsdlLocation>
@@ -82,6 +84,7 @@
 										<extraarg>-client</extraarg>
 									</extraargs>
 								</wsdlOption>
+								-->
 								<wsdlOption>
 									<wsdl>${project.basedir}/src/main/resources/wsdl/group.wsdl</wsdl>
 									<wsdlLocation>classpath:wsdl/group.wsdl</wsdlLocation>
@@ -95,7 +98,7 @@
 									<extraargs>
 										<extraarg>-client</extraarg>
 									</extraargs>
-								</wsdlOption>
+								</wsdlOption> 
 								<wsdlOption>
 									<wsdl>${project.basedir}/src/main/resources/wsdl/mtom.wsdl</wsdl>
 									<wsdlLocation>classpath:wsdl/mtom.wsdl</wsdlLocation>

@@ -37,6 +37,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="pcstate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="technicalnote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="domainForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="principalNameForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="sidForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="customer" maxOccurs="unbounded"&gt;
  *           &lt;complexType&gt;
  *             &lt;complexContent&gt;
@@ -77,6 +80,9 @@ import javax.xml.bind.annotation.XmlType;
     "street",
     "pcstate",
     "technicalnote",
+    "domainForIwa",
+    "principalNameForIwa",
+    "sidForIwa",
     "customer"
 })
 public class Completeuserwithcustomertype {
@@ -103,6 +109,9 @@ public class Completeuserwithcustomertype {
     protected String street;
     protected String pcstate;
     protected String technicalnote;
+    protected String domainForIwa;
+    protected String principalNameForIwa;
+    protected String sidForIwa;
     @XmlElement(required = true)
     protected List<Completeuserwithcustomertype.Customer> customer;
 
@@ -528,6 +537,78 @@ public class Completeuserwithcustomertype {
      */
     public void setTechnicalnote(String value) {
         this.technicalnote = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété domainForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDomainForIwa() {
+        return domainForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété domainForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDomainForIwa(String value) {
+        this.domainForIwa = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété principalNameForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPrincipalNameForIwa() {
+        return principalNameForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété principalNameForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPrincipalNameForIwa(String value) {
+        this.principalNameForIwa = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété sidForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSidForIwa() {
+        return sidForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété sidForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSidForIwa(String value) {
+        this.sidForIwa = value;
     }
 
     /**

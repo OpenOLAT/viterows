@@ -22,7 +22,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="eventname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -44,7 +43,6 @@ public class GetBookingListByUserAndDateRequest {
     @XmlElement(required = true)
     protected String end;
     protected String timezone;
-    protected String eventname;
 
     /**
      * Obtient la valeur de la propriété userid.
@@ -132,30 +130,6 @@ public class GetBookingListByUserAndDateRequest {
      */
     public void setTimezone(String value) {
         this.timezone = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété eventname.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEventname() {
-        return eventname;
-    }
-
-    /**
-     * Définit la valeur de la propriété eventname.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEventname(String value) {
-        this.eventname = value;
     }
 
 }

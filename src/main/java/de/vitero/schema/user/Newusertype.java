@@ -38,6 +38,11 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="pcstate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="technicalnote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="domainForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="principalNameForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="sidForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="forcenewpassword" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="generatepasswordlink" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="customeridlist" type="{http://www.vitero.de/schema/user}idlist"/&gt;
  *       &lt;/all&gt;
@@ -75,12 +80,17 @@ public class Newusertype {
     protected String street;
     protected String pcstate;
     protected String technicalnote;
+    protected String domainForIwa;
+    protected String principalNameForIwa;
+    protected String sidForIwa;
+    protected Boolean forcenewpassword;
+    protected Boolean generatepasswordlink;
     @XmlElement(required = true)
     protected String password;
     @XmlList
-    @XmlElement(type = Integer.class)
+    @XmlElement(required = true)
     @XmlSchemaType(name = "anySimpleType")
-    protected List<Integer> customeridlist;
+    protected List<String> customeridlist;
 
     /**
      * Obtient la valeur de la propriété username.
@@ -491,6 +501,126 @@ public class Newusertype {
     }
 
     /**
+     * Obtient la valeur de la propriété domainForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDomainForIwa() {
+        return domainForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété domainForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDomainForIwa(String value) {
+        this.domainForIwa = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété principalNameForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPrincipalNameForIwa() {
+        return principalNameForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété principalNameForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPrincipalNameForIwa(String value) {
+        this.principalNameForIwa = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété sidForIwa.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSidForIwa() {
+        return sidForIwa;
+    }
+
+    /**
+     * Définit la valeur de la propriété sidForIwa.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSidForIwa(String value) {
+        this.sidForIwa = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété forcenewpassword.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isForcenewpassword() {
+        return forcenewpassword;
+    }
+
+    /**
+     * Définit la valeur de la propriété forcenewpassword.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setForcenewpassword(Boolean value) {
+        this.forcenewpassword = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété generatepasswordlink.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isGeneratepasswordlink() {
+        return generatepasswordlink;
+    }
+
+    /**
+     * Définit la valeur de la propriété generatepasswordlink.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setGeneratepasswordlink(Boolean value) {
+        this.generatepasswordlink = value;
+    }
+
+    /**
      * Obtient la valeur de la propriété password.
      * 
      * @return
@@ -532,13 +662,13 @@ public class Newusertype {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Integer }
+     * {@link String }
      * 
      * 
      */
-    public List<Integer> getCustomeridlist() {
+    public List<String> getCustomeridlist() {
         if (customeridlist == null) {
-            customeridlist = new ArrayList<Integer>();
+            customeridlist = new ArrayList<String>();
         }
         return this.customeridlist;
     }

@@ -1,8 +1,19 @@
 # Vitero WS for OpenOLAT
 
-The SOAP interfaces for vitero used by OpenOLAT
+The SOAP interfaces for vitero used by OpenOLAT. You can download the WSDLs files with
 
-The WSDLs are compiled with the following command:
+```
+https://vms3.vitero.de/vitero/services/booking.wsdl
+https://vms3.vitero.de/vitero/services/cms.wsdl
+https://vms3.vitero.de/vitero/services/customer.wsdl
+https://vms3.vitero.de/vitero/services/group.wsdl
+https://vms3.vitero.de/vitero/services/licence.wsdl
+https://vms3.vitero.de/vitero/services/mtom.wsdl
+https://vms3.vitero.de/vitero/services/sessioncode.wsdl
+https://vms3.vitero.de/vitero/services/user.wsdl
+```
+
+Remove the method and operation ```success``` in mtmo.wsdl and ```moveToUser``` in customer.wsdl. Than you can compile the WSDLs with the following command:
 
 ```bash
 mvn clean generate-sources

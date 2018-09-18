@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;all&gt;
  *         &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="strictwsdl" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,6 +39,7 @@ public class ChangePasswordRequest {
     protected int userid;
     @XmlElement(required = true)
     protected String password;
+    protected Boolean strictwsdl;
 
     /**
      * Obtient la valeur de la propriété userid.
@@ -77,6 +79,30 @@ public class ChangePasswordRequest {
      */
     public void setPassword(String value) {
         this.password = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété strictwsdl.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isStrictwsdl() {
+        return strictwsdl;
+    }
+
+    /**
+     * Définit la valeur de la propriété strictwsdl.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setStrictwsdl(Boolean value) {
+        this.strictwsdl = value;
     }
 
 }

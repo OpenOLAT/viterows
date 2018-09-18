@@ -25,14 +25,18 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _SuccessRequest_QNAME = new QName("http://www.vitero.de/schema/user", "successRequest");
+    private final static QName _SuccessResponse_QNAME = new QName("http://www.vitero.de/schema/user", "successResponse");
     private final static QName _GetUserRequest_QNAME = new QName("http://www.vitero.de/schema/user", "getUserRequest");
     private final static QName _GetUserListRequest_QNAME = new QName("http://www.vitero.de/schema/user", "getUserListRequest");
     private final static QName _GetUserListResponse_QNAME = new QName("http://www.vitero.de/schema/user", "getUserListResponse");
     private final static QName _GetUserListByPositionResponse_QNAME = new QName("http://www.vitero.de/schema/user", "getUserListByPositionResponse");
     private final static QName _GetUserListByCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/user", "getUserListByCustomerResponse");
     private final static QName _GetUserListByGroupResponse_QNAME = new QName("http://www.vitero.de/schema/user", "getUserListByGroupResponse");
-    private final static QName _CreateUserResponse_QNAME = new QName("http://www.vitero.de/schema/user", "createUserResponse");
-    private final static QName _DeleteUserRequest_QNAME = new QName("http://www.vitero.de/schema/user", "deleteUserRequest");
+    private final static QName _UpdateUserResponse_QNAME = new QName("http://www.vitero.de/schema/user", "updateUserResponse");
+    private final static QName _DeleteUserResponse_QNAME = new QName("http://www.vitero.de/schema/user", "deleteUserResponse");
+    private final static QName _ChangePasswordResponse_QNAME = new QName("http://www.vitero.de/schema/user", "changePasswordResponse");
+    private final static QName _StoreAvatarUsingBase64StringResponse_QNAME = new QName("http://www.vitero.de/schema/user", "storeAvatarUsingBase64StringResponse");
+    private final static QName _GeneratePasswordLinkRequest_QNAME = new QName("http://www.vitero.de/schema/user", "generatePasswordLinkRequest");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.vitero.schema.user
@@ -122,6 +126,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreateUserResponse }
+     * 
+     */
+    public CreateUserResponse createCreateUserResponse() {
+        return new CreateUserResponse();
+    }
+
+    /**
      * Create an instance of {@link UpdateUserRequest }
      * 
      */
@@ -135,6 +147,14 @@ public class ObjectFactory {
      */
     public Completeusertype createCompleteusertype() {
         return new Completeusertype();
+    }
+
+    /**
+     * Create an instance of {@link DeleteUserRequest }
+     * 
+     */
+    public DeleteUserRequest createDeleteUserRequest() {
+        return new DeleteUserRequest();
     }
 
     /**
@@ -170,6 +190,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GeneratePasswordLinkResponse }
+     * 
+     */
+    public GeneratePasswordLinkResponse createGeneratePasswordLinkResponse() {
+        return new GeneratePasswordLinkResponse();
+    }
+
+    /**
      * Create an instance of {@link Usertype }
      * 
      */
@@ -192,6 +220,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "successRequest")
     public JAXBElement<String> createSuccessRequest(String value) {
         return new JAXBElement<String>(_SuccessRequest_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "successResponse")
+    public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_SuccessResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
@@ -249,21 +286,48 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Userid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "createUserResponse")
-    public JAXBElement<Userid> createCreateUserResponse(Userid value) {
-        return new JAXBElement<Userid>(_CreateUserResponse_QNAME, Userid.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "updateUserResponse")
+    public JAXBElement<SuccessResponse> createUpdateUserResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_UpdateUserResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "deleteUserResponse")
+    public JAXBElement<SuccessResponse> createDeleteUserResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_DeleteUserResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "changePasswordResponse")
+    public JAXBElement<SuccessResponse> createChangePasswordResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_ChangePasswordResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "storeAvatarUsingBase64StringResponse")
+    public JAXBElement<SuccessResponse> createStoreAvatarUsingBase64StringResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_StoreAvatarUsingBase64StringResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Userid }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "deleteUserRequest")
-    public JAXBElement<Userid> createDeleteUserRequest(Userid value) {
-        return new JAXBElement<Userid>(_DeleteUserRequest_QNAME, Userid.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "generatePasswordLinkRequest")
+    public JAXBElement<Userid> createGeneratePasswordLinkRequest(Userid value) {
+        return new JAXBElement<Userid>(_GeneratePasswordLinkRequest_QNAME, Userid.class, null, value);
     }
 
 }

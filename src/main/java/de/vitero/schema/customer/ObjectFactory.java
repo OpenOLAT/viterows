@@ -25,14 +25,19 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _SuccessRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "successRequest");
+    private final static QName _SuccessResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "successResponse");
     private final static QName _GetCustomerRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "getCustomerRequest");
     private final static QName _GetCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "getCustomerResponse");
     private final static QName _GetCustomerByNameResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "getCustomerByNameResponse");
-    private final static QName _GetCustomerListRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "getCustomerListRequest");
     private final static QName _CreateCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "createCustomerResponse");
-    private final static QName _DeleteCustomerRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "deleteCustomerRequest");
+    private final static QName _UpdateCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "updateCustomerResponse");
+    private final static QName _DeleteCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "deleteCustomerResponse");
     private final static QName _AddUserToCustomerRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "addUserToCustomerRequest");
+    private final static QName _AddUserToCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "addUserToCustomerResponse");
     private final static QName _RemoveUserFromCustomerRequest_QNAME = new QName("http://www.vitero.de/schema/customer", "removeUserFromCustomerRequest");
+    private final static QName _RemoveUserFromCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "removeUserFromCustomerResponse");
+    private final static QName _MoveUserToResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "moveUserToResponse");
+    private final static QName _MoveAllUsersToCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/customer", "moveAllUsersToCustomerResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.vitero.schema.customer
@@ -98,6 +103,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetCustomerListRequest }
+     * 
+     */
+    public GetCustomerListRequest createGetCustomerListRequest() {
+        return new GetCustomerListRequest();
+    }
+
+    /**
      * Create an instance of {@link GetCustomerListResponse }
      * 
      */
@@ -119,6 +132,14 @@ public class ObjectFactory {
      */
     public UpdateCustomerRequest.Customer createUpdateCustomerRequestCustomer() {
         return new UpdateCustomerRequest.Customer();
+    }
+
+    /**
+     * Create an instance of {@link DeleteCustomerRequest }
+     * 
+     */
+    public DeleteCustomerRequest createDeleteCustomerRequest() {
+        return new DeleteCustomerRequest();
     }
 
     /**
@@ -163,6 +184,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "successResponse")
+    public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_SuccessResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}}
      * 
      */
@@ -190,15 +220,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "getCustomerListRequest")
-    public JAXBElement<Object> createGetCustomerListRequest(Object value) {
-        return new JAXBElement<Object>(_GetCustomerListRequest_QNAME, Object.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}}
      * 
      */
@@ -208,12 +229,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "deleteCustomerRequest")
-    public JAXBElement<Customerid> createDeleteCustomerRequest(Customerid value) {
-        return new JAXBElement<Customerid>(_DeleteCustomerRequest_QNAME, Customerid.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "updateCustomerResponse")
+    public JAXBElement<SuccessResponse> createUpdateCustomerResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_UpdateCustomerResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "deleteCustomerResponse")
+    public JAXBElement<SuccessResponse> createDeleteCustomerResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_DeleteCustomerResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
@@ -226,12 +256,48 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "addUserToCustomerResponse")
+    public JAXBElement<SuccessResponse> createAddUserToCustomerResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_AddUserToCustomerResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Customeriduserid }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "removeUserFromCustomerRequest")
     public JAXBElement<Customeriduserid> createRemoveUserFromCustomerRequest(Customeriduserid value) {
         return new JAXBElement<Customeriduserid>(_RemoveUserFromCustomerRequest_QNAME, Customeriduserid.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "removeUserFromCustomerResponse")
+    public JAXBElement<SuccessResponse> createRemoveUserFromCustomerResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_RemoveUserFromCustomerResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "moveUserToResponse")
+    public JAXBElement<SuccessResponse> createMoveUserToResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_MoveUserToResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "moveAllUsersToCustomerResponse")
+    public JAXBElement<SuccessResponse> createMoveAllUsersToCustomerResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_MoveAllUsersToCustomerResponse_QNAME, SuccessResponse.class, null, value);
     }
 
 }

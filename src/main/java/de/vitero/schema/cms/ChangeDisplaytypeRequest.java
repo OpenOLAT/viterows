@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="nodeid" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="displaytype" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="strictwsdl" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -30,13 +31,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "nodeid",
-    "displaytype"
+    "displaytype",
+    "strictwsdl"
 })
 @XmlRootElement(name = "changeDisplaytypeRequest")
 public class ChangeDisplaytypeRequest {
 
     protected long nodeid;
     protected int displaytype;
+    protected Boolean strictwsdl;
 
     /**
      * Obtient la valeur de la propriété nodeid.
@@ -68,6 +71,30 @@ public class ChangeDisplaytypeRequest {
      */
     public void setDisplaytype(int value) {
         this.displaytype = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété strictwsdl.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isStrictwsdl() {
+        return strictwsdl;
+    }
+
+    /**
+     * Définit la valeur de la propriété strictwsdl.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setStrictwsdl(Boolean value) {
+        this.strictwsdl = value;
     }
 
 }

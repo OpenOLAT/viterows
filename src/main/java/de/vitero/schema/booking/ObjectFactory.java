@@ -25,6 +25,7 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _SuccessRequest_QNAME = new QName("http://www.vitero.de/schema/booking", "successRequest");
+    private final static QName _SuccessResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "successResponse");
     private final static QName _GetBookingByIdRequest_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingByIdRequest");
     private final static QName _GetBookingByIdResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingByIdResponse");
     private final static QName _GetBookingByBookingTimeIdRequest_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingByBookingTimeIdRequest");
@@ -38,6 +39,7 @@ public class ObjectFactory {
     private final static QName _GetBookingListByUserInFutureResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByUserInFutureResponse");
     private final static QName _GetBookingListByUserAndCustomerInFutureResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByUserAndCustomerInFutureResponse");
     private final static QName _GetBookingListByDateResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "getBookingListByDateResponse");
+    private final static QName _UpdateBookingResponse_QNAME = new QName("http://www.vitero.de/schema/booking", "updateBookingResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.vitero.schema.booking
@@ -264,6 +266,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "successResponse")
+    public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_SuccessResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Bookingid }{@code >}}
      * 
      */
@@ -378,6 +389,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByDateResponse")
     public JAXBElement<Bookinglist> createGetBookingListByDateResponse(Bookinglist value) {
         return new JAXBElement<Bookinglist>(_GetBookingListByDateResponse_QNAME, Bookinglist.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "updateBookingResponse")
+    public JAXBElement<SuccessResponse> createUpdateBookingResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_UpdateBookingResponse_QNAME, SuccessResponse.class, null, value);
     }
 
 }

@@ -1,286 +1,419 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/cms" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/cms" targetNamespace="http://www.vitero.de/schema/cms">
-  <wsdl:types>
-    <xs:schema xmlns:viterocms="http://www.vitero.de/schema/cms" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/cms" version="1.0">
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/cms" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/cms" targetNamespace="http://www.vitero.de/schema/cms">
+  <wsdl:types xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:viterocms="http://www.vitero.de/schema/cms" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/cms" version="1.0">
     
   <!-- AVAILABLE REQUESTS AND RESPONSES -->  
-  <xs:element name="successRequest" type="xs:string"/> <!-- do not use -->
-  <xs:element name="successResponse">
-    <xs:complexType>
-    <xs:all>
-      <xs:element name="request" type="xs:string"/>
-    </xs:all>
-  </xs:complexType>
-  </xs:element>
+  <xs:element name="successRequest" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/> <!-- do not use -->
+  <xs:element name="successResponse" type="viterocms:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getGroupFolderRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="groupid" type="xs:int"/>
+  <xs:element name="getGroupFolderRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="groupid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>  
-  <xs:element name="getGroupFolderResponse" type="viterocms:wrappedFolder"/>
+  <xs:element name="getGroupFolderResponse" type="viterocms:wrappedFolder" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="getCustomerFolderRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="customerid" type="xs:int"/>
+  <xs:element name="getCustomerFolderRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="customerid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>  
-  <xs:element name="getCustomerFolderResponse" type="viterocms:wrappedFolder"/>
+  <xs:element name="getCustomerFolderResponse" type="viterocms:wrappedFolder" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="createFolderRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="nodeid" type="xs:long"/>
-        <xs:element name="name" type="xs:string"/>
-        <xs:element minOccurs="0" name="authorid" type="xs:int"/>
-        <xs:element minOccurs="0" name="displaytype" type="xs:int"/>
+  <xs:element name="createFolderRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="nodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element name="name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="authorid" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="displaytype" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="visible" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="createFolderResponse" type="viterocms:nodeid"/>
-  
-  <xs:element name="deleteNodeRequest" type="viterocms:nodeid"/>
-  
-  <xs:element name="renameNodeRequest">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="nodeid" type="xs:long"/>
-        <xs:element name="name" type="xs:string"/>
+  <xs:element name="createFolderResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="nodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="copyNodeRequest" type="viterocms:sourceAndDestNodeId"/>
+  <xs:element name="deleteNodeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="nodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteNodeResponse" type="viterocms:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="moveNodeRequest" type="viterocms:sourceAndDestNodeId"/>
+  <xs:element name="renameNodeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="nodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element name="name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="renameNodeResponse" type="viterocms:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   
-  <xs:element name="changeDisplaytypeRequest">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="nodeid" type="xs:long"/>
-        <xs:element name="displaytype" type="xs:int"/>
+  <xs:element name="copyNodeRequest" type="viterocms:sourceAndDestNodeId" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="copyNodeResponse" type="viterocms:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="moveNodeRequest" type="viterocms:sourceAndDestNodeId" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="moveNodeResponse" type="viterocms:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="changeDisplaytypeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="nodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element name="displaytype" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="changeDisplaytypeResponse" type="viterocms:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="changeVisibilityRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="nodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element name="visible" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="changeVisibilityResponse" type="viterocms:successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  
+  <xs:element name="getDisplaytypeRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="nodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDisplaytypeResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="displaytype" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   
   <!-- TYPES -->
-  <xs:complexType name="wrappedFolder">
-    <xs:all>
-      <xs:element name="folder" type="viterocms:folder"/>
+  <xs:complexType name="wrappedFolder" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="folder" type="viterocms:folder" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     </xs:all>
   </xs:complexType>
   
-  <xs:complexType name="folder">
-    <xs:sequence>
-      <xs:element name="nodeid" type="xs:long"/>
-      <xs:element name="name" type="xs:string"/>
-      <xs:element minOccurs="0" name="children" type="viterocms:nodeList"/>
+  <xs:complexType name="folder" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="nodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="displaytype" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="children" type="viterocms:nodeList" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     </xs:sequence>  
   </xs:complexType>
   
-  <xs:complexType name="file">
-    <xs:sequence>
-      <xs:element name="nodeid" type="xs:long"/>
-      <xs:element name="name" type="xs:string"/>
+  <xs:complexType name="file" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="nodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     </xs:sequence>  
   </xs:complexType>
   
-  <xs:complexType name="nodeList">
-  	<xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="folder" type="viterocms:folder"/>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="file" type="viterocms:file"/>
+  <xs:complexType name="nodeList" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  	<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="folder" type="viterocms:folder" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="file" type="viterocms:file" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
   	</xs:sequence>    
   </xs:complexType>
   
   
-  <xs:complexType name="sourceAndDestNodeId">
-    <xs:all>
-      <xs:element name="sourcenodeid" type="xs:long"/>
-      <xs:element name="destnodeid" type="xs:long"/>
+  <xs:complexType name="sourceAndDestNodeId" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="sourcenodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element name="destnodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <xs:element minOccurs="0" name="strictwsdl" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     </xs:all>
-  </xs:complexType> 
-  
-  <xs:complexType name="nodeid">
-      <xs:all>
-        <xs:element name="nodeid" type="xs:long"/>
-      </xs:all>
-    </xs:complexType>
+  </xs:complexType>   
 
+  <xs:complexType name="successResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="request" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    </xs:all>
+  </xs:complexType>
 </xs:schema>
   </wsdl:types>
-  <wsdl:message name="renameNodeRequest">
-    <wsdl:part element="tns:renameNodeRequest" name="renameNodeRequest">
+  <wsdl:message name="createFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createFolderResponse" name="createFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="changeDisplaytypeRequest">
-    <wsdl:part element="tns:changeDisplaytypeRequest" name="changeDisplaytypeRequest">
+  <wsdl:message name="changeVisibilityResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:changeVisibilityResponse" name="changeVisibilityResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createFolderResponse">
-    <wsdl:part element="tns:createFolderResponse" name="createFolderResponse">
+  <wsdl:message name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successResponse">
-    <wsdl:part element="tns:successResponse" name="successResponse">
+  <wsdl:message name="createFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:createFolderRequest" name="createFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupFolderResponse">
-    <wsdl:part element="tns:getGroupFolderResponse" name="getGroupFolderResponse">
+  <wsdl:message name="getDisplaytypeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getDisplaytypeResponse" name="getDisplaytypeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successRequest">
-    <wsdl:part element="tns:successRequest" name="successRequest">
+  <wsdl:message name="moveNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:moveNodeResponse" name="moveNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getCustomerFolderRequest">
-    <wsdl:part element="tns:getCustomerFolderRequest" name="getCustomerFolderRequest">
+  <wsdl:message name="changeDisplaytypeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:changeDisplaytypeRequest" name="changeDisplaytypeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createFolderRequest">
-    <wsdl:part element="tns:createFolderRequest" name="createFolderRequest">
+  <wsdl:message name="changeVisibilityRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:changeVisibilityRequest" name="changeVisibilityRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupFolderRequest">
-    <wsdl:part element="tns:getGroupFolderRequest" name="getGroupFolderRequest">
+  <wsdl:message name="getGroupFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getGroupFolderRequest" name="getGroupFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="deleteNodeRequest">
-    <wsdl:part element="tns:deleteNodeRequest" name="deleteNodeRequest">
+  <wsdl:message name="renameNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:renameNodeRequest" name="renameNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="copyNodeRequest">
-    <wsdl:part element="tns:copyNodeRequest" name="copyNodeRequest">
+  <wsdl:message name="moveNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:moveNodeRequest" name="moveNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getCustomerFolderResponse">
-    <wsdl:part element="tns:getCustomerFolderResponse" name="getCustomerFolderResponse">
+  <wsdl:message name="getCustomerFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getCustomerFolderResponse" name="getCustomerFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="moveNodeRequest">
-    <wsdl:part element="tns:moveNodeRequest" name="moveNodeRequest">
+  <wsdl:message name="deleteNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:deleteNodeRequest" name="deleteNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="Cms">
-    <wsdl:operation name="renameNode">
-      <wsdl:input message="tns:renameNodeRequest" name="renameNodeRequest">
+  <wsdl:message name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeDisplaytypeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:changeDisplaytypeResponse" name="changeDisplaytypeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDisplaytypeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getDisplaytypeRequest" name="getDisplaytypeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomerFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getCustomerFolderRequest" name="getCustomerFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="copyNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:copyNodeResponse" name="copyNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="renameNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:renameNodeResponse" name="renameNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="copyNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:copyNodeRequest" name="copyNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:deleteNodeResponse" name="deleteNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGroupFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:getGroupFolderResponse" name="getGroupFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Cms" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="createFolder" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:createFolderRequest" name="createFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="changeDisplaytype">
-      <wsdl:input message="tns:changeDisplaytypeRequest" name="changeDisplaytypeRequest">
-    </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="createFolder">
-      <wsdl:input message="tns:createFolderRequest" name="createFolderRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:createFolderResponse" name="createFolderResponse">
+      <wsdl:output message="tns:createFolderResponse" name="createFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="success">
-      <wsdl:input message="tns:successRequest" name="successRequest">
+    <wsdl:operation name="changeVisibility" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:changeVisibilityRequest" name="changeVisibilityRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:successResponse" name="successResponse">
+      <wsdl:output message="tns:changeVisibilityResponse" name="changeVisibilityResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroupFolder">
-      <wsdl:input message="tns:getGroupFolderRequest" name="getGroupFolderRequest">
+    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getGroupFolderResponse" name="getGroupFolderResponse">
+      <wsdl:output message="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getCustomerFolder">
-      <wsdl:input message="tns:getCustomerFolderRequest" name="getCustomerFolderRequest">
+    <wsdl:operation name="getDisplaytype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getDisplaytypeRequest" name="getDisplaytypeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:getCustomerFolderResponse" name="getCustomerFolderResponse">
+      <wsdl:output message="tns:getDisplaytypeResponse" name="getDisplaytypeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deleteNode">
-      <wsdl:input message="tns:deleteNodeRequest" name="deleteNodeRequest">
+    <wsdl:operation name="moveNode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:moveNodeRequest" name="moveNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
+      <wsdl:output message="tns:moveNodeResponse" name="moveNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="copyNode">
-      <wsdl:input message="tns:copyNodeRequest" name="copyNodeRequest">
+    <wsdl:operation name="changeDisplaytype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:changeDisplaytypeRequest" name="changeDisplaytypeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
+      <wsdl:output message="tns:changeDisplaytypeResponse" name="changeDisplaytypeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="moveNode">
-      <wsdl:input message="tns:moveNodeRequest" name="moveNodeRequest">
+    <wsdl:operation name="getGroupFolder" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getGroupFolderRequest" name="getGroupFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
+      <wsdl:output message="tns:getGroupFolderResponse" name="getGroupFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="renameNode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:renameNodeRequest" name="renameNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:renameNodeResponse" name="renameNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerFolder" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:getCustomerFolderRequest" name="getCustomerFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:getCustomerFolderResponse" name="getCustomerFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:deleteNodeRequest" name="deleteNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:deleteNodeResponse" name="deleteNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="copyNode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:copyNodeRequest" name="copyNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:copyNodeResponse" name="copyNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="CmsSoap11" type="tns:Cms">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="renameNode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="renameNodeRequest">
-        <soap:body use="literal"/>
+  <wsdl:binding name="CmsSoap11" type="tns:Cms" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="createFolder" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="createFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="changeDisplaytype">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="changeDisplaytypeRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="createFolder">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="createFolderRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="createFolderResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="createFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="success">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="successRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="changeVisibility" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="changeVisibilityRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="successResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="changeVisibilityResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroupFolder">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getGroupFolderRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getGroupFolderResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getCustomerFolder">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="getCustomerFolderRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getDisplaytype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getDisplaytypeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="getCustomerFolderResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="getDisplaytypeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deleteNode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="deleteNodeRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="moveNode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="moveNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
+      <wsdl:output name="moveNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="copyNode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="copyNodeRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="changeDisplaytype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="changeDisplaytypeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
+      <wsdl:output name="changeDisplaytypeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="moveNode">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="moveNodeRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="getGroupFolder" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getGroupFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
+      <wsdl:output name="getGroupFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="renameNode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="renameNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="renameNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerFolder" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="getCustomerFolderRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="getCustomerFolderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="deleteNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="deleteNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="copyNode" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="copyNodeRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="copyNodeResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="CmsService">
-    <wsdl:port binding="tns:CmsSoap11" name="CmsSoap11">
-      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
+  <wsdl:service name="CmsService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:port binding="tns:CmsSoap11" name="CmsSoap11" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:address location="https://vms3.vitero.de:443/vitero/services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

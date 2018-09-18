@@ -1,160 +1,160 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/mtom" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/mtom" targetNamespace="http://www.vitero.de/schema/mtom">
-  <wsdl:types>
-    <xs:schema xmlns:viteromtom="http://www.vitero.de/schema/mtom" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/mtom" version="1.0">
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/mtom" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/mtom" targetNamespace="http://www.vitero.de/schema/mtom">
+  <wsdl:types xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:viteromtom="http://www.vitero.de/schema/mtom" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/mtom" version="1.0">
     
-    <xs:element name="loadFileRequest" type="viteromtom:IdWrapper"/>
-    <xs:element name="loadFileResponse" type="viteromtom:FileWrapper"/>
+    <xs:element name="loadFileRequest" type="viteromtom:IdWrapper" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    <xs:element name="loadFileResponse" type="viteromtom:FileWrapper" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     
-    <xs:element name="storeFileRequest" type="viteromtom:FileWrapper"/>
-    <xs:element name="storeFileResponse" type="viteromtom:IdWrapper"/>
+    <xs:element name="storeFileRequest" type="viteromtom:FileWrapper" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    <xs:element name="storeFileResponse" type="viteromtom:IdWrapper" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
 
-    <xs:element name="loadAvatarRequest" type="viteromtom:AvatarInformation"/>
-    <xs:element name="loadAvatarResponse" type="viteromtom:AvatarWrapper"/>
+    <xs:element name="loadAvatarRequest" type="viteromtom:AvatarInformation" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    <xs:element name="loadAvatarResponse" type="viteromtom:AvatarWrapper" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     
-    <xs:element name="storeAvatarRequest" type="viteromtom:CompleteAvatarWrapper"/>
-    <xs:element name="successResponse" type="viteromtom:SuccessResponse"/>
+    <xs:element name="storeAvatarRequest" type="viteromtom:CompleteAvatarWrapper" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    <xs:element name="successResponse" type="viteromtom:SuccessResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
         
-    <xs:complexType name="IdWrapper">
-      <xs:all>
-        <xs:element name="nodeid" type="xs:long"/>
+    <xs:complexType name="IdWrapper" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="nodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
     
-    <xs:complexType name="FileWrapper">
-    	<xs:all>
-    		<xs:element name="filename" type="xs:string"/>
-    		<xs:element minOccurs="0" name="foldernodeid" type="xs:long"/>
-    		<xs:element name="file" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+    <xs:complexType name="FileWrapper" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    		<xs:element name="filename" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    		<xs:element minOccurs="0" name="foldernodeid" type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    		<xs:element name="file" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     	</xs:all>
     </xs:complexType>
     
-    <xs:complexType name="AvatarInformation">
-    	<xs:all>
-    		<xs:element name="userid" type="xs:integer"/>
-    		<xs:element minOccurs="0" name="type" type="xs:integer"/>
-    		<xs:element minOccurs="0" name="size" type="xs:integer"/>
+    <xs:complexType name="AvatarInformation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    		<xs:element name="userid" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    		<xs:element minOccurs="0" name="type" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    		<xs:element minOccurs="0" name="size" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     	</xs:all>
     </xs:complexType>
     
-    <xs:complexType name="AvatarWrapper">
-    	<xs:all>
-    		<xs:element name="filename" type="xs:string"/>
-    		<xs:element name="file" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+    <xs:complexType name="AvatarWrapper" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    		<xs:element name="filename" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    		<xs:element name="file" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     	</xs:all>
     </xs:complexType>
     
-    <xs:complexType name="CompleteAvatarWrapper">
-    	<xs:all>
-    		<xs:element name="userid" type="xs:integer"/>
-    		<xs:element minOccurs="0" name="type" type="xs:integer"/>
-    		<xs:element name="filename" type="xs:string"/>
-    		<xs:element name="file" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+    <xs:complexType name="CompleteAvatarWrapper" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    	<xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    		<xs:element name="userid" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    		<xs:element minOccurs="0" name="type" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    		<xs:element name="filename" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+    		<xs:element name="file" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
     	</xs:all>
     </xs:complexType>
     
-    <xs:complexType name="SuccessResponse">
-      <xs:all>
-        <xs:element name="request" type="xs:string"/>
+    <xs:complexType name="SuccessResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:all xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="request" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
       </xs:all>
     </xs:complexType>
     
 </xs:schema>
   </wsdl:types>
-  <wsdl:message name="storeFileRequest">
-    <wsdl:part element="tns:storeFileRequest" name="storeFileRequest">
+  <wsdl:message name="storeFileRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:storeFileRequest" name="storeFileRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="loadAvatarResponse">
-    <wsdl:part element="tns:loadAvatarResponse" name="loadAvatarResponse">
+  <wsdl:message name="storeFileResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:storeFileResponse" name="storeFileResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="loadAvatarRequest">
-    <wsdl:part element="tns:loadAvatarRequest" name="loadAvatarRequest">
+  <wsdl:message name="storeAvatarRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:storeAvatarRequest" name="storeAvatarRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="storeFileResponse">
-    <wsdl:part element="tns:storeFileResponse" name="storeFileResponse">
+  <wsdl:message name="loadFileResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:loadFileResponse" name="loadFileResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="loadFileResponse">
-    <wsdl:part element="tns:loadFileResponse" name="loadFileResponse">
+  <wsdl:message name="loadAvatarResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:loadAvatarResponse" name="loadAvatarResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successResponse">
-    <wsdl:part element="tns:successResponse" name="successResponse">
+  <wsdl:message name="loadAvatarRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:loadAvatarRequest" name="loadAvatarRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="storeAvatarRequest">
-    <wsdl:part element="tns:storeAvatarRequest" name="storeAvatarRequest">
+  <wsdl:message name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="loadFileRequest">
-    <wsdl:part element="tns:loadFileRequest" name="loadFileRequest">
+  <wsdl:message name="loadFileRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:loadFileRequest" name="loadFileRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="Mtom">
-    <wsdl:operation name="storeFile">
-      <wsdl:input message="tns:storeFileRequest" name="storeFileRequest">
+  <wsdl:portType name="Mtom" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="storeFile" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:storeFileRequest" name="storeFileRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:storeFileResponse" name="storeFileResponse">
+      <wsdl:output message="tns:storeFileResponse" name="storeFileResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="loadAvatar">
-      <wsdl:input message="tns:loadAvatarRequest" name="loadAvatarRequest">
+    <wsdl:operation name="storeAvatar" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:storeAvatarRequest" name="storeAvatarRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:loadAvatarResponse" name="loadAvatarResponse">
+    </wsdl:operation>
+    <wsdl:operation name="loadFile" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:loadFileRequest" name="loadFileRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:loadFileResponse" name="loadFileResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="loadFile">
-      <wsdl:input message="tns:loadFileRequest" name="loadFileRequest">
+    <wsdl:operation name="loadAvatar" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:loadAvatarRequest" name="loadAvatarRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:input>
-      <wsdl:output message="tns:loadFileResponse" name="loadFileResponse">
+      <wsdl:output message="tns:loadAvatarResponse" name="loadAvatarResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="storeAvatar">
-      <wsdl:input message="tns:storeAvatarRequest" name="storeAvatarRequest">
-    </wsdl:input>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="MtomSoap11" type="tns:Mtom">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="storeFile">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="storeFileRequest">
-        <soap:body use="literal"/>
+  <wsdl:binding name="MtomSoap11" type="tns:Mtom" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="storeFile" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="storeFileRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="storeFileResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="storeFileResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="loadAvatar">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="loadAvatarRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="storeAvatar" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="storeAvatarRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="loadAvatarResponse">
-        <soap:body use="literal"/>
+    </wsdl:operation>
+    <wsdl:operation name="loadFile" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="loadFileRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="loadFileResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="loadFile">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="loadFileRequest">
-        <soap:body use="literal"/>
+    <wsdl:operation name="loadAvatar" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="loadAvatarRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:input>
-      <wsdl:output name="loadFileResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="loadAvatarResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="storeAvatar">
-      <soap:operation soapAction=""/>
-      <wsdl:input name="storeAvatarRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="MtomService">
-    <wsdl:port binding="tns:MtomSoap11" name="MtomSoap11">
-      <soap:address location="https://vms.vitero.de:443/vitero/services/"/>
+  <wsdl:service name="MtomService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:port binding="tns:MtomSoap11" name="MtomSoap11" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:address location="https://vms3.vitero.de:443/vitero/services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -25,12 +25,14 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _SuccessRequest_QNAME = new QName("http://www.vitero.de/schema/sessioncode", "successRequest");
+    private final static QName _SuccessResponse_QNAME = new QName("http://www.vitero.de/schema/sessioncode", "successResponse");
     private final static QName _CreateBookingSessionCodeResponse_QNAME = new QName("http://www.vitero.de/schema/sessioncode", "createBookingSessionCodeResponse");
+    private final static QName _CreateGroupSessionCodeResponse_QNAME = new QName("http://www.vitero.de/schema/sessioncode", "createGroupSessionCodeResponse");
     private final static QName _CreatePersonalBookingSessionCodeResponse_QNAME = new QName("http://www.vitero.de/schema/sessioncode", "createPersonalBookingSessionCodeResponse");
     private final static QName _CreatePersonalGroupSessionCodeResponse_QNAME = new QName("http://www.vitero.de/schema/sessioncode", "createPersonalGroupSessionCodeResponse");
     private final static QName _CreateVmsSessionCodeResponse_QNAME = new QName("http://www.vitero.de/schema/sessioncode", "createVmsSessionCodeResponse");
     private final static QName _CreateAppointmentConfirmationSessionCodeResponse_QNAME = new QName("http://www.vitero.de/schema/sessioncode", "createAppointmentConfirmationSessionCodeResponse");
-    private final static QName _DeleteSessionCodeRequest_QNAME = new QName("http://www.vitero.de/schema/sessioncode", "deleteSessionCodeRequest");
+    private final static QName _DeleteSessionCodeResponse_QNAME = new QName("http://www.vitero.de/schema/sessioncode", "deleteSessionCodeResponse");
     private final static QName _GetTestroomSessionCodeResponse_QNAME = new QName("http://www.vitero.de/schema/sessioncode", "getTestroomSessionCodeResponse");
 
     /**
@@ -46,6 +48,14 @@ public class ObjectFactory {
      */
     public CreateBookingSessionCodeRequest createCreateBookingSessionCodeRequest() {
         return new CreateBookingSessionCodeRequest();
+    }
+
+    /**
+     * Create an instance of {@link CreateGroupSessionCodeRequest }
+     * 
+     */
+    public CreateGroupSessionCodeRequest createCreateGroupSessionCodeRequest() {
+        return new CreateGroupSessionCodeRequest();
     }
 
     /**
@@ -81,6 +91,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreateWebaccessSessionCodeRequest }
+     * 
+     */
+    public CreateWebaccessSessionCodeRequest createCreateWebaccessSessionCodeRequest() {
+        return new CreateWebaccessSessionCodeRequest();
+    }
+
+    /**
      * Create an instance of {@link GetSessionCodeInformationResponse }
      * 
      */
@@ -113,6 +131,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreateGroupSessionCodeRequest.Sessioncode }
+     * 
+     */
+    public CreateGroupSessionCodeRequest.Sessioncode createCreateGroupSessionCodeRequestSessioncode() {
+        return new CreateGroupSessionCodeRequest.Sessioncode();
+    }
+
+    /**
      * Create an instance of {@link CreatePersonalBookingSessionCodeRequest.Sessioncode }
      * 
      */
@@ -142,6 +168,30 @@ public class ObjectFactory {
      */
     public CreateAppointmentConfirmationSessionCodeRequest.Sessioncode createCreateAppointmentConfirmationSessionCodeRequestSessioncode() {
         return new CreateAppointmentConfirmationSessionCodeRequest.Sessioncode();
+    }
+
+    /**
+     * Create an instance of {@link CreateWebaccessSessionCodeRequest.Sessioncode }
+     * 
+     */
+    public CreateWebaccessSessionCodeRequest.Sessioncode createCreateWebaccessSessionCodeRequestSessioncode() {
+        return new CreateWebaccessSessionCodeRequest.Sessioncode();
+    }
+
+    /**
+     * Create an instance of {@link CreateWebaccessSessionCodeResponse }
+     * 
+     */
+    public CreateWebaccessSessionCodeResponse createCreateWebaccessSessionCodeResponse() {
+        return new CreateWebaccessSessionCodeResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteSessionCodeRequest }
+     * 
+     */
+    public DeleteSessionCodeRequest createDeleteSessionCodeRequest() {
+        return new DeleteSessionCodeRequest();
     }
 
     /**
@@ -218,12 +268,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "successResponse")
+    public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_SuccessResponse_QNAME, SuccessResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "createBookingSessionCodeResponse")
     public JAXBElement<Codetype> createCreateBookingSessionCodeResponse(Codetype value) {
         return new JAXBElement<Codetype>(_CreateBookingSessionCodeResponse_QNAME, Codetype.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "createGroupSessionCodeResponse")
+    public JAXBElement<Codetype> createCreateGroupSessionCodeResponse(Codetype value) {
+        return new JAXBElement<Codetype>(_CreateGroupSessionCodeResponse_QNAME, Codetype.class, null, value);
     }
 
     /**
@@ -263,12 +331,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "deleteSessionCodeRequest")
-    public JAXBElement<Codetype> createDeleteSessionCodeRequest(Codetype value) {
-        return new JAXBElement<Codetype>(_DeleteSessionCodeRequest_QNAME, Codetype.class, null, value);
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "deleteSessionCodeResponse")
+    public JAXBElement<SuccessResponse> createDeleteSessionCodeResponse(SuccessResponse value) {
+        return new JAXBElement<SuccessResponse>(_DeleteSessionCodeResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
