@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openolat</groupId>
 	<artifactId>viterows</artifactId>
-	<version>9.1</version>
+	<version>9.1.1</version>
 	<packaging>jar</packaging>
 	<name>vitero WS</name>
 	<url>http://www.openolat.org/</url>
@@ -152,24 +152,10 @@
 			<version>1.4</version>
 		</dependency>
 		<dependency>
-					<groupId>org.apache.cxf</groupId>
-					<artifactId>cxf-rt-frontend-jaxws</artifactId>
-					<version>3.2.7</version>
-				</dependency>
-				<dependency>
-					<groupId>org.apache.cxf</groupId>
-					<artifactId>cxf-rt-frontend-jaxrs</artifactId>
-					<version>3.2.7</version>
-				</dependency>
-				<dependency>
-					<groupId>org.apache.cxf</groupId>
-					<artifactId>cxf-rt-transports-http</artifactId>
-					<version>3.2.7</version>
-				</dependency>
-				<dependency>
-					<groupId>org.apache.cxf</groupId>
-					<artifactId>cxf-rt-rs-http-sci</artifactId>
-					<version>3.2.7</version>
-				</dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-core</artifactId>
+			<version>3.2.7</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 </project>
