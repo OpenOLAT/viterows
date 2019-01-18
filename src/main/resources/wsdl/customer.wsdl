@@ -400,7 +400,7 @@
       <wsdl:output name="createCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
         <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       </wsdl:output>
-    </wsdl:operation> 
+    </wsdl:operation>
     <wsdl:operation name="moveAllUsersToCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
       <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
       <wsdl:input name="moveAllUsersToCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">

@@ -18,3 +18,14 @@ Remove the method and operation ```success``` in mtmo.wsdl and ```moveToUser``` 
 ```bash
 mvn clean generate-sources
 ```
+
+
+Add this annotation
+
+```@org.apache.cxf.annotations.EndpointProperty(key = "soap.no.validate.parts", value = "true")```
+
+to all webservices (search the annotation @WebService)
+
+```bash
+mvn package
+```

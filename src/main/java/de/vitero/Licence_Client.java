@@ -59,7 +59,7 @@ public final class Licence_Client {
 					@Override
 					public List<Handler> getHandlerChain(PortInfo portInfo) {
 						List<Handler> handlerList = new ArrayList<Handler>();
-						handlerList.add(new ViteroSecurityHandler("admin", "007"));
+						//handlerList.add(new ViteroSecurityHandler("admin", "007"));
 						return handlerList;
 					}
         	

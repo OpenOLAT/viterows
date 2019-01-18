@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="eventsubtitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="audience" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *         &lt;element name="html5client" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="inspire" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -76,6 +77,7 @@ public class Newbookingtype {
     protected Boolean audience;
     @XmlElement(name = "html5client")
     protected Boolean html5Client;
+    protected Boolean inspire;
 
     /**
      * Obtient la valeur de la propriété start.
@@ -547,6 +549,30 @@ public class Newbookingtype {
      */
     public void setHtml5Client(Boolean value) {
         this.html5Client = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété inspire.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isInspire() {
+        return inspire;
+    }
+
+    /**
+     * Définit la valeur de la propriété inspire.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setInspire(Boolean value) {
+        this.inspire = value;
     }
 
 }

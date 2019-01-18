@@ -37,7 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="eventsubtitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="repetitionpattern" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="repetitionenddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="html5client" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="html5client" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="inspire" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="addexceptions" minOccurs="0"&gt;
  *           &lt;complexType&gt;
  *             &lt;complexContent&gt;
@@ -123,7 +124,8 @@ public class Booking_Type {
     protected String repetitionpattern;
     protected String repetitionenddate;
     @XmlElement(name = "html5client")
-    protected boolean html5Client;
+    protected Boolean html5Client;
+    protected boolean inspire;
     protected Booking_Type.Addexceptions addexceptions;
     protected Booking_Type.Subtractexceptions subtractexceptions;
 
@@ -498,17 +500,41 @@ public class Booking_Type {
     /**
      * Obtient la valeur de la propriété html5Client.
      * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
      */
-    public boolean isHtml5Client() {
+    public Boolean isHtml5Client() {
         return html5Client;
     }
 
     /**
      * Définit la valeur de la propriété html5Client.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
      */
-    public void setHtml5Client(boolean value) {
+    public void setHtml5Client(Boolean value) {
         this.html5Client = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété inspire.
+     * 
+     */
+    public boolean isInspire() {
+        return inspire;
+    }
+
+    /**
+     * Définit la valeur de la propriété inspire.
+     * 
+     */
+    public void setInspire(boolean value) {
+        this.inspire = value;
     }
 
     /**
