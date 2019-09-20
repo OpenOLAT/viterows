@@ -136,8 +136,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "successRequest")
     public JAXBElement<String> createSuccessRequest(String value) {
@@ -145,8 +149,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Grouprequesttype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Grouprequesttype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Grouprequesttype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "getBookableModulesForGroupRequest")
     public JAXBElement<Grouprequesttype> createGetBookableModulesForGroupRequest(Grouprequesttype value) {
@@ -154,8 +162,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "getBookableModulesForGroupResponse")
     public JAXBElement<Modulestype> createGetBookableModulesForGroupResponse(Modulestype value) {
@@ -163,8 +175,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Grouprequesttype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Grouprequesttype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Grouprequesttype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "getBookableRoomsForGroupRequest")
     public JAXBElement<Grouprequesttype> createGetBookableRoomsForGroupRequest(Grouprequesttype value) {
@@ -172,8 +188,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Grouprequesttype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Grouprequesttype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Grouprequesttype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "isPhoneAvailableRequest")
     public JAXBElement<Grouprequesttype> createIsPhoneAvailableRequest(Grouprequesttype value) {
@@ -181,8 +201,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "getModulesForCustomerResponse")
     public JAXBElement<Modulestype> createGetModulesForCustomerResponse(Modulestype value) {
@@ -190,8 +214,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Modulestype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/licence", name = "getAllModulesResponse")
     public JAXBElement<Modulestype> createGetAllModulesResponse(Modulestype value) {

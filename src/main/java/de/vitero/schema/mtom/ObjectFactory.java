@@ -89,8 +89,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link IdWrapper }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link IdWrapper }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link IdWrapper }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "loadFileRequest")
     public JAXBElement<IdWrapper> createLoadFileRequest(IdWrapper value) {
@@ -98,8 +102,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FileWrapper }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link FileWrapper }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link FileWrapper }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "loadFileResponse")
     public JAXBElement<FileWrapper> createLoadFileResponse(FileWrapper value) {
@@ -107,8 +115,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FileWrapper }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link FileWrapper }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link FileWrapper }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "storeFileRequest")
     public JAXBElement<FileWrapper> createStoreFileRequest(FileWrapper value) {
@@ -116,8 +128,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link IdWrapper }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link IdWrapper }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link IdWrapper }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "storeFileResponse")
     public JAXBElement<IdWrapper> createStoreFileResponse(IdWrapper value) {
@@ -125,8 +141,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AvatarInformation }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AvatarInformation }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AvatarInformation }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "loadAvatarRequest")
     public JAXBElement<AvatarInformation> createLoadAvatarRequest(AvatarInformation value) {
@@ -134,8 +154,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AvatarWrapper }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AvatarWrapper }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AvatarWrapper }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "loadAvatarResponse")
     public JAXBElement<AvatarWrapper> createLoadAvatarResponse(AvatarWrapper value) {
@@ -143,8 +167,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CompleteAvatarWrapper }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CompleteAvatarWrapper }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link CompleteAvatarWrapper }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "storeAvatarRequest")
     public JAXBElement<CompleteAvatarWrapper> createStoreAvatarRequest(CompleteAvatarWrapper value) {
@@ -152,8 +180,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/mtom", name = "successResponse")
     public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {

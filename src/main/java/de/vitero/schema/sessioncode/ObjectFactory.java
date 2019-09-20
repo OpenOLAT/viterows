@@ -259,8 +259,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "successRequest")
     public JAXBElement<String> createSuccessRequest(String value) {
@@ -268,8 +272,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "successResponse")
     public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
@@ -277,8 +285,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "createBookingSessionCodeResponse")
     public JAXBElement<Codetype> createCreateBookingSessionCodeResponse(Codetype value) {
@@ -286,8 +298,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "createGroupSessionCodeResponse")
     public JAXBElement<Codetype> createCreateGroupSessionCodeResponse(Codetype value) {
@@ -295,8 +311,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "createPersonalBookingSessionCodeResponse")
     public JAXBElement<Codetype> createCreatePersonalBookingSessionCodeResponse(Codetype value) {
@@ -304,8 +324,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "createPersonalGroupSessionCodeResponse")
     public JAXBElement<Codetype> createCreatePersonalGroupSessionCodeResponse(Codetype value) {
@@ -313,8 +337,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "createVmsSessionCodeResponse")
     public JAXBElement<Codetype> createCreateVmsSessionCodeResponse(Codetype value) {
@@ -322,8 +350,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "createAppointmentConfirmationSessionCodeResponse")
     public JAXBElement<Codetype> createCreateAppointmentConfirmationSessionCodeResponse(Codetype value) {
@@ -331,8 +363,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "deleteSessionCodeResponse")
     public JAXBElement<SuccessResponse> createDeleteSessionCodeResponse(SuccessResponse value) {
@@ -340,8 +376,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Codetype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/sessioncode", name = "getTestroomSessionCodeResponse")
     public JAXBElement<Codetype> createGetTestroomSessionCodeResponse(Codetype value) {

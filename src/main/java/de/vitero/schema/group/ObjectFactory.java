@@ -210,8 +210,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "successRequest")
     public JAXBElement<String> createSuccessRequest(String value) {
@@ -219,8 +223,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "successResponse")
     public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
@@ -228,8 +236,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Groupid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Groupid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Groupid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupRequest")
     public JAXBElement<Groupid> createGetGroupRequest(Groupid value) {
@@ -237,8 +249,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Group_Type }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Group_Type }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Group_Type }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupResponse")
     public JAXBElement<Group_Type> createGetGroupResponse(Group_Type value) {
@@ -246,8 +262,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Groupnamecustomerid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Groupnamecustomerid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Groupnamecustomerid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupByNameRequest")
     public JAXBElement<Groupnamecustomerid> createGetGroupByNameRequest(Groupnamecustomerid value) {
@@ -255,8 +275,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Group_Type }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Group_Type }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Group_Type }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupByNameResponse")
     public JAXBElement<Group_Type> createGetGroupByNameResponse(Group_Type value) {
@@ -264,8 +288,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Groupid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Groupid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Groupid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "createGroupResponse")
     public JAXBElement<Groupid> createCreateGroupResponse(Groupid value) {
@@ -273,8 +301,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "updateGroupResponse")
     public JAXBElement<SuccessResponse> createUpdateGroupResponse(SuccessResponse value) {
@@ -282,8 +314,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "deleteGroupResponse")
     public JAXBElement<SuccessResponse> createDeleteGroupResponse(SuccessResponse value) {
@@ -291,8 +327,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Groupiduseridstrict }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Groupiduseridstrict }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Groupiduseridstrict }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "addUserToGroupRequest")
     public JAXBElement<Groupiduseridstrict> createAddUserToGroupRequest(Groupiduseridstrict value) {
@@ -300,8 +340,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "addUserToGroupResponse")
     public JAXBElement<SuccessResponse> createAddUserToGroupResponse(SuccessResponse value) {
@@ -309,8 +353,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Groupiduseridstrict }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Groupiduseridstrict }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Groupiduseridstrict }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "removeUserFromGroupRequest")
     public JAXBElement<Groupiduseridstrict> createRemoveUserFromGroupRequest(Groupiduseridstrict value) {
@@ -318,8 +366,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "removeUserFromGroupResponse")
     public JAXBElement<SuccessResponse> createRemoveUserFromGroupResponse(SuccessResponse value) {
@@ -327,8 +379,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "changeGroupRoleResponse")
     public JAXBElement<SuccessResponse> createChangeGroupRoleResponse(SuccessResponse value) {
@@ -336,8 +392,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "changeEnabledResponse")
     public JAXBElement<SuccessResponse> createChangeEnabledResponse(SuccessResponse value) {
@@ -345,8 +405,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Groupiduserid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Groupiduserid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Groupiduserid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "isUserInGroupRequest")
     public JAXBElement<Groupiduserid> createIsUserInGroupRequest(Groupiduserid value) {
@@ -354,8 +418,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Groupiduserid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Groupiduserid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Groupiduserid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getParticipantRequest")
     public JAXBElement<Groupiduserid> createGetParticipantRequest(Groupiduserid value) {

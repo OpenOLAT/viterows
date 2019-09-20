@@ -7,7 +7,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlList;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -65,7 +64,6 @@ public class Customertype {
     protected String customernumber;
     @XmlList
     @XmlElement(type = Integer.class)
-    @XmlSchemaType(name = "anySimpleType")
     protected List<Integer> groupidlist;
     protected List<Customertype.User> user;
 

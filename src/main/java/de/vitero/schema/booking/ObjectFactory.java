@@ -257,8 +257,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "successRequest")
     public JAXBElement<String> createSuccessRequest(String value) {
@@ -266,8 +270,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "successResponse")
     public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
@@ -275,8 +283,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookingid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingByIdRequest")
     public JAXBElement<Bookingid> createGetBookingByIdRequest(Bookingid value) {
@@ -284,8 +296,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookingtype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingByIdResponse")
     public JAXBElement<Bookingtype> createGetBookingByIdResponse(Bookingtype value) {
@@ -293,8 +309,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtimeid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtimeid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookingtimeid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingByBookingTimeIdRequest")
     public JAXBElement<Bookingtimeid> createGetBookingByBookingTimeIdRequest(Bookingtimeid value) {
@@ -302,8 +322,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookingtype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingByBookingTimeIdResponse")
     public JAXBElement<Bookingtype> createGetBookingByBookingTimeIdResponse(Bookingtype value) {
@@ -311,8 +335,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtimeid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtimeid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookingtimeid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingTimeByIdRequest")
     public JAXBElement<Bookingtimeid> createGetBookingTimeByIdRequest(Bookingtimeid value) {
@@ -320,8 +348,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtimetype }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookingtimetype }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookingtimetype }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingTimeByIdResponse")
     public JAXBElement<Bookingtimetype> createGetBookingTimeByIdResponse(Bookingtimetype value) {
@@ -329,8 +361,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByGroupAndDateResponse")
     public JAXBElement<Bookinglist> createGetBookingListByGroupAndDateResponse(Bookinglist value) {
@@ -338,8 +374,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByGroupInFutureResponse")
     public JAXBElement<Bookinglist> createGetBookingListByGroupInFutureResponse(Bookinglist value) {
@@ -347,8 +387,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByUserAndDateResponse")
     public JAXBElement<Bookinglist> createGetBookingListByUserAndDateResponse(Bookinglist value) {
@@ -356,8 +400,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByUserAndDateAndCustomerResponse")
     public JAXBElement<Bookinglist> createGetBookingListByUserAndDateAndCustomerResponse(Bookinglist value) {
@@ -365,8 +413,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByUserInFutureResponse")
     public JAXBElement<Bookinglist> createGetBookingListByUserInFutureResponse(Bookinglist value) {
@@ -374,8 +426,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByUserAndCustomerInFutureResponse")
     public JAXBElement<Bookinglist> createGetBookingListByUserAndCustomerInFutureResponse(Bookinglist value) {
@@ -383,8 +439,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Bookinglist }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "getBookingListByDateResponse")
     public JAXBElement<Bookinglist> createGetBookingListByDateResponse(Bookinglist value) {
@@ -392,8 +452,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/booking", name = "updateBookingResponse")
     public JAXBElement<SuccessResponse> createUpdateBookingResponse(SuccessResponse value) {

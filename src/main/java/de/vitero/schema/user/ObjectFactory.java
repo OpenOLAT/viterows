@@ -214,8 +214,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "successRequest")
     public JAXBElement<String> createSuccessRequest(String value) {
@@ -223,8 +227,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "successResponse")
     public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
@@ -232,8 +240,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Userid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Userid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Userid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "getUserRequest")
     public JAXBElement<Userid> createGetUserRequest(Userid value) {
@@ -241,8 +253,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "getUserListRequest")
     public JAXBElement<Object> createGetUserListRequest(Object value) {
@@ -250,8 +266,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "getUserListResponse")
     public JAXBElement<Userlist> createGetUserListResponse(Userlist value) {
@@ -259,8 +279,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "getUserListByPositionResponse")
     public JAXBElement<Userlist> createGetUserListByPositionResponse(Userlist value) {
@@ -268,8 +292,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "getUserListByCustomerResponse")
     public JAXBElement<Userlist> createGetUserListByCustomerResponse(Userlist value) {
@@ -277,8 +305,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "getUserListByGroupResponse")
     public JAXBElement<Userlist> createGetUserListByGroupResponse(Userlist value) {
@@ -286,8 +318,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "updateUserResponse")
     public JAXBElement<SuccessResponse> createUpdateUserResponse(SuccessResponse value) {
@@ -295,8 +331,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "deleteUserResponse")
     public JAXBElement<SuccessResponse> createDeleteUserResponse(SuccessResponse value) {
@@ -304,8 +344,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "changePasswordResponse")
     public JAXBElement<SuccessResponse> createChangePasswordResponse(SuccessResponse value) {
@@ -313,8 +357,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "storeAvatarUsingBase64StringResponse")
     public JAXBElement<SuccessResponse> createStoreAvatarUsingBase64StringResponse(SuccessResponse value) {
@@ -322,8 +370,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Userid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Userid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Userid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "generatePasswordLinkRequest")
     public JAXBElement<Userid> createGeneratePasswordLinkRequest(Userid value) {

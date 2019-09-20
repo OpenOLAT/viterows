@@ -175,8 +175,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "successRequest")
     public JAXBElement<String> createSuccessRequest(String value) {
@@ -184,8 +188,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "successResponse")
     public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
@@ -193,8 +201,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "getCustomerRequest")
     public JAXBElement<Customerid> createGetCustomerRequest(Customerid value) {
@@ -202,8 +214,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customer_Type }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customer_Type }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Customer_Type }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "getCustomerResponse")
     public JAXBElement<Customer_Type> createGetCustomerResponse(Customer_Type value) {
@@ -211,8 +227,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customer_Type }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customer_Type }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Customer_Type }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "getCustomerByNameResponse")
     public JAXBElement<Customer_Type> createGetCustomerByNameResponse(Customer_Type value) {
@@ -220,8 +240,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Customerid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "createCustomerResponse")
     public JAXBElement<Customerid> createCreateCustomerResponse(Customerid value) {
@@ -229,8 +253,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "updateCustomerResponse")
     public JAXBElement<SuccessResponse> createUpdateCustomerResponse(SuccessResponse value) {
@@ -238,8 +266,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "deleteCustomerResponse")
     public JAXBElement<SuccessResponse> createDeleteCustomerResponse(SuccessResponse value) {
@@ -247,8 +279,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customeriduserid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customeriduserid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Customeriduserid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "addUserToCustomerRequest")
     public JAXBElement<Customeriduserid> createAddUserToCustomerRequest(Customeriduserid value) {
@@ -256,8 +292,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "addUserToCustomerResponse")
     public JAXBElement<SuccessResponse> createAddUserToCustomerResponse(SuccessResponse value) {
@@ -265,8 +305,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Customeriduserid }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customeriduserid }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Customeriduserid }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "removeUserFromCustomerRequest")
     public JAXBElement<Customeriduserid> createRemoveUserFromCustomerRequest(Customeriduserid value) {
@@ -274,8 +318,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "removeUserFromCustomerResponse")
     public JAXBElement<SuccessResponse> createRemoveUserFromCustomerResponse(SuccessResponse value) {
@@ -283,8 +331,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "moveUserToResponse")
     public JAXBElement<SuccessResponse> createMoveUserToResponse(SuccessResponse value) {
@@ -292,8 +344,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SuccessResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/customer", name = "moveAllUsersToCustomerResponse")
     public JAXBElement<SuccessResponse> createMoveAllUsersToCustomerResponse(SuccessResponse value) {
