@@ -8,21 +8,21 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour bookingtimetype complex type.
+ * &lt;p&gt;Classe Java pour bookingtimetype complex type.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
- * <pre>
- * &lt;complexType name="bookingtimetype"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;all&gt;
- *         &lt;element name="bookingtime" type="{http://www.vitero.de/schema/booking}bookingtime"/&gt;
- *       &lt;/all&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="bookingtimetype"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;all&amp;gt;
+ *         &amp;lt;element name="bookingtime" type="{http://www.vitero.de/schema/booking}bookingtime"/&amp;gt;
+ *       &amp;lt;/all&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */

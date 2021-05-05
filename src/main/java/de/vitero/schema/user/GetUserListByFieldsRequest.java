@@ -3,29 +3,28 @@ package de.vitero.schema.user;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java pour usertype complex type.
+ * &lt;p&gt;Classe Java pour anonymous complex type.
  * 
  * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * &lt;pre&gt;
- * &amp;lt;complexType name="usertype"&amp;gt;
+ * &amp;lt;complexType&amp;gt;
  *   &amp;lt;complexContent&amp;gt;
  *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
  *       &amp;lt;all&amp;gt;
- *         &amp;lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
- *         &amp;lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="surname" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *         &amp;lt;element name="customerid" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="surname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
  *         &amp;lt;element name="company" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="locale" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="pcstate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
  *         &amp;lt;element name="domainForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
  *         &amp;lt;element name="principalNameForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
  *         &amp;lt;element name="sidForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
@@ -38,42 +37,70 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "usertype", propOrder = {
+@XmlType(name = "", propOrder = {
 
 })
-public class Usertype {
+@XmlRootElement(name = "getUserListByFieldsRequest")
+public class GetUserListByFieldsRequest {
 
-    protected int id;
-    @XmlElement(required = true)
+    protected Integer customerid;
+    protected Integer userid;
     protected String username;
-    protected String title;
-    @XmlElement(required = true)
     protected String surname;
-    @XmlElement(required = true)
     protected String firstname;
-    @XmlElement(required = true)
     protected String email;
     protected String company;
-    protected String locale;
-    protected String timezone;
+    protected String pcstate;
     protected String domainForIwa;
     protected String principalNameForIwa;
     protected String sidForIwa;
 
     /**
-     * Obtient la valeur de la propriété id.
+     * Obtient la valeur de la propriété customerid.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getId() {
-        return id;
+    public Integer getCustomerid() {
+        return customerid;
     }
 
     /**
-     * Définit la valeur de la propriété id.
+     * Définit la valeur de la propriété customerid.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setId(int value) {
-        this.id = value;
+    public void setCustomerid(Integer value) {
+        this.customerid = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété userid.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getUserid() {
+        return userid;
+    }
+
+    /**
+     * Définit la valeur de la propriété userid.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setUserid(Integer value) {
+        this.userid = value;
     }
 
     /**
@@ -98,30 +125,6 @@ public class Usertype {
      */
     public void setUsername(String value) {
         this.username = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété title.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTitle() {
-        return title;
-    }
-
-    /**
-     * Définit la valeur de la propriété title.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTitle(String value) {
-        this.title = value;
     }
 
     /**
@@ -221,51 +224,27 @@ public class Usertype {
     }
 
     /**
-     * Obtient la valeur de la propriété locale.
+     * Obtient la valeur de la propriété pcstate.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getLocale() {
-        return locale;
+    public String getPcstate() {
+        return pcstate;
     }
 
     /**
-     * Définit la valeur de la propriété locale.
+     * Définit la valeur de la propriété pcstate.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setLocale(String value) {
-        this.locale = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété timezone.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTimezone() {
-        return timezone;
-    }
-
-    /**
-     * Définit la valeur de la propriété timezone.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTimezone(String value) {
-        this.timezone = value;
+    public void setPcstate(String value) {
+        this.pcstate = value;
     }
 
     /**

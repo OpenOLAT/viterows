@@ -10,43 +10,43 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour modulestype complex type.
+ * &lt;p&gt;Classe Java pour modulestype complex type.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
- * <pre>
- * &lt;complexType name="modulestype"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;all&gt;
- *         &lt;element name="modules"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;element name="module" maxOccurs="unbounded" minOccurs="0"&gt;
- *                     &lt;complexType&gt;
- *                       &lt;complexContent&gt;
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                           &lt;all&gt;
- *                             &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                             &lt;element name="enddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *                             &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
- *                           &lt;/all&gt;
- *                         &lt;/restriction&gt;
- *                       &lt;/complexContent&gt;
- *                     &lt;/complexType&gt;
- *                   &lt;/element&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *       &lt;/all&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="modulestype"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;all&amp;gt;
+ *         &amp;lt;element name="modules"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;complexContent&amp;gt;
+ *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                 &amp;lt;sequence&amp;gt;
+ *                   &amp;lt;element name="module" maxOccurs="unbounded" minOccurs="0"&amp;gt;
+ *                     &amp;lt;complexType&amp;gt;
+ *                       &amp;lt;complexContent&amp;gt;
+ *                         &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                           &amp;lt;all&amp;gt;
+ *                             &amp;lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *                             &amp;lt;element name="enddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *                             &amp;lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&amp;gt;
+ *                           &amp;lt;/all&amp;gt;
+ *                         &amp;lt;/restriction&amp;gt;
+ *                       &amp;lt;/complexContent&amp;gt;
+ *                     &amp;lt;/complexType&amp;gt;
+ *                   &amp;lt;/element&amp;gt;
+ *                 &amp;lt;/sequence&amp;gt;
+ *               &amp;lt;/restriction&amp;gt;
+ *             &amp;lt;/complexContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *       &amp;lt;/all&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -85,33 +85,33 @@ public class Modulestype {
 
 
     /**
-     * <p>Classe Java pour anonymous complex type.
+     * &lt;p&gt;Classe Java pour anonymous complex type.
      * 
-     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+     * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;element name="module" maxOccurs="unbounded" minOccurs="0"&gt;
-     *           &lt;complexType&gt;
-     *             &lt;complexContent&gt;
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *                 &lt;all&gt;
-     *                   &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *                   &lt;element name="enddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
-     *                   &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
-     *                 &lt;/all&gt;
-     *               &lt;/restriction&gt;
-     *             &lt;/complexContent&gt;
-     *           &lt;/complexType&gt;
-     *         &lt;/element&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;complexContent&amp;gt;
+     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *       &amp;lt;sequence&amp;gt;
+     *         &amp;lt;element name="module" maxOccurs="unbounded" minOccurs="0"&amp;gt;
+     *           &amp;lt;complexType&amp;gt;
+     *             &amp;lt;complexContent&amp;gt;
+     *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *                 &amp;lt;all&amp;gt;
+     *                   &amp;lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+     *                   &amp;lt;element name="enddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+     *                   &amp;lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&amp;gt;
+     *                 &amp;lt;/all&amp;gt;
+     *               &amp;lt;/restriction&amp;gt;
+     *             &amp;lt;/complexContent&amp;gt;
+     *           &amp;lt;/complexType&amp;gt;
+     *         &amp;lt;/element&amp;gt;
+     *       &amp;lt;/sequence&amp;gt;
+     *     &amp;lt;/restriction&amp;gt;
+     *   &amp;lt;/complexContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */
@@ -126,20 +126,20 @@ public class Modulestype {
         /**
          * Gets the value of the module property.
          * 
-         * <p>
+         * &lt;p&gt;
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the module property.
+         * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the module property.
          * 
-         * <p>
+         * &lt;p&gt;
          * For example, to add a new item, do as follows:
-         * <pre>
+         * &lt;pre&gt;
          *    getModule().add(newItem);
-         * </pre>
+         * &lt;/pre&gt;
          * 
          * 
-         * <p>
+         * &lt;p&gt;
          * Objects of the following type(s) are allowed in the list
          * {@link Modulestype.Modules.Module }
          * 
@@ -154,23 +154,23 @@ public class Modulestype {
 
 
         /**
-         * <p>Classe Java pour anonymous complex type.
+         * &lt;p&gt;Classe Java pour anonymous complex type.
          * 
-         * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+         * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
          * 
-         * <pre>
-         * &lt;complexType&gt;
-         *   &lt;complexContent&gt;
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-         *       &lt;all&gt;
-         *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-         *         &lt;element name="enddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
-         *         &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
-         *       &lt;/all&gt;
-         *     &lt;/restriction&gt;
-         *   &lt;/complexContent&gt;
-         * &lt;/complexType&gt;
-         * </pre>
+         * &lt;pre&gt;
+         * &amp;lt;complexType&amp;gt;
+         *   &amp;lt;complexContent&amp;gt;
+         *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+         *       &amp;lt;all&amp;gt;
+         *         &amp;lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+         *         &amp;lt;element name="enddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+         *         &amp;lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&amp;gt;
+         *       &amp;lt;/all&amp;gt;
+         *     &amp;lt;/restriction&amp;gt;
+         *   &amp;lt;/complexContent&amp;gt;
+         * &amp;lt;/complexType&amp;gt;
+         * &lt;/pre&gt;
          * 
          * 
          */

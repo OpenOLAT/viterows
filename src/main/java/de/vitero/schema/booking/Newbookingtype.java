@@ -8,42 +8,42 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour newbookingtype complex type.
+ * &lt;p&gt;Classe Java pour newbookingtype complex type.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
- * <pre>
- * &lt;complexType name="newbookingtype"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;all&gt;
- *         &lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="groupid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="ignorefaults" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="cafe" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="capture" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="phone" type="{http://www.vitero.de/schema/booking}phonetype" minOccurs="0"/&gt;
- *         &lt;element name="pcstateokrequired" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="repetitionpattern" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="repetitionenddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="eventname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="eventcomment" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="eventcompany" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="eventreferent" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="eventsubtitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="audience" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="html5client" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="inspire" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *       &lt;/all&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="newbookingtype"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;all&amp;gt;
+ *         &amp;lt;element name="start" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *         &amp;lt;element name="end" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *         &amp;lt;element name="startbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+ *         &amp;lt;element name="endbuffer" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+ *         &amp;lt;element name="groupid" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+ *         &amp;lt;element name="roomsize" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+ *         &amp;lt;element name="ignorefaults" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="cafe" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="capture" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="phone" type="{http://www.vitero.de/schema/booking}phonetype" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="pcstateokrequired" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="repetitionpattern" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="repetitionenddate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="eventname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="eventcomment" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="eventcompany" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="eventreferent" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="eventsubtitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="audience" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="html5client" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="inspire" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/all&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/licence" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/licence" targetNamespace="http://www.vitero.de/schema/licence">
-  <wsdl:types xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:viterolicence="http://www.vitero.de/schema/licence" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/licence" version="1.0">
        
   <!-- AVAILABLE REQUESTS AND RESPONSES -->  
@@ -114,175 +114,175 @@
   
 </xs:schema>
   </wsdl:types>
-  <wsdl:message name="groupHasBookableModuleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:groupHasBookableModuleResponse" name="groupHasBookableModuleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="groupHasBookableModuleResponse">
+    <wsdl:part element="tns:groupHasBookableModuleResponse" name="groupHasBookableModuleResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="successResponse">
+    <wsdl:part element="tns:successResponse" name="successResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="groupHasBookableModuleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:groupHasBookableModuleRequest" name="groupHasBookableModuleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="groupHasBookableModuleRequest">
+    <wsdl:part element="tns:groupHasBookableModuleRequest" name="groupHasBookableModuleRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="isPhoneAvailableResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:isPhoneAvailableResponse" name="isPhoneAvailableResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="isPhoneAvailableResponse">
+    <wsdl:part element="tns:isPhoneAvailableResponse" name="isPhoneAvailableResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getModulesForCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getModulesForCustomerRequest" name="getModulesForCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getModulesForCustomerRequest">
+    <wsdl:part element="tns:getModulesForCustomerRequest" name="getModulesForCustomerRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getModulesForCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getModulesForCustomerResponse" name="getModulesForCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getModulesForCustomerResponse">
+    <wsdl:part element="tns:getModulesForCustomerResponse" name="getModulesForCustomerResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getAllModulesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getAllModulesRequest" name="getAllModulesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getAllModulesRequest">
+    <wsdl:part element="tns:getAllModulesRequest" name="getAllModulesRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="isPhoneAvailableRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:isPhoneAvailableRequest" name="isPhoneAvailableRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="isPhoneAvailableRequest">
+    <wsdl:part element="tns:isPhoneAvailableRequest" name="isPhoneAvailableRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookableRoomsForGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getBookableRoomsForGroupRequest" name="getBookableRoomsForGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getBookableRoomsForGroupRequest">
+    <wsdl:part element="tns:getBookableRoomsForGroupRequest" name="getBookableRoomsForGroupRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getAllModulesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getAllModulesResponse" name="getAllModulesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getAllModulesResponse">
+    <wsdl:part element="tns:getAllModulesResponse" name="getAllModulesResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="successRequest">
+    <wsdl:part element="tns:successRequest" name="successRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookableModulesForGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getBookableModulesForGroupResponse" name="getBookableModulesForGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getBookableModulesForGroupResponse">
+    <wsdl:part element="tns:getBookableModulesForGroupResponse" name="getBookableModulesForGroupResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookableModulesForGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getBookableModulesForGroupRequest" name="getBookableModulesForGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getBookableModulesForGroupRequest">
+    <wsdl:part element="tns:getBookableModulesForGroupRequest" name="getBookableModulesForGroupRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getBookableRoomsForGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getBookableRoomsForGroupResponse" name="getBookableRoomsForGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getBookableRoomsForGroupResponse">
+    <wsdl:part element="tns:getBookableRoomsForGroupResponse" name="getBookableRoomsForGroupResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="Licence" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:operation name="groupHasBookableModule" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:groupHasBookableModuleRequest" name="groupHasBookableModuleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:portType name="Licence">
+    <wsdl:operation name="groupHasBookableModule">
+      <wsdl:input message="tns:groupHasBookableModuleRequest" name="groupHasBookableModuleRequest">
     </wsdl:input>
-      <wsdl:output message="tns:groupHasBookableModuleResponse" name="groupHasBookableModuleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:groupHasBookableModuleResponse" name="groupHasBookableModuleResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="success">
+      <wsdl:input message="tns:successRequest" name="successRequest">
     </wsdl:input>
-      <wsdl:output message="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:successResponse" name="successResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="isPhoneAvailable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:isPhoneAvailableRequest" name="isPhoneAvailableRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="isPhoneAvailable">
+      <wsdl:input message="tns:isPhoneAvailableRequest" name="isPhoneAvailableRequest">
     </wsdl:input>
-      <wsdl:output message="tns:isPhoneAvailableResponse" name="isPhoneAvailableResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:isPhoneAvailableResponse" name="isPhoneAvailableResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getModulesForCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:getModulesForCustomerRequest" name="getModulesForCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="getModulesForCustomer">
+      <wsdl:input message="tns:getModulesForCustomerRequest" name="getModulesForCustomerRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getModulesForCustomerResponse" name="getModulesForCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:getModulesForCustomerResponse" name="getModulesForCustomerResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getAllModules" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:getAllModulesRequest" name="getAllModulesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="getAllModules">
+      <wsdl:input message="tns:getAllModulesRequest" name="getAllModulesRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getAllModulesResponse" name="getAllModulesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:getAllModulesResponse" name="getAllModulesResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookableRoomsForGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:getBookableRoomsForGroupRequest" name="getBookableRoomsForGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="getBookableRoomsForGroup">
+      <wsdl:input message="tns:getBookableRoomsForGroupRequest" name="getBookableRoomsForGroupRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getBookableRoomsForGroupResponse" name="getBookableRoomsForGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:getBookableRoomsForGroupResponse" name="getBookableRoomsForGroupResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookableModulesForGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:getBookableModulesForGroupRequest" name="getBookableModulesForGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="getBookableModulesForGroup">
+      <wsdl:input message="tns:getBookableModulesForGroupRequest" name="getBookableModulesForGroupRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getBookableModulesForGroupResponse" name="getBookableModulesForGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:getBookableModulesForGroupResponse" name="getBookableModulesForGroupResponse">
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="LicenceSoap11" type="tns:Licence" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-    <wsdl:operation name="groupHasBookableModule" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="groupHasBookableModuleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+  <wsdl:binding name="LicenceSoap11" type="tns:Licence">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="groupHasBookableModule">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="groupHasBookableModuleRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="groupHasBookableModuleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="groupHasBookableModuleResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="success">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="successRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="successResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="isPhoneAvailable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="isPhoneAvailableRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="isPhoneAvailable">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="isPhoneAvailableRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="isPhoneAvailableResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="isPhoneAvailableResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getModulesForCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="getModulesForCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="getModulesForCustomer">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getModulesForCustomerRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getModulesForCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="getModulesForCustomerResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getAllModules" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="getAllModulesRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="getAllModules">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getAllModulesRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getAllModulesResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="getAllModulesResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookableRoomsForGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="getBookableRoomsForGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="getBookableRoomsForGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getBookableRoomsForGroupRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getBookableRoomsForGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="getBookableRoomsForGroupResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBookableModulesForGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="getBookableModulesForGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="getBookableModulesForGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getBookableModulesForGroupRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getBookableModulesForGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="getBookableModulesForGroupResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="LicenceService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:port binding="tns:LicenceSoap11" name="LicenceSoap11" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:address location="https://vms3.vitero.de:443/vitero/services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+  <wsdl:service name="LicenceService">
+    <wsdl:port binding="tns:LicenceSoap11" name="LicenceSoap11">
+      <soap:address location="https://vms3.vitero.de/vitero/services/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

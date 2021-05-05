@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vitero.de/schema/group" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vitero.de/schema/group" targetNamespace="http://www.vitero.de/schema/group">
-  <wsdl:types xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:viterogroup="http://www.vitero.de/schema/group" elementFormDefault="qualified" targetNamespace="http://www.vitero.de/schema/group" version="1.0">
   
   <!-- AVAILABLE REQUESTS AND RESPONSES -->
@@ -188,313 +188,313 @@
 
 </xs:schema>
   </wsdl:types>
-  <wsdl:message name="changeGroupRoleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:changeGroupRoleRequest" name="changeGroupRoleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="changeGroupRoleRequest">
+    <wsdl:part element="tns:changeGroupRoleRequest" name="changeGroupRoleRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getParticipantRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getParticipantRequest" name="getParticipantRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getParticipantRequest">
+    <wsdl:part element="tns:getParticipantRequest" name="getParticipantRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="deleteGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:deleteGroupResponse" name="deleteGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="deleteGroupResponse">
+    <wsdl:part element="tns:deleteGroupResponse" name="deleteGroupResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:createGroupRequest" name="createGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="createGroupRequest">
+    <wsdl:part element="tns:createGroupRequest" name="createGroupRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getParticipantResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getParticipantResponse" name="getParticipantResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getParticipantResponse">
+    <wsdl:part element="tns:getParticipantResponse" name="getParticipantResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="successRequest">
+    <wsdl:part element="tns:successRequest" name="successRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getGroupResponse" name="getGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getGroupResponse">
+    <wsdl:part element="tns:getGroupResponse" name="getGroupResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="deleteGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:deleteGroupRequest" name="deleteGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="deleteGroupRequest">
+    <wsdl:part element="tns:deleteGroupRequest" name="deleteGroupRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="addUserToGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:addUserToGroupRequest" name="addUserToGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="addUserToGroupRequest">
+    <wsdl:part element="tns:addUserToGroupRequest" name="addUserToGroupRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="successResponse">
+    <wsdl:part element="tns:successResponse" name="successResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="changeEnabledResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:changeEnabledResponse" name="changeEnabledResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="changeEnabledResponse">
+    <wsdl:part element="tns:changeEnabledResponse" name="changeEnabledResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getGroupByNameResponse" name="getGroupByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getGroupByNameResponse">
+    <wsdl:part element="tns:getGroupByNameResponse" name="getGroupByNameResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupListByCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getGroupListByCustomerRequest" name="getGroupListByCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getGroupListByCustomerRequest">
+    <wsdl:part element="tns:getGroupListByCustomerRequest" name="getGroupListByCustomerRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="addUserToGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:addUserToGroupResponse" name="addUserToGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="addUserToGroupResponse">
+    <wsdl:part element="tns:addUserToGroupResponse" name="addUserToGroupResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="isUserInGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:isUserInGroupRequest" name="isUserInGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="isUserInGroupRequest">
+    <wsdl:part element="tns:isUserInGroupRequest" name="isUserInGroupRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="isUserInGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:isUserInGroupResponse" name="isUserInGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="isUserInGroupResponse">
+    <wsdl:part element="tns:isUserInGroupResponse" name="isUserInGroupResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="changeGroupRoleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:changeGroupRoleResponse" name="changeGroupRoleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="changeGroupRoleResponse">
+    <wsdl:part element="tns:changeGroupRoleResponse" name="changeGroupRoleResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="createGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:createGroupResponse" name="createGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="createGroupResponse">
+    <wsdl:part element="tns:createGroupResponse" name="createGroupResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="updateGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:updateGroupResponse" name="updateGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="updateGroupResponse">
+    <wsdl:part element="tns:updateGroupResponse" name="updateGroupResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getGroupByNameRequest" name="getGroupByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getGroupByNameRequest">
+    <wsdl:part element="tns:getGroupByNameRequest" name="getGroupByNameRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="removeUserFromGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:removeUserFromGroupRequest" name="removeUserFromGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="removeUserFromGroupRequest">
+    <wsdl:part element="tns:removeUserFromGroupRequest" name="removeUserFromGroupRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="changeEnabledRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:changeEnabledRequest" name="changeEnabledRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="changeEnabledRequest">
+    <wsdl:part element="tns:changeEnabledRequest" name="changeEnabledRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getGroupRequest" name="getGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getGroupRequest">
+    <wsdl:part element="tns:getGroupRequest" name="getGroupRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="updateGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:updateGroupRequest" name="updateGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="updateGroupRequest">
+    <wsdl:part element="tns:updateGroupRequest" name="updateGroupRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getGroupListByCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:getGroupListByCustomerResponse" name="getGroupListByCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="getGroupListByCustomerResponse">
+    <wsdl:part element="tns:getGroupListByCustomerResponse" name="getGroupListByCustomerResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="removeUserFromGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:part element="tns:removeUserFromGroupResponse" name="removeUserFromGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="removeUserFromGroupResponse">
+    <wsdl:part element="tns:removeUserFromGroupResponse" name="removeUserFromGroupResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="Group" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:operation name="changeGroupRole" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:changeGroupRoleRequest" name="changeGroupRoleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:portType name="Group">
+    <wsdl:operation name="changeGroupRole">
+      <wsdl:input message="tns:changeGroupRoleRequest" name="changeGroupRoleRequest">
     </wsdl:input>
-      <wsdl:output message="tns:changeGroupRoleResponse" name="changeGroupRoleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:changeGroupRoleResponse" name="changeGroupRoleResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getParticipant" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:getParticipantRequest" name="getParticipantRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="getParticipant">
+      <wsdl:input message="tns:getParticipantRequest" name="getParticipantRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getParticipantResponse" name="getParticipantResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:getParticipantResponse" name="getParticipantResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deleteGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:deleteGroupRequest" name="deleteGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="deleteGroup">
+      <wsdl:input message="tns:deleteGroupRequest" name="deleteGroupRequest">
     </wsdl:input>
-      <wsdl:output message="tns:deleteGroupResponse" name="deleteGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:deleteGroupResponse" name="deleteGroupResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:createGroupRequest" name="createGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="createGroup">
+      <wsdl:input message="tns:createGroupRequest" name="createGroupRequest">
     </wsdl:input>
-      <wsdl:output message="tns:createGroupResponse" name="createGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:createGroupResponse" name="createGroupResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:successRequest" name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="success">
+      <wsdl:input message="tns:successRequest" name="successRequest">
     </wsdl:input>
-      <wsdl:output message="tns:successResponse" name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:successResponse" name="successResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:getGroupRequest" name="getGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="getGroup">
+      <wsdl:input message="tns:getGroupRequest" name="getGroupRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getGroupResponse" name="getGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:getGroupResponse" name="getGroupResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="addUserToGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:addUserToGroupRequest" name="addUserToGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="addUserToGroup">
+      <wsdl:input message="tns:addUserToGroupRequest" name="addUserToGroupRequest">
     </wsdl:input>
-      <wsdl:output message="tns:addUserToGroupResponse" name="addUserToGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:addUserToGroupResponse" name="addUserToGroupResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="changeEnabled" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:changeEnabledRequest" name="changeEnabledRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="changeEnabled">
+      <wsdl:input message="tns:changeEnabledRequest" name="changeEnabledRequest">
     </wsdl:input>
-      <wsdl:output message="tns:changeEnabledResponse" name="changeEnabledResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:changeEnabledResponse" name="changeEnabledResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroupByName" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:getGroupByNameRequest" name="getGroupByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="getGroupByName">
+      <wsdl:input message="tns:getGroupByNameRequest" name="getGroupByNameRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getGroupByNameResponse" name="getGroupByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:getGroupByNameResponse" name="getGroupByNameResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroupListByCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:getGroupListByCustomerRequest" name="getGroupListByCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="getGroupListByCustomer">
+      <wsdl:input message="tns:getGroupListByCustomerRequest" name="getGroupListByCustomerRequest">
     </wsdl:input>
-      <wsdl:output message="tns:getGroupListByCustomerResponse" name="getGroupListByCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:getGroupListByCustomerResponse" name="getGroupListByCustomerResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="isUserInGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:isUserInGroupRequest" name="isUserInGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="isUserInGroup">
+      <wsdl:input message="tns:isUserInGroupRequest" name="isUserInGroupRequest">
     </wsdl:input>
-      <wsdl:output message="tns:isUserInGroupResponse" name="isUserInGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:isUserInGroupResponse" name="isUserInGroupResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:updateGroupRequest" name="updateGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="updateGroup">
+      <wsdl:input message="tns:updateGroupRequest" name="updateGroupRequest">
     </wsdl:input>
-      <wsdl:output message="tns:updateGroupResponse" name="updateGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:updateGroupResponse" name="updateGroupResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="removeUserFromGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <wsdl:input message="tns:removeUserFromGroupRequest" name="removeUserFromGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="removeUserFromGroup">
+      <wsdl:input message="tns:removeUserFromGroupRequest" name="removeUserFromGroupRequest">
     </wsdl:input>
-      <wsdl:output message="tns:removeUserFromGroupResponse" name="removeUserFromGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:output message="tns:removeUserFromGroupResponse" name="removeUserFromGroupResponse">
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="GroupSoap11" type="tns:Group" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-    <wsdl:operation name="changeGroupRole" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="changeGroupRoleRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+  <wsdl:binding name="GroupSoap11" type="tns:Group">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="changeGroupRole">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="changeGroupRoleRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="changeGroupRoleResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="changeGroupRoleResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getParticipant" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="getParticipantRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="getParticipant">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getParticipantRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getParticipantResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="getParticipantResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="deleteGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="deleteGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="deleteGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deleteGroupRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="deleteGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="deleteGroupResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="createGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="createGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createGroupRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="createGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="createGroupResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="success" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="successRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="success">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="successRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="successResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="successResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="getGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="getGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getGroupRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="getGroupResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="addUserToGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="addUserToGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="addUserToGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="addUserToGroupRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="addUserToGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="addUserToGroupResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="changeEnabled" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="changeEnabledRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="changeEnabled">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="changeEnabledRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="changeEnabledResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="changeEnabledResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroupByName" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="getGroupByNameRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="getGroupByName">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getGroupByNameRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getGroupByNameResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="getGroupByNameResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getGroupListByCustomer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="getGroupListByCustomerRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="getGroupListByCustomer">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getGroupListByCustomerRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="getGroupListByCustomerResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="getGroupListByCustomerResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="isUserInGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="isUserInGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="isUserInGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="isUserInGroupRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="isUserInGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="isUserInGroupResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="updateGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="updateGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="updateGroupRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="updateGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="updateGroupResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="removeUserFromGroup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
-      <wsdl:input name="removeUserFromGroupRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="removeUserFromGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="removeUserFromGroupRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="removeUserFromGroupResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:output name="removeUserFromGroupResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="GroupService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <wsdl:port binding="tns:GroupSoap11" name="GroupSoap11" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-      <soap:address location="https://vms3.vitero.de:443/vitero/services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+  <wsdl:service name="GroupService">
+    <wsdl:port binding="tns:GroupSoap11" name="GroupSoap11">
+      <soap:address location="https://vms3.vitero.de/vitero/services/"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -11,7 +11,7 @@ import javax.xml.namespace.QName;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the de.vitero.schema.user package. 
- * <p>An ObjectFactory allows you to programatically 
+ * &lt;p&gt;An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -32,6 +32,7 @@ public class ObjectFactory {
     private final static QName _GetUserListByPositionResponse_QNAME = new QName("http://www.vitero.de/schema/user", "getUserListByPositionResponse");
     private final static QName _GetUserListByCustomerResponse_QNAME = new QName("http://www.vitero.de/schema/user", "getUserListByCustomerResponse");
     private final static QName _GetUserListByGroupResponse_QNAME = new QName("http://www.vitero.de/schema/user", "getUserListByGroupResponse");
+    private final static QName _GetUserListByFieldsResponse_QNAME = new QName("http://www.vitero.de/schema/user", "getUserListByFieldsResponse");
     private final static QName _UpdateUserResponse_QNAME = new QName("http://www.vitero.de/schema/user", "updateUserResponse");
     private final static QName _DeleteUserResponse_QNAME = new QName("http://www.vitero.de/schema/user", "deleteUserResponse");
     private final static QName _ChangePasswordResponse_QNAME = new QName("http://www.vitero.de/schema/user", "changePasswordResponse");
@@ -107,6 +108,14 @@ public class ObjectFactory {
      */
     public GetUserListByGroupRequest createGetUserListByGroupRequest() {
         return new GetUserListByGroupRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetUserListByFieldsRequest }
+     * 
+     */
+    public GetUserListByFieldsRequest createGetUserListByFieldsRequest() {
+        return new GetUserListByFieldsRequest();
     }
 
     /**
@@ -315,6 +324,19 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "getUserListByGroupResponse")
     public JAXBElement<Userlist> createGetUserListByGroupResponse(Userlist value) {
         return new JAXBElement<Userlist>(_GetUserListByGroupResponse_QNAME, Userlist.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Userlist }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://www.vitero.de/schema/user", name = "getUserListByFieldsResponse")
+    public JAXBElement<Userlist> createGetUserListByFieldsResponse(Userlist value) {
+        return new JAXBElement<Userlist>(_GetUserListByFieldsResponse_QNAME, Userlist.class, null, value);
     }
 
     /**
