@@ -1,30 +1,30 @@
 
 package de.vitero.schema.booking;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java pour phonetype complex type.
+ * <p>Classe Java pour phonetype complex type.
  * 
- * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
- * &lt;pre&gt;
- * &amp;lt;complexType name="phonetype"&amp;gt;
- *   &amp;lt;complexContent&amp;gt;
- *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
- *       &amp;lt;all&amp;gt;
- *         &amp;lt;element name="phoneconference" type="{http://www.w3.org/2001/XMLSchema}boolean"/&amp;gt;
- *         &amp;lt;element name="showdialogue" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="dialout" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="dialoutphoneparticipant" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
- *       &amp;lt;/all&amp;gt;
- *     &amp;lt;/restriction&amp;gt;
- *   &amp;lt;/complexContent&amp;gt;
- * &amp;lt;/complexType&amp;gt;
- * &lt;/pre&gt;
+ * <pre>
+ * &lt;complexType name="phonetype"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="phoneconference" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="showdialogue" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="dialout" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="dialoutphoneparticipant" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */

@@ -1,29 +1,29 @@
 
 package de.vitero.schema.booking;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java pour anonymous complex type.
+ * <p>Classe Java pour anonymous complex type.
  * 
- * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
- * &lt;pre&gt;
- * &amp;lt;complexType&amp;gt;
- *   &amp;lt;complexContent&amp;gt;
- *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
- *       &amp;lt;all&amp;gt;
- *         &amp;lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
- *         &amp;lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *       &amp;lt;/all&amp;gt;
- *     &amp;lt;/restriction&amp;gt;
- *   &amp;lt;/complexContent&amp;gt;
- * &amp;lt;/complexType&amp;gt;
- * &lt;/pre&gt;
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="userid" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */

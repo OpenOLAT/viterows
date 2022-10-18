@@ -1,39 +1,39 @@
 
 package de.vitero.schema.user;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java pour usertype complex type.
+ * <p>Classe Java pour usertype complex type.
  * 
- * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
- * &lt;pre&gt;
- * &amp;lt;complexType name="usertype"&amp;gt;
- *   &amp;lt;complexContent&amp;gt;
- *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
- *       &amp;lt;all&amp;gt;
- *         &amp;lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
- *         &amp;lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="surname" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="company" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="locale" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="domainForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="principalNameForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="sidForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *       &amp;lt;/all&amp;gt;
- *     &amp;lt;/restriction&amp;gt;
- *   &amp;lt;/complexContent&amp;gt;
- * &amp;lt;/complexType&amp;gt;
- * &lt;/pre&gt;
+ * <pre>
+ * &lt;complexType name="usertype"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="surname" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="company" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="locale" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="domainForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="principalNameForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="sidForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */

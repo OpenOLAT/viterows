@@ -1,41 +1,41 @@
 
 package de.vitero.schema.group;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java pour anonymous complex type.
+ * <p>Classe Java pour anonymous complex type.
  * 
- * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
- * &lt;pre&gt;
- * &amp;lt;complexType&amp;gt;
- *   &amp;lt;complexContent&amp;gt;
- *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
- *       &amp;lt;all&amp;gt;
- *         &amp;lt;element name="group"&amp;gt;
- *           &amp;lt;complexType&amp;gt;
- *             &amp;lt;complexContent&amp;gt;
- *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
- *                 &amp;lt;all&amp;gt;
- *                   &amp;lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
- *                   &amp;lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *                   &amp;lt;element name="strictwsdl" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
- *                 &amp;lt;/all&amp;gt;
- *               &amp;lt;/restriction&amp;gt;
- *             &amp;lt;/complexContent&amp;gt;
- *           &amp;lt;/complexType&amp;gt;
- *         &amp;lt;/element&amp;gt;
- *       &amp;lt;/all&amp;gt;
- *     &amp;lt;/restriction&amp;gt;
- *   &amp;lt;/complexContent&amp;gt;
- * &amp;lt;/complexType&amp;gt;
- * &lt;/pre&gt;
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="group"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                   &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="strictwsdl" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -75,23 +75,23 @@ public class UpdateGroupRequest {
 
 
     /**
-     * &lt;p&gt;Classe Java pour anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.
      * 
-     * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
      * 
-     * &lt;pre&gt;
-     * &amp;lt;complexType&amp;gt;
-     *   &amp;lt;complexContent&amp;gt;
-     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
-     *       &amp;lt;all&amp;gt;
-     *         &amp;lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
-     *         &amp;lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
-     *         &amp;lt;element name="strictwsdl" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
-     *       &amp;lt;/all&amp;gt;
-     *     &amp;lt;/restriction&amp;gt;
-     *   &amp;lt;/complexContent&amp;gt;
-     * &amp;lt;/complexType&amp;gt;
-     * &lt;/pre&gt;
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;all&gt;
+     *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="strictwsdl" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+     *       &lt;/all&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
      * 
      * 
      */

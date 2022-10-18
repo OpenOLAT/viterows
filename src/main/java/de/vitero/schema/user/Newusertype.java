@@ -3,52 +3,52 @@ package de.vitero.schema.user;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlList;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlList;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java pour newusertype complex type.
+ * <p>Classe Java pour newusertype complex type.
  * 
- * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
- * &lt;pre&gt;
- * &amp;lt;complexType name="newusertype"&amp;gt;
- *   &amp;lt;complexContent&amp;gt;
- *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
- *       &amp;lt;all&amp;gt;
- *         &amp;lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="surname" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="company" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="locale" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="fax" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="zip" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="pcstate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="technicalnote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="domainForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="principalNameForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="sidForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="forcenewpassword" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="generatepasswordlink" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="customeridlist" type="{http://www.vitero.de/schema/user}idlist"/&amp;gt;
- *       &amp;lt;/all&amp;gt;
- *     &amp;lt;/restriction&amp;gt;
- *   &amp;lt;/complexContent&amp;gt;
- * &amp;lt;/complexType&amp;gt;
- * &lt;/pre&gt;
+ * <pre>
+ * &lt;complexType name="newusertype"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="surname" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="company" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="locale" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="fax" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="zip" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="pcstate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="technicalnote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="domainForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="principalNameForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="sidForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="forcenewpassword" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="generatepasswordlink" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="customeridlist" type="{http://www.vitero.de/schema/user}idlist"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -645,20 +645,20 @@ public class Newusertype {
     /**
      * Gets the value of the customeridlist property.
      * 
-     * &lt;p&gt;
+     * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the customeridlist property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the customeridlist property.
      * 
-     * &lt;p&gt;
+     * <p>
      * For example, to add a new item, do as follows:
-     * &lt;pre&gt;
+     * <pre>
      *    getCustomeridlist().add(newItem);
-     * &lt;/pre&gt;
+     * </pre>
      * 
      * 
-     * &lt;p&gt;
+     * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Integer }
      * 
