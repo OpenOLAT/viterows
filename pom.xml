@@ -54,7 +54,7 @@
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>3.4.10</version>
+				<version>3.5.5</version>
 				<executions>
 					<execution>
 						<id>generate-sources</id>
@@ -136,8 +136,8 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
-						<source>1.8</source>
-						<target>1.8</target>
+						<source>11</source>
+						<target>11</target>
 						<encoding>UTF-8</encoding>
 					</configuration>
 				</plugin>
@@ -154,7 +154,7 @@
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-core</artifactId>
-			<version>3.4.3</version>
+			<version>3.5.5</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
