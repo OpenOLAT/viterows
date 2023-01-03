@@ -21,22 +21,6 @@
 			<url>http://nexus.openolat.org/nexus/content/repositories/openolat-snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
-	<pluginRepositories>
-		<pluginRepository>
-			<id>apache-snapshot</id>
-			<name>Apache Snapshot</name>
-			<url>https://repository.apache.org/snapshots</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>never</updatePolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>daily</updatePolicy>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
 
 	<build>
 		<resources>
@@ -70,7 +54,7 @@
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>4.0.0-SNAPSHOT</version>
+				<version>4.0.0</version>
 				<executions>
 					<execution>
 						<id>generate-sources</id>
@@ -175,7 +159,7 @@
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-core</artifactId>
-			<version>4.0.0-SNAPSHOT</version>
+			<version>4.0.0</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
