@@ -3,28 +3,28 @@ package de.vitero.schema.cms;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java pour nodeList complex type.
+ * <p>Classe Java pour nodeList complex type.</p>
  * 
- * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.</p>
  * 
- * &lt;pre&gt;
- * &amp;lt;complexType name="nodeList"&amp;gt;
- *   &amp;lt;complexContent&amp;gt;
- *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
- *       &amp;lt;sequence&amp;gt;
- *         &amp;lt;element name="folder" type="{http://www.vitero.de/schema/cms}folder" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="file" type="{http://www.vitero.de/schema/cms}file" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
- *       &amp;lt;/sequence&amp;gt;
- *     &amp;lt;/restriction&amp;gt;
- *   &amp;lt;/complexContent&amp;gt;
- * &amp;lt;/complexType&amp;gt;
- * &lt;/pre&gt;
+ * <pre>{@code
+ * <complexType name="nodeList">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="folder" type="{http://www.vitero.de/schema/cms}folder" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="file" type="{http://www.vitero.de/schema/cms}file" maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -41,28 +41,31 @@ public class NodeList {
     /**
      * Gets the value of the folder property.
      * 
-     * &lt;p&gt;
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the folder property.
+     * This is why there is not a <CODE>set</CODE> method for the folder property.</p>
      * 
-     * &lt;p&gt;
+     * <p>
      * For example, to add a new item, do as follows:
-     * &lt;pre&gt;
-     *    getFolder().add(newItem);
-     * &lt;/pre&gt;
+     * </p>
+     * <pre>
+     * getFolder().add(newItem);
+     * </pre>
      * 
      * 
-     * &lt;p&gt;
+     * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Folder }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the folder property.
      */
     public List<Folder> getFolder() {
         if (folder == null) {
-            folder = new ArrayList<Folder>();
+            folder = new ArrayList<>();
         }
         return this.folder;
     }
@@ -70,28 +73,31 @@ public class NodeList {
     /**
      * Gets the value of the file property.
      * 
-     * &lt;p&gt;
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the file property.
+     * This is why there is not a <CODE>set</CODE> method for the file property.</p>
      * 
-     * &lt;p&gt;
+     * <p>
      * For example, to add a new item, do as follows:
-     * &lt;pre&gt;
-     *    getFile().add(newItem);
-     * &lt;/pre&gt;
+     * </p>
+     * <pre>
+     * getFile().add(newItem);
+     * </pre>
      * 
      * 
-     * &lt;p&gt;
+     * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link File }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the file property.
      */
     public List<File> getFile() {
         if (file == null) {
-            file = new ArrayList<File>();
+            file = new ArrayList<>();
         }
         return this.file;
     }

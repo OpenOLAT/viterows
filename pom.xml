@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openolat</groupId>
 	<artifactId>viterows</artifactId>
-	<version>10.3.0</version>
+	<version>10.3.1</version>
 	<packaging>jar</packaging>
 	<name>vitero WS</name>
 	<url>http://www.openolat.org/</url>
@@ -21,6 +21,12 @@
 			<url>http://nexus.openolat.org/nexus/content/repositories/openolat-snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<targetJdk>17</targetJdk>
+		<apache.cxf>4.1.2</apache.cxf>
+	</properties>
 
 	<build>
 		<resources>
@@ -54,7 +60,7 @@
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>3.5.5</version>
+				<version>${apache.cxf}</version>
 				<executions>
 					<execution>
 						<id>generate-sources</id>
@@ -136,8 +142,8 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
-						<source>11</source>
-						<target>11</target>
+						<source>${targetJdk}</source>
+						<target>${targetJdk}</target>
 						<encoding>UTF-8</encoding>
 					</configuration>
 				</plugin>
@@ -149,12 +155,17 @@
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-			<version>1.4</version>
+			<version>1.18.0</version>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.xml.ws</groupId>
+			<artifactId>jakarta.xml.ws-api</artifactId>
+			<version>4.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-core</artifactId>
-			<version>3.5.5</version>
+			<version>${apache.cxf}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

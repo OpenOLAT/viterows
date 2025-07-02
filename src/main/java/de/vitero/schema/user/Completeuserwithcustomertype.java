@@ -3,60 +3,60 @@ package de.vitero.schema.user;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java pour completeuserwithcustomertype complex type.
+ * <p>Classe Java pour completeuserwithcustomertype complex type.</p>
  * 
- * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.</p>
  * 
- * &lt;pre&gt;
- * &amp;lt;complexType name="completeuserwithcustomertype"&amp;gt;
- *   &amp;lt;complexContent&amp;gt;
- *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
- *       &amp;lt;sequence&amp;gt;
- *         &amp;lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
- *         &amp;lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="surname" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
- *         &amp;lt;element name="company" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="locale" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="fax" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="zip" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="pcstate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="technicalnote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="domainForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="principalNameForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="sidForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="customer" maxOccurs="unbounded"&amp;gt;
- *           &amp;lt;complexType&amp;gt;
- *             &amp;lt;complexContent&amp;gt;
- *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
- *                 &amp;lt;all&amp;gt;
- *                   &amp;lt;element name="customerid" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
- *                   &amp;lt;element name="admin" type="{http://www.w3.org/2001/XMLSchema}boolean"/&amp;gt;
- *                 &amp;lt;/all&amp;gt;
- *               &amp;lt;/restriction&amp;gt;
- *             &amp;lt;/complexContent&amp;gt;
- *           &amp;lt;/complexType&amp;gt;
- *         &amp;lt;/element&amp;gt;
- *       &amp;lt;/sequence&amp;gt;
- *     &amp;lt;/restriction&amp;gt;
- *   &amp;lt;/complexContent&amp;gt;
- * &amp;lt;/complexType&amp;gt;
- * &lt;/pre&gt;
+ * <pre>{@code
+ * <complexType name="completeuserwithcustomertype">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="surname" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="company" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="locale" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="timezone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="fax" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="country" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="zip" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="city" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="street" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="pcstate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="technicalnote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="domainForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="principalNameForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="sidForIwa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="customer" maxOccurs="unbounded">
+ *           <complexType>
+ *             <complexContent>
+ *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 <all>
+ *                   <element name="customerid" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *                   <element name="admin" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *                 </all>
+ *               </restriction>
+ *             </complexContent>
+ *           </complexType>
+ *         </element>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -614,50 +614,53 @@ public class Completeuserwithcustomertype {
     /**
      * Gets the value of the customer property.
      * 
-     * &lt;p&gt;
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the customer property.
+     * This is why there is not a <CODE>set</CODE> method for the customer property.</p>
      * 
-     * &lt;p&gt;
+     * <p>
      * For example, to add a new item, do as follows:
-     * &lt;pre&gt;
-     *    getCustomer().add(newItem);
-     * &lt;/pre&gt;
+     * </p>
+     * <pre>
+     * getCustomer().add(newItem);
+     * </pre>
      * 
      * 
-     * &lt;p&gt;
+     * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Completeuserwithcustomertype.Customer }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the customer property.
      */
     public List<Completeuserwithcustomertype.Customer> getCustomer() {
         if (customer == null) {
-            customer = new ArrayList<Completeuserwithcustomertype.Customer>();
+            customer = new ArrayList<>();
         }
         return this.customer;
     }
 
 
     /**
-     * &lt;p&gt;Classe Java pour anonymous complex type.
+     * <p>Classe Java pour anonymous complex type.</p>
      * 
-     * &lt;p&gt;Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+     * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.</p>
      * 
-     * &lt;pre&gt;
-     * &amp;lt;complexType&amp;gt;
-     *   &amp;lt;complexContent&amp;gt;
-     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
-     *       &amp;lt;all&amp;gt;
-     *         &amp;lt;element name="customerid" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
-     *         &amp;lt;element name="admin" type="{http://www.w3.org/2001/XMLSchema}boolean"/&amp;gt;
-     *       &amp;lt;/all&amp;gt;
-     *     &amp;lt;/restriction&amp;gt;
-     *   &amp;lt;/complexContent&amp;gt;
-     * &amp;lt;/complexType&amp;gt;
-     * &lt;/pre&gt;
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <all>
+     *         <element name="customerid" type="{http://www.w3.org/2001/XMLSchema}int"/>
+     *         <element name="admin" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+     *       </all>
+     *     </restriction>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
      * 
      * 
      */

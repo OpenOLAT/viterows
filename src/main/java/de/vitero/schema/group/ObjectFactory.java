@@ -1,17 +1,17 @@
 
 package de.vitero.schema.group;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
-import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlElementDecl;
+import jakarta.xml.bind.annotation.XmlRegistry;
 
 
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the de.vitero.schema.group package. 
- * &lt;p&gt;An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,23 +24,23 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _SuccessRequest_QNAME = new QName("http://www.vitero.de/schema/group", "successRequest");
-    private final static QName _SuccessResponse_QNAME = new QName("http://www.vitero.de/schema/group", "successResponse");
-    private final static QName _GetGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupRequest");
-    private final static QName _GetGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupResponse");
-    private final static QName _GetGroupByNameRequest_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupByNameRequest");
-    private final static QName _GetGroupByNameResponse_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupByNameResponse");
-    private final static QName _CreateGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "createGroupResponse");
-    private final static QName _UpdateGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "updateGroupResponse");
-    private final static QName _DeleteGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "deleteGroupResponse");
-    private final static QName _AddUserToGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "addUserToGroupRequest");
-    private final static QName _AddUserToGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "addUserToGroupResponse");
-    private final static QName _RemoveUserFromGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "removeUserFromGroupRequest");
-    private final static QName _RemoveUserFromGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "removeUserFromGroupResponse");
-    private final static QName _ChangeGroupRoleResponse_QNAME = new QName("http://www.vitero.de/schema/group", "changeGroupRoleResponse");
-    private final static QName _ChangeEnabledResponse_QNAME = new QName("http://www.vitero.de/schema/group", "changeEnabledResponse");
-    private final static QName _IsUserInGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "isUserInGroupRequest");
-    private final static QName _GetParticipantRequest_QNAME = new QName("http://www.vitero.de/schema/group", "getParticipantRequest");
+    private static final QName _SuccessRequest_QNAME = new QName("http://www.vitero.de/schema/group", "successRequest");
+    private static final QName _SuccessResponse_QNAME = new QName("http://www.vitero.de/schema/group", "successResponse");
+    private static final QName _GetGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupRequest");
+    private static final QName _GetGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupResponse");
+    private static final QName _GetGroupByNameRequest_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupByNameRequest");
+    private static final QName _GetGroupByNameResponse_QNAME = new QName("http://www.vitero.de/schema/group", "getGroupByNameResponse");
+    private static final QName _CreateGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "createGroupResponse");
+    private static final QName _UpdateGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "updateGroupResponse");
+    private static final QName _DeleteGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "deleteGroupResponse");
+    private static final QName _AddUserToGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "addUserToGroupRequest");
+    private static final QName _AddUserToGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "addUserToGroupResponse");
+    private static final QName _RemoveUserFromGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "removeUserFromGroupRequest");
+    private static final QName _RemoveUserFromGroupResponse_QNAME = new QName("http://www.vitero.de/schema/group", "removeUserFromGroupResponse");
+    private static final QName _ChangeGroupRoleResponse_QNAME = new QName("http://www.vitero.de/schema/group", "changeGroupRoleResponse");
+    private static final QName _ChangeEnabledResponse_QNAME = new QName("http://www.vitero.de/schema/group", "changeEnabledResponse");
+    private static final QName _IsUserInGroupRequest_QNAME = new QName("http://www.vitero.de/schema/group", "isUserInGroupRequest");
+    private static final QName _GetParticipantRequest_QNAME = new QName("http://www.vitero.de/schema/group", "getParticipantRequest");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: de.vitero.schema.group
@@ -52,6 +52,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UpdateGroupRequest }
      * 
+     * @return
+     *     the new instance of {@link UpdateGroupRequest }
      */
     public UpdateGroupRequest createUpdateGroupRequest() {
         return new UpdateGroupRequest();
@@ -60,6 +62,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Completegrouptype }
      * 
+     * @return
+     *     the new instance of {@link Completegrouptype }
      */
     public Completegrouptype createCompletegrouptype() {
         return new Completegrouptype();
@@ -68,6 +72,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SuccessResponse }
      * 
+     * @return
+     *     the new instance of {@link SuccessResponse }
      */
     public SuccessResponse createSuccessResponse() {
         return new SuccessResponse();
@@ -76,6 +82,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Groupid }
      * 
+     * @return
+     *     the new instance of {@link Groupid }
      */
     public Groupid createGroupid() {
         return new Groupid();
@@ -84,6 +92,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Group_Type }
      * 
+     * @return
+     *     the new instance of {@link Group_Type }
      */
     public Group_Type createGroup_Type() {
         return new Group_Type();
@@ -92,6 +102,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Groupnamecustomerid }
      * 
+     * @return
+     *     the new instance of {@link Groupnamecustomerid }
      */
     public Groupnamecustomerid createGroupnamecustomerid() {
         return new Groupnamecustomerid();
@@ -100,6 +112,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetGroupListByCustomerRequest }
      * 
+     * @return
+     *     the new instance of {@link GetGroupListByCustomerRequest }
      */
     public GetGroupListByCustomerRequest createGetGroupListByCustomerRequest() {
         return new GetGroupListByCustomerRequest();
@@ -108,6 +122,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetGroupListByCustomerResponse }
      * 
+     * @return
+     *     the new instance of {@link GetGroupListByCustomerResponse }
      */
     public GetGroupListByCustomerResponse createGetGroupListByCustomerResponse() {
         return new GetGroupListByCustomerResponse();
@@ -116,6 +132,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Grouptype }
      * 
+     * @return
+     *     the new instance of {@link Grouptype }
      */
     public Grouptype createGrouptype() {
         return new Grouptype();
@@ -124,6 +142,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateGroupRequest }
      * 
+     * @return
+     *     the new instance of {@link CreateGroupRequest }
      */
     public CreateGroupRequest createCreateGroupRequest() {
         return new CreateGroupRequest();
@@ -132,6 +152,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UpdateGroupRequest.Group }
      * 
+     * @return
+     *     the new instance of {@link UpdateGroupRequest.Group }
      */
     public UpdateGroupRequest.Group createUpdateGroupRequestGroup() {
         return new UpdateGroupRequest.Group();
@@ -140,6 +162,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteGroupRequest }
      * 
+     * @return
+     *     the new instance of {@link DeleteGroupRequest }
      */
     public DeleteGroupRequest createDeleteGroupRequest() {
         return new DeleteGroupRequest();
@@ -148,6 +172,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Groupiduseridstrict }
      * 
+     * @return
+     *     the new instance of {@link Groupiduseridstrict }
      */
     public Groupiduseridstrict createGroupiduseridstrict() {
         return new Groupiduseridstrict();
@@ -156,6 +182,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ChangeGroupRoleRequest }
      * 
+     * @return
+     *     the new instance of {@link ChangeGroupRoleRequest }
      */
     public ChangeGroupRoleRequest createChangeGroupRoleRequest() {
         return new ChangeGroupRoleRequest();
@@ -164,6 +192,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ChangeEnabledRequest }
      * 
+     * @return
+     *     the new instance of {@link ChangeEnabledRequest }
      */
     public ChangeEnabledRequest createChangeEnabledRequest() {
         return new ChangeEnabledRequest();
@@ -172,6 +202,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Groupiduserid }
      * 
+     * @return
+     *     the new instance of {@link Groupiduserid }
      */
     public Groupiduserid createGroupiduserid() {
         return new Groupiduserid();
@@ -180,6 +212,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link IsUserInGroupResponse }
      * 
+     * @return
+     *     the new instance of {@link IsUserInGroupResponse }
      */
     public IsUserInGroupResponse createIsUserInGroupResponse() {
         return new IsUserInGroupResponse();
@@ -188,6 +222,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetParticipantResponse }
      * 
+     * @return
+     *     the new instance of {@link GetParticipantResponse }
      */
     public GetParticipantResponse createGetParticipantResponse() {
         return new GetParticipantResponse();
@@ -196,6 +232,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Groupidcustomerid }
      * 
+     * @return
+     *     the new instance of {@link Groupidcustomerid }
      */
     public Groupidcustomerid createGroupidcustomerid() {
         return new Groupidcustomerid();
@@ -204,6 +242,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Completegrouptype.Participant }
      * 
+     * @return
+     *     the new instance of {@link Completegrouptype.Participant }
      */
     public Completegrouptype.Participant createCompletegrouptypeParticipant() {
         return new Completegrouptype.Participant();
@@ -219,7 +259,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "successRequest")
     public JAXBElement<String> createSuccessRequest(String value) {
-        return new JAXBElement<String>(_SuccessRequest_QNAME, String.class, null, value);
+        return new JAXBElement<>(_SuccessRequest_QNAME, String.class, null, value);
     }
 
     /**
@@ -232,7 +272,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "successResponse")
     public JAXBElement<SuccessResponse> createSuccessResponse(SuccessResponse value) {
-        return new JAXBElement<SuccessResponse>(_SuccessResponse_QNAME, SuccessResponse.class, null, value);
+        return new JAXBElement<>(_SuccessResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
@@ -245,7 +285,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupRequest")
     public JAXBElement<Groupid> createGetGroupRequest(Groupid value) {
-        return new JAXBElement<Groupid>(_GetGroupRequest_QNAME, Groupid.class, null, value);
+        return new JAXBElement<>(_GetGroupRequest_QNAME, Groupid.class, null, value);
     }
 
     /**
@@ -258,7 +298,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupResponse")
     public JAXBElement<Group_Type> createGetGroupResponse(Group_Type value) {
-        return new JAXBElement<Group_Type>(_GetGroupResponse_QNAME, Group_Type.class, null, value);
+        return new JAXBElement<>(_GetGroupResponse_QNAME, Group_Type.class, null, value);
     }
 
     /**
@@ -271,7 +311,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupByNameRequest")
     public JAXBElement<Groupnamecustomerid> createGetGroupByNameRequest(Groupnamecustomerid value) {
-        return new JAXBElement<Groupnamecustomerid>(_GetGroupByNameRequest_QNAME, Groupnamecustomerid.class, null, value);
+        return new JAXBElement<>(_GetGroupByNameRequest_QNAME, Groupnamecustomerid.class, null, value);
     }
 
     /**
@@ -284,7 +324,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getGroupByNameResponse")
     public JAXBElement<Group_Type> createGetGroupByNameResponse(Group_Type value) {
-        return new JAXBElement<Group_Type>(_GetGroupByNameResponse_QNAME, Group_Type.class, null, value);
+        return new JAXBElement<>(_GetGroupByNameResponse_QNAME, Group_Type.class, null, value);
     }
 
     /**
@@ -297,7 +337,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "createGroupResponse")
     public JAXBElement<Groupid> createCreateGroupResponse(Groupid value) {
-        return new JAXBElement<Groupid>(_CreateGroupResponse_QNAME, Groupid.class, null, value);
+        return new JAXBElement<>(_CreateGroupResponse_QNAME, Groupid.class, null, value);
     }
 
     /**
@@ -310,7 +350,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "updateGroupResponse")
     public JAXBElement<SuccessResponse> createUpdateGroupResponse(SuccessResponse value) {
-        return new JAXBElement<SuccessResponse>(_UpdateGroupResponse_QNAME, SuccessResponse.class, null, value);
+        return new JAXBElement<>(_UpdateGroupResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
@@ -323,7 +363,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "deleteGroupResponse")
     public JAXBElement<SuccessResponse> createDeleteGroupResponse(SuccessResponse value) {
-        return new JAXBElement<SuccessResponse>(_DeleteGroupResponse_QNAME, SuccessResponse.class, null, value);
+        return new JAXBElement<>(_DeleteGroupResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
@@ -336,7 +376,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "addUserToGroupRequest")
     public JAXBElement<Groupiduseridstrict> createAddUserToGroupRequest(Groupiduseridstrict value) {
-        return new JAXBElement<Groupiduseridstrict>(_AddUserToGroupRequest_QNAME, Groupiduseridstrict.class, null, value);
+        return new JAXBElement<>(_AddUserToGroupRequest_QNAME, Groupiduseridstrict.class, null, value);
     }
 
     /**
@@ -349,7 +389,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "addUserToGroupResponse")
     public JAXBElement<SuccessResponse> createAddUserToGroupResponse(SuccessResponse value) {
-        return new JAXBElement<SuccessResponse>(_AddUserToGroupResponse_QNAME, SuccessResponse.class, null, value);
+        return new JAXBElement<>(_AddUserToGroupResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
@@ -362,7 +402,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "removeUserFromGroupRequest")
     public JAXBElement<Groupiduseridstrict> createRemoveUserFromGroupRequest(Groupiduseridstrict value) {
-        return new JAXBElement<Groupiduseridstrict>(_RemoveUserFromGroupRequest_QNAME, Groupiduseridstrict.class, null, value);
+        return new JAXBElement<>(_RemoveUserFromGroupRequest_QNAME, Groupiduseridstrict.class, null, value);
     }
 
     /**
@@ -375,7 +415,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "removeUserFromGroupResponse")
     public JAXBElement<SuccessResponse> createRemoveUserFromGroupResponse(SuccessResponse value) {
-        return new JAXBElement<SuccessResponse>(_RemoveUserFromGroupResponse_QNAME, SuccessResponse.class, null, value);
+        return new JAXBElement<>(_RemoveUserFromGroupResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
@@ -388,7 +428,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "changeGroupRoleResponse")
     public JAXBElement<SuccessResponse> createChangeGroupRoleResponse(SuccessResponse value) {
-        return new JAXBElement<SuccessResponse>(_ChangeGroupRoleResponse_QNAME, SuccessResponse.class, null, value);
+        return new JAXBElement<>(_ChangeGroupRoleResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
@@ -401,7 +441,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "changeEnabledResponse")
     public JAXBElement<SuccessResponse> createChangeEnabledResponse(SuccessResponse value) {
-        return new JAXBElement<SuccessResponse>(_ChangeEnabledResponse_QNAME, SuccessResponse.class, null, value);
+        return new JAXBElement<>(_ChangeEnabledResponse_QNAME, SuccessResponse.class, null, value);
     }
 
     /**
@@ -414,7 +454,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "isUserInGroupRequest")
     public JAXBElement<Groupiduserid> createIsUserInGroupRequest(Groupiduserid value) {
-        return new JAXBElement<Groupiduserid>(_IsUserInGroupRequest_QNAME, Groupiduserid.class, null, value);
+        return new JAXBElement<>(_IsUserInGroupRequest_QNAME, Groupiduserid.class, null, value);
     }
 
     /**
@@ -427,7 +467,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.vitero.de/schema/group", name = "getParticipantRequest")
     public JAXBElement<Groupiduserid> createGetParticipantRequest(Groupiduserid value) {
-        return new JAXBElement<Groupiduserid>(_GetParticipantRequest_QNAME, Groupiduserid.class, null, value);
+        return new JAXBElement<>(_GetParticipantRequest_QNAME, Groupiduserid.class, null, value);
     }
 
 }
