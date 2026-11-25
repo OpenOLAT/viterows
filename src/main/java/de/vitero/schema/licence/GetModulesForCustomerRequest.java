@@ -1,4 +1,3 @@
-
 package de.vitero.schema.licence;
 
 import jakarta.xml.bind.annotation.XmlAccessType;

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openolat</groupId>
 	<artifactId>viterows</artifactId>
-	<version>10.3.1</version>
+	<version>10.3.2</version>
 	<packaging>jar</packaging>
 	<name>vitero WS</name>
 	<url>http://www.openolat.org/</url>
@@ -24,8 +24,8 @@
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<targetJdk>17</targetJdk>
-		<apache.cxf>4.1.2</apache.cxf>
+		<targetJdk>25</targetJdk>
+		<apache.cxf>4.2.4</apache.cxf>
 	</properties>
 
 	<build>
@@ -155,12 +155,12 @@
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-			<version>1.18.0</version>
+			<version>1.23.0</version>
 		</dependency>
 		<dependency>
 			<groupId>jakarta.xml.ws</groupId>
 			<artifactId>jakarta.xml.ws-api</artifactId>
-			<version>4.0.2</version>
+			<version>4.0.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>

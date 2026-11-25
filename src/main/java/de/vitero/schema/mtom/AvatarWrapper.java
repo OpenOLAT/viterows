@@ -1,4 +1,3 @@
-
 package de.vitero.schema.mtom;
 
 import jakarta.activation.DataHandler;

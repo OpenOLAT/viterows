@@ -1,4 +1,3 @@
-
 package de.vitero.schema.user;
 
 import jakarta.xml.bind.annotation.XmlAccessType;

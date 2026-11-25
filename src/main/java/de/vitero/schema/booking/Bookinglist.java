@@ -1,4 +1,3 @@
-
 package de.vitero.schema.booking;
 
 import java.util.ArrayList;
@@ -39,9 +38,9 @@ public class Bookinglist {
      * Gets the value of the booking property.
      * 
      * <p>This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the booking property.</p>
+     * not a snapshot. Therefore, any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the booking property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:

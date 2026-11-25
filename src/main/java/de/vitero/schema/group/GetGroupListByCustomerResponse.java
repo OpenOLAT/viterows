@@ -1,4 +1,3 @@
-
 package de.vitero.schema.group;
 
 import java.util.ArrayList;
@@ -41,9 +40,9 @@ public class GetGroupListByCustomerResponse {
      * Gets the value of the group property.
      * 
      * <p>This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the group property.</p>
+     * not a snapshot. Therefore, any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the group property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:

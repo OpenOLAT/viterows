@@ -1,4 +1,3 @@
-
 package de.vitero.schema.booking;
 
 import javax.xml.namespace.QName;

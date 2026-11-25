@@ -1,4 +1,3 @@
-
 package de.vitero.schema.sessioncode;
 
 import javax.xml.namespace.QName;

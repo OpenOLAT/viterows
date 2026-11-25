@@ -1,4 +1,3 @@
-
 package de.vitero.schema.licence;
 
 import javax.xml.namespace.QName;

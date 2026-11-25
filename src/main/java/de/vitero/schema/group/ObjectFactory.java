@@ -1,4 +1,3 @@
-
 package de.vitero.schema.group;
 
 import javax.xml.namespace.QName;

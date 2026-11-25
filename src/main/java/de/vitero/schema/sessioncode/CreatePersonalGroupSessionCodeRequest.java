@@ -1,4 +1,3 @@
-
 package de.vitero.schema.sessioncode;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
